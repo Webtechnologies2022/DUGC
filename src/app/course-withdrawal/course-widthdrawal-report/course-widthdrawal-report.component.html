@@ -1,7 +1,6 @@
-
 <main>
-  
-            <!--img src="assets/kletech_logo.png" alt="KLE Tech logo" class="nav-logo"-->
+
+  <!--img src="assets/kletech_logo.png" alt="KLE Tech logo" class="nav-logo"-->
   <select align="center" #semester (change)="getSemReport(semester.value)">
     <option default>Choose semester</option>
     <option value="3">3</option>
@@ -11,9 +10,9 @@
     <option value="7">7</option>
     <option value="8">8</option>
   </select>
-            
-  <h1>Approved Students List of {{selectedSem}} sem.</h1>
-  <table border="1" class="pop" >
+
+  <h1>Approved Students List of sem {{selectedSem}}.</h1>
+  <table border="1" class="pop">
     <tr>
       <th>Sl no.</th>
       <th>USN</th>
@@ -40,14 +39,14 @@
             {{course.attendance}} <br>
           </b>
         </td>
-        <td>W</td>    
-        {{incrementSno()}}    
+        <td>W</td>
+        {{incrementSno()}}
       </tr>
     </tbody>
-    
+
   </table>
   <br />
   <br>
   <br>
- <div style="text-align: center;"><button class="kop"  (click)="printReport()">Print</button></div>
+  <div style="text-align: center;"><button class="kop" (click)="printReport()">Print</button></div>
 </main>
