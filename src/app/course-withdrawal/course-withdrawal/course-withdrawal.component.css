@@ -1,0 +1,15 @@
+
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
+}
+
+button{
+  padding: .5em;
+}
+
+th{
+  text-align: center;
+}

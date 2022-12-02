@@ -1,0 +1,53 @@
+
+<main>
+  
+            <!--img src="assets/kletech_logo.png" alt="KLE Tech logo" class="nav-logo"-->
+  <select align="center" #semester (change)="getSemReport(semester.value)">
+    <option default>Choose semester</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+            
+  <h1>Approved Students List of {{selectedSem}} sem.</h1>
+  <table border="1" class="pop" >
+    <tr>
+      <th>Sl no.</th>
+      <th>USN</th>
+      <th>Name</th>
+      <th>Sem</th>
+      <th>Course</th>
+      <th>Attendance</th>
+      <th>Grade</th>
+    </tr>
+    {{resetSno()}}
+    <tbody *ngFor="let student of students; let i = index">
+      <tr *ngIf="student.status =='approved' && student.sem == selectedSem">
+        <td>{{sno}}</td>
+        <td>{{student.srn}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.sem}}</td>
+        <td>
+          <b *ngFor="let course of student.selectedCourseToWithdraw">
+            {{course.name}} <br>
+          </b>
+        </td>
+        <td>
+          <b *ngFor="let course of student.selectedCourseToWithdraw">
+            {{course.attendance}} <br>
+          </b>
+        </td>
+        <td>W</td>    
+        {{incrementSno()}}    
+      </tr>
+    </tbody>
+    
+  </table>
+  <br />
+  <br>
+  <br>
+ <div style="text-align: center;"><button class="kop"  (click)="printReport()">Print</button></div>
+</main>

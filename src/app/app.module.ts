@@ -20,6 +20,13 @@ import { DeleteSheetComponent } from './minor-analysis/delete-sheet/delete-sheet
 import { UploadResultComponent } from './minor-analysis/upload-result/upload-result.component';
 import { ToastrModule } from 'ngx-toastr';
 
+//Withdrawal module
+import { CourseWithdrawalComponent } from './course-withdrawal/course-withdrawal/course-withdrawal.component';
+import { CourseWidthdrawalReportComponent } from './course-withdrawal/course-widthdrawal-report/course-widthdrawal-report.component';
+import { CourseWithdrawalApplicationComponent } from './course-withdrawal/course-withdrawal-application/course-withdrawal-application.component';
+import { WithdrawalNavbarComponent } from './course-withdrawal/navbar/navbar.component';
+import { CourseWithdrawalMainComponent } from './course-withdrawal/course-withdrawal-main/course-withdrawal-main.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +41,12 @@ import { ToastrModule } from 'ngx-toastr';
     ChartsComponent,
     DeleteSheetComponent,
     UploadResultComponent,
+    AppComponent,
+    CourseWithdrawalComponent,
+    CourseWidthdrawalReportComponent,
+    CourseWithdrawalApplicationComponent,
+    WithdrawalNavbarComponent,
+    CourseWithdrawalMainComponent,
   ],
   imports: [
     BrowserModule,
