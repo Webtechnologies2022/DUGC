@@ -55,7 +55,7 @@ export class ConsolidatedSheetUploadComponent implements OnInit {
         this.statusService.isUploaded = true;
         this.statusService.isConsolidated = true;
         this.statusService.setResult(resp);
-        this.router.navigate(['/coordinator/upload_status']);
+        this.router.navigate(['/Minor/coordinator/upload_status']);
       },
       (error) => {
         console.log(error);
