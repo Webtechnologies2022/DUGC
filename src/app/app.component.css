@@ -79,3 +79,8 @@
   opacity: 20%;
   pointer-events: none;
 }
+
+
+.nav-container {
+  margin-bottom: -1em;
+}
