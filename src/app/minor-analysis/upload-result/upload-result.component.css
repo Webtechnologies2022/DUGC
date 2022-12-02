@@ -1,0 +1,105 @@
+* {
+  letter-spacing: -0.04em;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 1.3em;
+  color: #00000085;
+}
+
+.status-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+}
+
+.status-div {
+  padding-right: 6em;
+}
+
+.data-row {
+  display: flex;
+  margin-bottom: 0.3em;
+}
+
+.data {
+  margin-top: 1em;
+}
+
+.data-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.data-sub {
+  font-weight: 500;
+  min-width: 6em;
+}
+
+.us-section-title {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 1.2em 0 0.5em 0;
+}
+
+.us-section-subtitle {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0 0.8em 0 0;
+  min-width: 4em;
+}
+
+.us-heading {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.us-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.us-section-content {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.us-section-name {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0 0.4em;
+}
+
+.us-section-icon img {
+  height: 1.2em;
+}
+
+.course_code {
+  font-weight: 700;
+}
+
+.us-section-swatch {
+  display: flex;
+  padding-right: 0.8em;
+}
+
+.us-subsection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+}
+
+.is-hidden {
+  visibility: hidden;
+}

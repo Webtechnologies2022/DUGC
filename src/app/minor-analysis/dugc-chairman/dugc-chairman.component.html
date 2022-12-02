@@ -1,0 +1,72 @@
+<div class="main">
+  <div class="form">
+    <div class="form-text">Please add the course :</div>
+    <div class="form-input">
+      <div class="input-section">
+         <div class="input-section-title">
+          <label for="sem_type">Choose the type of semester:</label>
+         </div>
+         <div class="input-section-content">
+                <select id="sem_type" name="sem_type" [(ngModel)]="inp.sem_type">
+                    <option disabled value="" [selected]="true"></option>
+                    <option value="odd">Odd</option>
+                    <option value="even">Even</option>
+                </select>
+         </div>
+       </div>
+            <div *ngIf="inp.sem_type == 'even';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp.semester" >
+                            <option disabled value="" [selected]=true></option>
+                            <option value="four" [selected]="true">IV - four</option>
+                            <option value="six">VI - six</option>
+                            <option value="eight">VIII - eight</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+             <div *ngIf="inp.sem_type == 'odd';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp.semester" >
+                            <option disabled value="" [selected]=true></option>
+                            <option value="three" [selected]="true">III - three</option>
+                            <option value="five">V - five</option>
+                            <option value="seven">VII - seven</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        <div class = "input-section">
+            <div class = "input-section-title">
+                <label for="course_code">Enter the course code :</label>
+            </div>
+            <div class = "input-section-content">
+                <input id="course_code" type="text" name="course_code" placeholder="Ex: 22ECSC301" required="" [(ngModel)]="inp.course_code">
+            </div>
+        </div>
+        <div class = "input-section">
+            <div class = "input-section-title">
+                <label for="course_code">Enter the course name :</label>
+            </div>
+            <div class = "input-section-content">
+                <input id="course_name" type="text" name="course_name" placeholder="Ex: Software Engineering" required="" [(ngModel)]="inp.course_name">
+            </div>
+        </div>
+        <div class = "input-section">
+            <div>
+                <button id="submit-upload" (click)="submitForm()">Submit</button>
+                <button id="reset-button" (click)="resetForm()">Reset</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

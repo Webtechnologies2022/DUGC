@@ -1,0 +1,71 @@
+<div class="main">
+    <div class="form">
+        <div class="form-text">Please enter the details below: </div>
+        <div class="main-input-section">
+
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="sem_type">Choose the type of semester:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="sem_type" name="sem_type" [(ngModel)]="inp_sem_type">
+                        <option disabled value="" [selected]=true></option>
+                        <option value="odd">Odd</option>
+                        <option value="even">Even</option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="inp_sem_type == 'even';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp_sem_num">
+                            <option disabled value="" [selected]=true></option>
+                            <option value="four" [selected]="true">IV - four</option>
+                            <option value="six">VI - six</option>
+                            <option value="eight">VIII - eight</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="inp_sem_type == 'odd';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp_sem_num">
+                            <option disabled value="" [selected]=true></option>
+                            <option value="three" [selected]="true">III - three</option>
+                            <option value="five">V - five</option>
+                            <option value="seven">VII - seven</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="exam">Choose the exam:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="exam" name="exam" [(ngModel)]="inp_exam">
+                        <option disabled value="" [selected]=true></option>
+                        <option value="m1">Minor 1</option>
+                        <option value="m2">Minor 2</option>
+                        <option value="Activity">Activity</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="">
+            <button class="submit-upload" (click)="goToURL()">Submit</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

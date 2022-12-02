@@ -1,0 +1,205 @@
+<div *ngIf="isConsolidated;else singleBlock">
+    <div class="status-container">
+        <div class="title">Upload Successful!</div>
+        <div *ngFor="let res of result.read_result_array;let i = index" [attr.data-index]="i">
+            <div class="status-content">
+                <div class="status-div">
+                    <div class="data-title">Details</div>
+                    <div class="data-table">
+                        <div class="data-row">
+                            <div class="data-sub">Year: </div>
+                            <div>{{result.academic_year}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">Course: </div>
+                            <div>{{result.course}} - {{coursesWithNames[result.course]}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">Exam: </div>
+                            <div>{{result.exam}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">Semester: </div>
+                            <div>{{result.semester}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">Division: </div>
+                            <div>{{sections[i]}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-div">
+                    <div class="data-title">Data</div>
+                    <div class="data-table">
+                        <div class="data-row">
+                            <div class="data-sub">Average: </div>
+                            <div>{{res.Average}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">S: </div>
+                            <div>{{res.S_grade}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">A: </div>
+                            <div>{{res.A_grade}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">B: </div>
+                            <div>{{res.B_grade}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">C: </div>
+                            <div>{{res.C_grade}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">D: </div>
+                            <div>{{res.D_grade}}</div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-sub">Total: </div>
+                            <div>{{res.total}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div [ngClass]="{'is-hidden': i != 0}" class="upload-status-main">
+                    <div *ngIf="result.course != '' && result.semester != '' && result.academic_year != '2021-22';">
+                        <div class="us-heading">Upload Status</div>
+                        <div class="us-section">
+                            <div class="us-section-title"><span class="course_code">{{result.course}}</span> -
+                                {{coursesWithNames[result.course]}}
+                            </div>
+                            <!-- ********************************************** -->
+                            <div *ngFor="let exam of exams">
+                                <div class="us-subsection">
+                                    <div class="us-section-subtitle">{{exam}} : </div>
+                                    <div class="us-section-content">
+                                        <div *ngFor="let section of sections">
+                                            <div class="us-section-swatch">
+                                                <div class="us-section-name">{{section}}</div>
+                                                <div *ngIf="isComplete(exam,section);else elseBlock">
+                                                    <div class="us-section-icon"><img src="../../assets/icons/ok.svg"
+                                                            alt="completed">
+                                                    </div>
+                                                </div>
+                                                <ng-template #elseBlock>
+                                                    <div class="us-section-icon"><img
+                                                            src="../../assets/icons/cancel.svg" alt="not completed">
+                                                    </div>
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***************************************** -->
+                        </div>
+                    </div>
+                </div>
+                <ng-template #NoStatus>
+                    <div></div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #singleBlock>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <div class="status-container">
+        <div class="title">Upload Successful!</div>
+        <div class="status-content">
+            <div class="status-div">
+                <div class="data-title">Details</div>
+                <div class="data-table">
+                    <div class="data-row">
+                        <div class="data-sub">Year: </div>
+                        <div>{{result.academic_year}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">Course: </div>
+                        <div>{{result.course}} - {{coursesWithNames[result.course]}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">Exam: </div>
+                        <div>{{result.exam}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">Semester: </div>
+                        <div>{{result.semester}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">Division: </div>
+                        <div>{{result.section}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-div">
+                <div class="data-title">Data</div>
+                <div class="data-table">
+                    <div class="data-row">
+                        <div class="data-sub">Average: </div>
+                        <div>{{result.read_result.Average}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">S: </div>
+                        <div>{{result.read_result.S_grade}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">A: </div>
+                        <div>{{result.read_result.A_grade}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">B: </div>
+                        <div>{{result.read_result.B_grade}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">C: </div>
+                        <div>{{result.read_result.C_grade}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">D: </div>
+                        <div>{{result.read_result.D_grade}}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-sub">Total: </div>
+                        <div>{{result.read_result.total}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-status-main">
+                <div *ngIf="result.course != '' && result.semester != '' && result.academic_year != '2021-22';">
+                    <div class="us-heading">Upload Status</div>
+                    <div class="us-section">
+                        <div class="us-section-title"><span class="course_code">{{result.course}}</span> -
+                            {{coursesWithNames[result.course]}}
+                        </div>
+                        <!-- ********************************************** -->
+                        <div *ngFor="let exam of exams">
+                            <div class="us-subsection">
+                                <div class="us-section-subtitle">{{exam}} : </div>
+                                <div class="us-section-content">
+                                    <div *ngFor="let section of sections">
+                                        <div class="us-section-swatch">
+                                            <div class="us-section-name">{{section}}</div>
+                                            <div *ngIf="isComplete(exam,section);else elseBlock">
+                                                <div class="us-section-icon"><img src="../../assets/icons/ok.svg"
+                                                        alt="completed">
+                                                </div>
+                                            </div>
+                                            <ng-template #elseBlock>
+                                                <div class="us-section-icon"><img src="../../assets/icons/cancel.svg"
+                                                        alt="not completed">
+                                                </div>
+                                            </ng-template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ***************************************** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,146 @@
+<div class="main">
+    <div class="form">
+        <div class="form-text">Please enter the details below: </div>
+        <form class="form-input">
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="academic_year">Choose the academic year:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="academic_year" name="academic_year" [(ngModel)]="inp.academic_year">
+                        <option value="2022-23">2022-23</option>
+                        <option value="2020-21">2020-21</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="sem_type">Choose the type of semester:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="sem_type" name="sem_type" [(ngModel)]="inp.sem_type">
+                        <option disabled value="" [selected]=true></option>
+                        <option value="odd">Odd</option>
+                        <option value="even">Even</option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="inp.sem_type == 'even';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp.semester" (change)="changeCourses()">
+                            <option disabled value="" [selected]=true></option>
+                            <option value="four" [selected]="true">IV - four</option>
+                            <option value="six">VI - six</option>
+                            <option value="eight">VIII - eight</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="inp.sem_type == 'odd';">
+                <div class="input-section">
+                    <div class="input-section-title">
+                        <label for="semester">Choose the semester:</label>
+                    </div>
+                    <div class="input-section-content">
+                        <select id="semester" name="semester" [(ngModel)]="inp.semester" (change)="changeCourses()">
+                            <option disabled value="" [selected]=true></option>
+                            <option value="three" [selected]="true">III - three</option>
+                            <option value="five">V - five</option>
+                            <option value="seven">VII - seven</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="course">Choose the course:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="course" name="course" [(ngModel)]="inp.course">
+                        <option disabled value="" [selected]=true></option>
+                        <option *ngFor="let item of selectedCourse|keyvalue" [value]="item.key">
+                            {{item.key}} - {{item.value["Name"]}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="section">Choose the division:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="section" name="section" [(ngModel)]="inp.section">
+                        <option disabled value="" [selected]=true></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="input-section-title">
+                    <label for="exam">Choose the exam:</label>
+                </div>
+                <div class="input-section-content">
+                    <select id="exam" name="exam" [(ngModel)]="inp.exam">
+                        <option disabled value="" [selected]=true></option>
+                        <option value="m1">Minor 1</option>
+                        <option value="m2">Minor 2</option>
+                        <option value="activity">Activity</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="status-message">{{statusMessage}}</div>
+            </div>
+            <div>
+                <button id="submit-upload" (click)="submitForm()">Delete</button>
+                <button id="reset-button" (click)="resetForm()">Reset</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <div class="upload-status-main">
+            <div *ngIf="inp.course != '' && inp.semester != '';">
+                <div class="us-heading">Upload Status</div>
+                <div class="us-section">
+                    <div class="us-section-title"><span class="course_code">{{inp.course}}</span> -
+                        {{coursesWithNames[inp.course]}}
+                    </div>
+                    <!-- ********************************************** -->
+
+                    <div *ngFor="let exam of exams">
+                        <div class="us-subsection">
+                            <div class="us-section-subtitle">{{exam}}:</div>
+                            <div class="us-section-content">
+                                <div *ngFor="let section of sections">
+                                    <div class="us-section-swatch">
+                                        <div class="us-section-name">{{section}}</div>
+                                        <div *ngIf="isComplete(exam,section);else elseBlock">
+                                            <div class="us-section-icon"><img src="../../assets/icons/ok.svg"
+                                                    alt="completed">
+                                            </div>
+                                        </div>
+                                        <ng-template #elseBlock>
+                                            <div class="us-section-icon"><img src="../../assets/icons/cancel.svg"
+                                                    alt="not completed">
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***************************************** -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

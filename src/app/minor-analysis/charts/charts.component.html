@@ -1,0 +1,145 @@
+<h2 id="head-val">Analysis Report</h2>
+<br>
+
+<div class="container">
+  <h3>Analysis for {{exam_val2}} | Sem {{sem_val}} | {{this_year}}</h3>
+
+  <div>
+    <table>
+      <tr>
+        <td rowspan="3"><b>Sl no.</b></td>
+        <td rowspan="3"><b>Course code</b></td>
+        <td colspan="25"><b>No. of students scoring, marks</b></td>
+        <td colspan="5" rowspan="2"><b>Total students</b></td>
+        <td colspan="5" rowspan="2"><b>Average Marks {{this_year}}</b></td>
+        <td colspan="5" rowspan="2"><b>Average Marks {{prev_year}}</b></td>
+      </tr>
+      <tr>
+        <td colspan="5"><b>0-4</b></td>
+        <td colspan="5"><b>5-7</b></td>
+        <td colspan="5"><b>8-11</b></td>
+        <td colspan="5"><b>12-16</b></td>
+        <td colspan="5"><b>17-20</b></td>
+      </tr>
+      <tr>
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+
+        <td>A div</td>
+        <td>B div</td>
+        <td>C div</td>
+        <td>D div</td>
+        <td>E div</td>
+      </tr>
+      <tr *ngFor="let course_item of course_codes; let myIndex = index">
+        <td>{{myIndex + 1}}</td>
+        <td>{{course_item}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].a1; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].a2; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].a3; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].a4; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].a5; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].aT; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].avg; let inIndex = index">{{num1}}</td>
+        <td *ngFor="let num1 of content_array[myIndex].pre; let inIndex = index">{{num1}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<br>
+<br>
+<h3 class="title">Visualizations</h3>
+<br>
+<div class="chart-display" id="chart-display">
+  <div class="chart-row">
+    <div class="chart-item">
+      <label id="chartLabel1"></label>
+      <canvas id="myChart1" style="width:0%;max-width:0px"></canvas>
+    </div>
+    <div class="chart-item">
+      <label id="chartLabel2"></label>
+      <canvas id="myChart2" style="width:0%;max-width:0px"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-item">
+      <label id="chartLabel3"></label>
+      <canvas id="myChart3" style="width:0%;max-width:0px"></canvas>
+    </div>
+    <div class="chart-item">
+      <label id="chartLabel4"></label>
+      <canvas id="myChart4" style="width:0%;max-width:0px"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-item">
+      <label id="chartLabel5"></label>
+      <canvas id="myChart5" style="width:0%;max-width:0px"></canvas>
+    </div>
+    <div class="chart-item">
+      <label id="chartLabel6"></label>
+      <canvas id="myChart6" style="width:0%;max-width:0px"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-item">
+      <label id="chartLabel7"></label>
+      <canvas id="myChart7" style="width:0%;max-width:0px"></canvas>
+    </div>
+    <div class="chart-item">
+      <label id="chartLabel8"></label>
+      <canvas id="myChart8" style="width:0%;max-width:0px"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-item">
+      <label id="chartLabel9"></label>
+      <canvas id="myChart9" style="width:0%;max-width:0px"></canvas>
+    </div>
+    <div class="chart-item">
+      <label id="chartLabel10"></label>
+      <canvas id="myChart10" style="width:0%;max-width:0px"></canvas>
+    </div>
+  </div>
+</div>
+<button onclick="window.print()" class="print no-print" id="printButton">Print Report</button>

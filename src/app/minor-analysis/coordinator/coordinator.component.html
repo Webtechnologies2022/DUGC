@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="nav-options">
+        <div class="nav-op" routerLink="/coordinator/single" [routerLinkActive]="['selected-option']">
+            Single Sheet
+            Upload
+        </div>
+        <div class=" nav-op" routerLink="/coordinator/consolidated" [routerLinkActive]="['selected-option']">
+            Consolidated
+            Sheet Upload
+        </div>
+        <div class="nav-op" routerLink="/coordinator/delete" [routerLinkActive]="['selected-option']">
+            Delete Sheet
+        </div>
+    </div>
+    <div class="dashboard">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
