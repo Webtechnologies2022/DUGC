@@ -77,7 +77,7 @@ export class SingleSheetUploadComponent implements OnInit {
         console.log(resp);
         this.statusService.isUploaded = true;
         this.statusService.setResult(resp);
-        this.router.navigate(['/coordinator/upload_status']);
+        this.router.navigate(['/Minor/coordinator/upload_status']);
       },
       (error) => {
         console.log(error);
