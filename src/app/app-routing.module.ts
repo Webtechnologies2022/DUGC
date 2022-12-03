@@ -21,6 +21,11 @@ import { CourseWithdrawalComponent } from './course-withdrawal/course-withdrawal
 import { CourseWidthdrawalReportComponent } from './course-withdrawal/course-widthdrawal-report/course-widthdrawal-report.component';
 import { CourseWithdrawalApplicationComponent } from './course-withdrawal/course-withdrawal-application/course-withdrawal-application.component';
 import { WithdrawalNavbarComponent } from './course-withdrawal/navbar/navbar.component';
+import { EndsemAnalysisMainComponent } from './endsem-analysis/endsem-analysis-main/endsem-analysis-main.component';
+
+//End sem analysis component
+import { LoginComponent } from './endsem-analysis/login/login.component';
+import { AnalysisComponent } from './endsem-analysis/analysis/analysis.component';
 
 const routes: Routes = [
   {
@@ -64,6 +69,14 @@ const routes: Routes = [
       { path: 'Home', component: CourseWithdrawalComponent },
       { path: 'Application', component: CourseWithdrawalApplicationComponent },
       { path: 'Report', component: CourseWidthdrawalReportComponent },
+    ],
+  },
+  {
+    path: 'Endsem',
+    component: EndsemAnalysisMainComponent,
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'analysis', component: AnalysisComponent },
     ],
   },
 ];

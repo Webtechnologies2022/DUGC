@@ -1,0 +1,112 @@
+<div class="nav-container">
+    <!-- <div class="navbar">
+        <div class="nav-section nav-img-section">
+            <img src="assets/logo.png" alt="KLE Tech logo" class="nav-logo">
+        </div>
+        <div class="nav-section nav-des-section">
+            <div class="nav-des">DUGC</div><br>
+            <div class="nav-des-sub">DEPARTMENT OF</div>
+            <div class="nav-des-sub">UNDERGRADUATE COURSES</div>
+        </div>
+    </div> -->
+
+</div><br>
+
+
+<!-- <app-courselist></app-courselist> -->
+<div class="start">
+    <h1 id="table-class">SEMESTER-END RESULTS</h1><br>
+    Choose Semester:
+    <select #select1 (change)="see(select1.value)">
+        <option value="">select here</option>
+        <option value="sem3">Semester 3</option>
+        <option value="sem4">Semester 4</option>
+        <option value="sem5">Semester 5</option>
+        <option value="sem6">Semester 6</option>
+        <option value="sem7">Semester 7</option>
+        <option value="sem8">Semester 8</option>
+    </select>
+</div>
+<br>
+
+<br>
+<div class="table">
+
+    <br>
+    <table id="customers" align="center">
+
+        <tr>
+            <th class="id">Course Name</th>
+            <th class="name">Course Code</th>
+            <th class="pass-per">Passing percentage</th>
+        </tr>
+        <tr *ngFor="let sch of scheduleData">
+            <td> {{sch.code}} </td>
+            <td> {{sch.name}} </td>
+            <td>
+                <!-- <input #my2 name = "" type="text" [(ngModel)]="sch.passing"> -->
+                <input #myname name="" type="text" [(ngModel)]="sch.passing">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table id="customers" align="center">
+        <tr>
+            <th>Total Passing percentage</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" [(ngModel)]="pt">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button class="btn" (click)="onClick(myname)">Analyze</button>
+    <!-- <table>
+        <tr *ngFor="let i of store">
+            <td>{{i}}</td>
+        </tr>
+    </table> -->
+
+    <div class="chartbox">
+        <canvas id="myChart" width="100" height="100" #mychart></canvas>
+        <canvas id="myChart1" width="100" height="100" #mychart1></canvas>
+    </div>
+
+
+</div>
+<!-- <table  border="1px">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Passing percentage</th>
+    </tr>
+    <tr *ngFor="let sch of scheduleData">
+        <td> {{sch.code}} </td>
+        <td> {{sch.name}} </td>
+        <td>
+            <input  #myname name="" type="text" [(ngModel)]="sch.passing">
+        </td>
+    </tr>
+</table>
+<br>
+<table border="1px">
+    <tr>
+        <th>Total Passing percentage</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text">
+        </td>
+    </tr>
+</table>
+
+<button (click)="onClick(myname)">Analyze</button>
+<table>
+    <tr *ngFor="let i of store">
+        <td>{{i}}</td>
+    </tr>
+</table>
+<canvas  id="myChart" width="500" height="250" #mychart></canvas>
+<router-outlet></router-outlet> -->
+<!-- <app-chart></app-chart> -->

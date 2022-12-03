@@ -1,0 +1,11 @@
+.inner-form {
+  background-color: rgba(166, 217, 235, 0.286);
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  font-size: xx-large;
+}

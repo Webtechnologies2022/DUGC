@@ -398,8 +398,3 @@ app.get("*", (req, res) => {
 app.listen(constants.BACKEND_PORT, () => {
     console.log("Listening on port ", constants.BACKEND_PORT);
 })
-
-
-
-
-

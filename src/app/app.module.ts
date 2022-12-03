@@ -26,6 +26,18 @@ import { CourseWidthdrawalReportComponent } from './course-withdrawal/course-wid
 import { CourseWithdrawalApplicationComponent } from './course-withdrawal/course-withdrawal-application/course-withdrawal-application.component';
 import { WithdrawalNavbarComponent } from './course-withdrawal/navbar/navbar.component';
 import { CourseWithdrawalMainComponent } from './course-withdrawal/course-withdrawal-main/course-withdrawal-main.component';
+import { EndsemAnalysisMainComponent } from './endsem-analysis/endsem-analysis-main/endsem-analysis-main.component';
+
+//End sem analysis module
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { LoginComponent } from './endsem-analysis/login/login.component';
+import { AnalysisComponent } from './endsem-analysis/analysis/analysis.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +59,18 @@ import { CourseWithdrawalMainComponent } from './course-withdrawal/course-withdr
     CourseWithdrawalApplicationComponent,
     WithdrawalNavbarComponent,
     CourseWithdrawalMainComponent,
+
+    LoginComponent,
+    EndsemAnalysisMainComponent,
+    AnalysisComponent,
   ],
   imports: [
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

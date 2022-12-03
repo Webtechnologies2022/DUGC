@@ -1,0 +1,40 @@
+<!-- 
+
+
+<h1>WELC0ME TO SEM END RESULT LOGIN PAGE</h1>
+
+<div  class = "outer-form" fxLayoutAlign = "center center" fxFlexFill >
+    <mat-card class = "inner-form" fxFlex = "25"  flex-wrap= "wrap">
+        <mat-toolbar color="primary" > Login Page</mat-toolbar>
+          <form fxLayoutAlign="stretch" fxLayout = "column">
+            <mat-form-field class="form">
+              <br>
+              <input matInput type = "text" name="username" placeholder="USERNAME" [(ngModel)] = 'a' required>   
+              
+            </mat-form-field>
+          
+            <mat-form-field class="form">
+                <input matInput type = "password" name="password" required placeholder="PASSWORD" [(ngModel)] = 'b'>
+            </mat-form-field>
+            <br>
+           
+            <button class="btn" (click)="validation()">Login</button>
+          </form>
+          
+    </mat-card>
+</div>
+
+
+<div class="login" *ngIf="msg ; else elseBlock">
+    LOGIN SUCCESFULL, CLICK OPTION TO GO TO NEXT PAGE
+    <a [routerLink] = "['/analysis']" >VIEW SEM END ANALYSIS</a>
+</div>
+<ng-template #elseBlock>
+    LOGIN FAILED
+</ng-template>
+
+
+
+
+
+ -->
