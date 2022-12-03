@@ -84,3 +84,10 @@
 .nav-container {
   margin-bottom: -1em;
 }
+
+
+@media print {
+  .nav-options{
+    display: none;
+  }
+}
