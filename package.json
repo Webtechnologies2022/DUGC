@@ -40,7 +40,13 @@
     "path": "^0.12.7",
     "@grapecity/spread-excelio": "^15.2.5",
     "@grapecity/spread-sheets": "^15.2.5",
-    "@grapecity/spread-sheets-angular": "^15.2.5"
+    "@grapecity/spread-sheets-angular": "^15.2.5",
+    "cotter": "^0.3.35",
+    "emailjs": "^4.0.1",
+    "file-saver": "^2.0.5",
+    "ng2-file-upload": "^1.4.0",
+    "ngx-doc-viewer": "^14.0.0",
+    "nodemailer": "^6.8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.3",

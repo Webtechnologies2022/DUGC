@@ -56,6 +56,30 @@ import { Bsnp2021Component } from './lab-analysis/bsnp2021/bsnp2021.component';
 import { Bcn2021Component } from './lab-analysis/bcn2021/bcn2021.component';
 import { Sem8Component } from './lab-analysis/sem8/sem8.component';
 
+//Circular
+
+import { LoginComponentCircular } from './circular/login/login.component';
+import { CircularComponent } from './circular/circular/circular.component';
+import { MintsComponent } from './circular/mints/mints.component';
+import { NoticeComponent } from './circular/notice/notice.component';
+import { LayoutComponent } from './circular/layout/layout.component';
+import { AuthService } from './circular/auth.service';
+import { materialize } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CmmComponent } from './circular/cmm/cmm.component';
+import { CamComponent } from './circular/cam/cam.component';
+import { CcwComponent } from './circular/ccw/ccw.component';
+import { CinComponent } from './circular/cin/cin.component';
+import { CerComponent } from './circular/cer/cer.component';
+import { NmComponent } from './circular/nm/nm.component';
+import { NaComponent } from './circular/na/na.component';
+import { NwComponent } from './circular/nw/nw.component';
+import { NsComponent } from './circular/ns/ns.component';
+import { HomeComponentCircular } from './circular/home/home.component';
+import { NiComponent } from './circular/ni/ni.component';
+import { NavComponent } from './circular/nav/nav.component';
+import { CircularMainComponent } from './circular/circular-main/circular-main.component';
+
 const routes: Routes = [
   {
     path: 'Minor',
@@ -138,6 +162,31 @@ const routes: Routes = [
       { path: 'bsnp2021', component: Bsnp2021Component },
       { path: 'sem8', component: Sem8Component },
       { path: '', redirectTo: '/Lab/home', pathMatch: 'full' },
+    ],
+  },
+  {
+    path: 'Circular',
+    component: CircularMainComponent,
+    children: [
+      { path: 'home', component: HomeComponentCircular },
+      { path: 'ns', component: NsComponent },
+      { path: 'ni', component: NiComponent },
+      { path: 'nw', component: NwComponent },
+      { path: 'na', component: NaComponent },
+      { path: 'nm', component: NmComponent },
+      { path: 'cer', component: CerComponent },
+      { path: 'cin', component: CinComponent },
+      { path: 'ccw', component: CcwComponent },
+      { path: 'cam', component: CamComponent },
+      { path: 'cmm', component: CmmComponent },
+      { path: 'circular', component: CircularComponent },
+      { path: 'mints', component: MintsComponent },
+      { path: 'notice', component: NoticeComponent },
+      { path: 'nav', component: NavComponent },
+      {
+        path: 'login',
+        component: LoginComponentCircular,
+      },
     ],
   },
 ];

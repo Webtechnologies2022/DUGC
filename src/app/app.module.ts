@@ -67,6 +67,30 @@ import { Acn2021Component } from './lab-analysis/acn2021/acn2021.component';
 import { Bsnp2021Component } from './lab-analysis/bsnp2021/bsnp2021.component';
 import { Bcn2021Component } from './lab-analysis/bcn2021/bcn2021.component';
 import { Sem8Component } from './lab-analysis/sem8/sem8.component';
+import { CircularMainComponent } from './circular/circular-main/circular-main.component';
+
+//Circular component
+
+import { LoginComponentCircular } from './circular/login/login.component';
+import { CircularComponent } from './circular/circular/circular.component';
+import { MintsComponent } from './circular/mints/mints.component';
+import { NoticeComponent } from './circular/notice/notice.component';
+import { LayoutComponent } from './circular/layout/layout.component';
+import { AuthService } from './circular/auth.service';
+import { materialize } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CmmComponent } from './circular/cmm/cmm.component';
+import { CamComponent } from './circular/cam/cam.component';
+import { CcwComponent } from './circular/ccw/ccw.component';
+import { CinComponent } from './circular/cin/cin.component';
+import { CerComponent } from './circular/cer/cer.component';
+import { NmComponent } from './circular/nm/nm.component';
+import { NaComponent } from './circular/na/na.component';
+import { NwComponent } from './circular/nw/nw.component';
+import { NsComponent } from './circular/ns/ns.component';
+import { HomeComponentCircular } from './circular/home/home.component';
+import { NiComponent } from './circular/ni/ni.component';
+import { NavComponent } from './circular/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +144,27 @@ import { Sem8Component } from './lab-analysis/sem8/sem8.component';
     Bsnp2021Component,
     Bcn2021Component,
     Sem8Component,
+    CircularMainComponent,
+
+    //Circular component
+    AppComponent,
+    LoginComponentCircular,
+    CircularComponent,
+    MintsComponent,
+    NoticeComponent,
+    LayoutComponent,
+    CmmComponent,
+    CamComponent,
+    CcwComponent,
+    CinComponent,
+    CerComponent,
+    NmComponent,
+    NaComponent,
+    NwComponent,
+    NsComponent,
+    HomeComponentCircular,
+    NiComponent,
+    NavComponent,
   ],
   imports: [
     FlexLayoutModule,
@@ -136,7 +181,7 @@ import { Sem8Component } from './lab-analysis/sem8/sem8.component';
     ToastrModule.forRoot(),
     DxChartModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
