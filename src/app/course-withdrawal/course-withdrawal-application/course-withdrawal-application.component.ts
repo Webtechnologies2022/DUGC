@@ -251,24 +251,44 @@ export class CourseWithdrawalApplicationComponent implements OnInit {
         this.selectedSemCourses = sem.courses;
       }
     });
+    this.totalCreditsForSem = 0
     this.displayCourses();
   }
 
+  totalCreditsForSem = 0;
   course: any;
   displayCourses() {
     for (this.course of this.selectedSemCourses) {
       console.log(this.course.name);
+      this.totalCreditsForSem += Number(this.course.credits)
     }
+    console.log(`Total Credits of selected sem is ${this.totalCreditsForSem}. And allowed is ${this.totalCreditsForSem - 16}`)
   }
 
   selectedCourse(event: any, course: any) {
+    // if (event.target.checked) {
+    //   if (this.totalCredits + Number(course.credits) > 6) {
+    //     this.toastr.error('Invalid Operation', 'Credits Allowed are 6.');
+    //     event.target.checked = false;
+    //   } else {
+    //     this.totalCredits += Number(course.credits);
+    //     this.selectedCourses.push(course);
+    //   }
+    // } else {
+    //   let index = this.selectedCourses.indexOf(course);
+    //   this.selectedCourses.splice(index, 1);
+    //   this.totalCredits -= Number(course.credits);
+    // }
+    
     if (event.target.checked) {
-      if (this.totalCredits + Number(course.credits) > 6) {
-        this.toastr.error('Invalid Operation', 'Credits Allowed are 6.');
+      console.log(`totalcreditsforsem ${this.totalCreditsForSem}`)
+      console.log(`totalcredits ${this.totalCredits}`)
+      if ((this.totalCredits + Number(course.credits)) > (this.totalCreditsForSem - 16)) {
+        this.toastr.error('Invalid Operation', 'Credits should not be less than 16.');
         event.target.checked = false;
       } else {
         this.totalCredits += Number(course.credits);
-        this.selectedCourses.push(course);
+        this.selectedCourses.push(course);     
       }
     } else {
       let index = this.selectedCourses.indexOf(course);
@@ -298,7 +318,7 @@ export class CourseWithdrawalApplicationComponent implements OnInit {
     this.details = {
       name: this.studentName,
       sem: this.selectedSem,
-      srn: this.srn,
+      srn: this.srn.toUpperCase(),
       rollNo: this.rno,
       division: this.div,
       selectedCourseToWithdraw: this.sc,

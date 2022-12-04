@@ -2,7 +2,7 @@
 
   <!--img src="assets/kletech_logo.png" alt="KLE Tech logo" class="nav-logo"-->
   <select align="center" #semester (change)="getSemReport(semester.value)">
-    <option default>Choose semester</option>
+    <option [defaultSelected]="true" disabled>Choose semester</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
