@@ -37,7 +37,10 @@
     "http-errors": "^2.0.0",
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "@grapecity/spread-excelio": "^15.2.5",
+    "@grapecity/spread-sheets": "^15.2.5",
+    "@grapecity/spread-sheets-angular": "^15.2.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.3",

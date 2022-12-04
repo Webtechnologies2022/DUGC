@@ -1,0 +1,87 @@
+
+           #i1{
+                margin-top: 2%;
+                display: block;
+                box-align:right;
+                margin-left: auto;
+                margin-right: auto;
+                /*padding-right:70px;
+                padding-top:10px; */
+                width: 25%;
+
+            }
+            /* #i2{
+                box-align:left;
+                display: block;
+                width: 55%;
+                margin-top: 2%;
+                margin-left: 1%;
+            } */
+            h3,h4{
+                margin-right: auto;
+                margin-left: auto;
+                text-align: center;
+                color: #636363;
+                /*font-weight: 600;
+                text-align: right;*/
+                font-size: 30px;
+                padding-top: 30px;
+                /* padding-left:1000px;
+                padding-right: 50px; */
+            }
+            .container {   
+                /* margin-top: 17px;   
+                padding-left: 875px;*/
+                /*background-color: rgb(173,176,181);>  */
+                text-align: center;
+                font-size: 28px;
+                font-style: normal;
+                padding: 0.4em 0.9em; 
+                border: 0.15em solid #C62128;
+                border-radius: 0.5em;
+                border-width:50%;
+                margin: 0.4em 0.4em;
+                font-weight: 600;
+                color: #636363;
+                letter-spacing: -0.03em;
+                transition: 0.6s;
+            }   
+            button {   
+                background-color: #C62128;   
+                width: 100%;  
+                color: white;   
+                padding: 15px;   
+                margin: 10px 0px;   
+                border: none;   
+                cursor: pointer;   
+            }   
+           
+            button:hover {   
+                opacity: 0.7; 
+
+            }  
+            .dropdown,.dropdown:hover {
+                width: 100px;   
+                padding: 10px 18px;  
+                margin: 10px 5px; 
+                border: 0.15em solid #C62128;
+                border-radius: 0.5em; 
+            }
+            .drop{
+                text-align: center;
+                font-size: 15px;
+                border: 0.15em solid #C62128;
+                border-radius: 0.5em;
+
+            }
+            /* body{
+                background-color: rgb(248, 208, 4);
+            } */
+             /* .cancelbtn {   
+                width: 125px;   
+                padding: 7px;  
+                margin: 10px 5px;  
+                font-size: 30px;
+                background-color: red;
+            }   */
+        

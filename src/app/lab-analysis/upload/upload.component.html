@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+</head>
+
+<body>
+  <h2>Uploding Result - 2022</h2>
+  <div class="navbar">
+    <a href="/Lab/home">Home</a>
+    <a href="https://www.kletech.ac.in/">About</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Select Year
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/Lab/adiv2021">5th Sem 2021</a>
+        <a href="/Lab/a32021">3rd Sem 2021</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<br />
+<br />
+<br />
+
+<input type="file" (change)="ReadExcel($event)">
+<!-- <div id="hide" class="col-lg-8 col-xs-8">
+    <label class="hand-cursor">
+     <input type="file" nv-file-select uploader="$ctrl.uploader"/>
+     <span class="fa fa-camera"></span>
+     <span class="photo_text hidden-xs">Choose file to upload</span>
+      </label>
+ </div> -->
+
+<br>
+<br>
+<br>
+<div style="width: 50%; margin-left: 20%">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">MARKS</th>
+        <th scope="col">GRADE</th>
+        <th scope="col">COUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of ExcelData">
+        <th scope="row">{{ data.MARKS }}</th>
+        <!-- <td>{{data.MARKS}}</td> -->
+        <td>{{ data.GRADE }}</td>
+        <td>{{ data.COUNT }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>{{ x }}</p>
+</div>
+<div id="chart-wrapper">
+  <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+</div>
+<router-outlet></router-outlet>
+<!-- <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas> -->

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>DUGC | View</title>
+  <%- include('partials/lib.ejs')%>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body onload="readData()">
+  <div class="container">
+    <%- include('partials/navbar.ejs')%>
+      <br>
+      <h1>Analysis Report</h1>
+      <br>
+      <!-- ******************************** Table - START ***************************** -->
+
+      <br>
+      <h2>Analysis for <%=dataExams[exam_index]%> | Sem <%=semester.toUpperCase()%> | <%=this_year%>
+      </h2>
+      <br>
+      <table>
+        <tr>
+
+          <td rowspan="3">Sl no.</td>
+          <td rowspan="3">Course code</td>
+          <td colspan="25"><b>No. of students scoring, marks</b></td>
+          <td colspan="5" rowspan="2"><b>Total students</b></td>
+          <td colspan="5" rowspan="2"><b>Average Marks <%=this_year%></b></td>
+          <td colspan="5" rowspan="2"><b>Average Marks prev yr</b></td>
+        </tr>
+        <tr>
+          <td colspan="5">0-4</td>
+          <td colspan="5">5-7</td>
+          <td colspan="5">8-11</td>
+          <td colspan="5">12-16</td>
+          <td colspan="5">17-20</td>
+        </tr>
+        <tr>
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+
+          <td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+<td>A-div</td>
+          <td>B-div</td>
+          <td>C-div</td>
+          <td>D-div</td>
+          <td>E-div</td>
+        </tr>
+        <%let i=0%>
+          <!--hi-->
+          <%const coursesArray=[];%>
+            <!--hi-->
+            <%let j=0%>
+              <!--hi-->
+              <%const marksArray=[];%>
+                <!--hi-->
+                <%const prevMarks = [];%>
+                <%let prev=0%>
+                <%for(let course_index=0; course_index<dataCourses.length; course_index++){%>
+                  <tr>
+                    <td>
+                      <%=course_index+1%>
+                    </td>
+                    <td>
+                      <%=dataCourses[course_index]%>
+                    </td>
+                    <%coursesArray[i++]=dataCourses[course_index]%>
+                      <%for(let grades_index=0; grades_index < dataParticulars.length-2;
+                        grades_index++){%>
+                        <%for(let section_index=0; section_index < dataSections.length;
+                          section_index++){%>
+                          <td>
+                            <%=
+                              getScore(course_index,exam_index,section_index,grades_index,this_year,semester)%>
+                          </td>
+                          <%}%>
+                            <%}%>
+                              <%for(let section_index=0; section_index <
+                                dataSections.length; section_index++){%>
+                                <td>
+                                  <%=getScore(course_index,exam_index,section_index,6,this_year,semester)%>
+                                </td>
+                                <%}%>
+                                  <%for(let section_index=0; section_index <
+                                    dataSections.length; section_index++){%>
+                                    <td>
+                                      <%=getScore(course_index,exam_index,section_index,5,this_year,semester)%>
+                                    </td>
+                                    <%}%>
+                                      <%for(let section_index=0; section_index <
+                                        dataSections.length; section_index++){%>
+                                        <td>
+                                          <%=getScore(course_index,exam_index,section_index,5,"2020-21",semester)%>
+                                          <%prevMarks[prev++] = getScore(course_index,exam_index,section_index,5,"2020-21",semester)%>
+                                        </td>
+                                        <%}%>
+                  </tr>
+                  <%}%>
+                    <tr>
+                      <td colspan="2"><b>Total</b></td>
+                      <%for(let i=0;i<dataParticulars.length-2;i++){%>
+                        <%for(let section_index=0; section_index < dataSections.length;
+                          section_index++){%>
+                          <td>
+                            <%=getTotalScore(exam_index,section_index,i,this_year,semester)%>
+                          </td>
+                          <%}%>
+                            <%}%>
+                              <td colspan="5"></td>
+                              <td colspan="5"></td>
+                              <td colspan="5"></td>
+                    </tr>
+      </table>
+      <%for(let course_index=0; course_index<dataCourses.length; course_index++){%>
+        <%for(let section_index=0; section_index < dataSections.length; section_index++){%>
+
+          <!-- <p>
+            <%=getScore(course_index,exam_index,section_index,5,this_year,semester)%>
+          </p> -->
+          <%marksArray[j++]= getScore(course_index,exam_index,section_index,5,this_year,semester)%>
+<!-- <hr /> -->
+            <%}%>
+              <%}%>
+                <br>
+                <br>
+                <!-- ******************************* Table - END *************************** -->
+                <p id="allCourses" hidden>
+                  <%=coursesArray%>
+                </p>
+                <p id="allMarks" hidden>
+                  <%=marksArray%>
+                </p>
+                <p id="allPrevMarks" hidden>
+                  <%=prevMarks%>
+                </p>
+                <div class="chart-display" id="chart-display">
+                  <div class="chart-item">
+                    <label id="chartLabel1"></label>
+                    <canvas id="myChart1" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel2"></label>
+                    <canvas id="myChart2" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel3"></label>
+                    <canvas id="myChart3" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel4"></label>
+                    <canvas id="myChart4" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel5"></label>
+                    <canvas id="myChart5" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel6"></label>
+                    <canvas id="myChart6" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel7"></label>
+                    <canvas id="myChart7" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel8"></label>
+                    <canvas id="myChart8" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel9"></label>
+                    <canvas id="myChart9" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <label id="chartLabel10"></label>
+                    <canvas id="myChart10" style="width:0%;max-width:0px"></canvas>
+                  </div>
+                </div>
+
+
+
+
+                <br />
+                <a href="/Lab/" class="back no-print">Go back</a>
+                <a onclick="window.print()" class="print no-print">Print report</a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    let divisions = ["A", "B", "C", "D", "E"];  //k
+    let x1 = [0,0,0,0,0]; //k
+    let x2 = [0,0,0,0,0]; //k
+    let graphName = "";    //k
+    let g = 0;           //k
+    function readData() {
+      let n = document.getElementById("allCourses").innerHTML.split(',');
+      console.log(n);
+      let y = document.getElementById("allMarks").innerHTML.split(',');
+      console.log(y);
+      let pre = document.getElementById("allPrevMarks").innerHTML.split(',');
+      console.log("hi bro");
+      console.log(pre);
+let xValues = ["A", "B", "C", "D", "E"];
+      let yValues = [];
+      let y2Values = [];
+      let p = 0;
+      let q = 0;
+      // for (let i = 0; i < 5; i++) {
+      //   // console.log(y[i]);
+      //   let number = (parseFloat(y[i]));
+      //   number = number ? number : 0;
+      //   yValues.push(number);
+      // }
+      // for (let i = 0; i < 5; i++) {
+      //   // console.log(y[i]);
+      //   let number = (parseFloat(pre[i]));
+      //   number = number ? number : 0;
+      //   y2Values.push(number);
+      // }
+      let color1 = ["#4cc9f0"];
+      let color2 = ["#70e000"];
+      // console.log(xValues);
+      // console.log(yValues);
+      // document.getElementById("cnavasLabel").innerHTML = n[0];
+      console.log(n.length);
+      let courseName = "myChart1";
+      let chartNumber = "chartLabel1";
+      // let p = 0;
+      for (g = 0; g < n.length; g++) {       //kk
+        yValues = [];
+        y2Values = [];
+        for (let i = 0; i < 5; i++) {
+          let number = (parseFloat(y[p++]));
+          let number2 = (parseFloat(pre[q++]));
+          number2 = number2 ? number2 : 0;
+          number = number ? number : 0;
+          yValues.push(number);
+          x1[i] = x1[i] + Math.round((number/5) * 100) / 100; //k
+          x2[i] = x2[i] +Math.round((number2/5) * 100) / 100; //k
+          y2Values.push(number2);
+        }
+
+        courseName = courseName.split('');
+        courseName[7] = g + 1;
+        courseName = courseName.join('');
+
+
+        chartNumber = chartNumber.split('');
+        chartNumber[10] = g + 1;
+        chartNumber = chartNumber.join('');
+        let tempString = n[g] + " : <b>Average Marks</b>";
+        document.getElementById(chartNumber).innerHTML = tempString;
+
+        console.log(courseName);
+        document.getElementById(courseName).style.width = "700%";
+        document.getElementById(courseName).style.maxWidth = "700px";
+        new Chart(courseName, {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              label: "Current Year",
+              backgroundColor: color1,
+              data: yValues
+            },
+            {
+            label: "Previous Year",
+            backgroundColor: color2,
+            data: y2Values
+          }
+          ]},
+          plugins:[ChartDataLabels]
+        });
+      }
+
+      // kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+      courseName = courseName.split('');
+      courseName[7] = g + 1;
+      courseName = courseName.join('');
+
+
+      chartNumber = chartNumber.split('');
+      chartNumber[10] = g + 1;
+      chartNumber = chartNumber.join('');
+      let tempString =  "<br /><hr /><br /><center><b>Overall Performance of Divisions</b></center><br />";
+      document.getElementById(chartNumber).innerHTML = tempString;
+      document.getElementById(courseName).style.width = "700%";
+      document.getElementById(courseName).style.maxWidth = "700px";
+      graphName = courseName;
+      console.log(graphName);
+      console.log("hi");
+
+      console.log(x1)
+      console.log(x2)
+      new Chart(graphName, {
+        type: "bar",
+        data: {
+          labels: divisions,
+          datasets: [{
+            label: "Current Year",
+            backgroundColor: color1,
+            data: x1
+          },
+          {
+          label: "Previous Year",
+          backgroundColor: color2,
+          data: x2
+        }
+        ]},
+        plugins:[ChartDataLabels]
+      });
+      // kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    }
+
+
+    var css = '@page { size: landscape; }',
+      head = document.head || document.getElementsByTagName('head')[0],
+      style = document.createElement('style');
+
+    style.type = 'text/css';
+    style.media = 'print';
+
+    if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+    }
+
+    else {
+      style.appendChild(document.createTextNode(css));
+    }
+
+    head.appendChild(style);
+
+  </script>
+</body>
+
+</html>

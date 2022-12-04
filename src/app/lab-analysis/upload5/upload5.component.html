@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+</head>
+
+<body>
+
+  <h2> Uploding 5th sem Result 2022</h2>
+  <div class="navbar">
+    <a href="/Lab/home">Home</a>
+    <a href="https://www.kletech.ac.in/">About</a>
+    <!-- <a href="/Lab/adiv2021">Previous Year</a></div>  -->
+    <div class="dropdown">
+      <button class="dropbtn">Select Year
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/Lab/adiv2021">5th Sem 2021</a>
+        <a href="/Lab/a32021">3rd Sem 2021</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<br>
+<br>
+<br>
+<input type="file" (change)="ReadExcel($event)">
+
+
+
+<div style="width:50% ; margin-left: 20%;">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">MARKS</th>
+        <th scope="col">GRADE</th>
+        <th scope="col">COUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of ExcelData">
+        <th scope="row">{{data.MARKS}}</th>
+        <!-- <td>{{data.MARKS}}</td> -->
+        <td>{{data.GRADE}}</td>
+        <td>{{data.COUNT}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Choose the file from your PC and click UPLOAD                                    
+ <input type="file" id="file_upload"> 
+ <button id="b1" onclick="upload()">Upload</button>  
+ <br>
+ <br>
+ <!-- table to display the excel data 
+ <table id="display_excel_data" border="1"></table>
+ <!-- <script id="s1">    
+
+<p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+<p><img id="output" width="200" /></p>
+
+<script>
+var loadFile = function(event) {
+ var image = document.getElementById('output');
+ image.src = URL.createObjectURL(event.target.files[0]);
+}; 
+</script>
+  <!-- <iframe id="if1"width="1000" height="450" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=BDACEA1F3CE615E5%21155&authkey=%21AK3ZfCIBi3qtwSM&em=2&wdAllowInteractivity=False&Item='Sheet1'!B2%3AM18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&resen=false"></iframe>    <br><br> -->
+
+<!-- <input
+  type="file" 
+  accept=".xlsx"
+  class="custom-file-input"
+  id="customFile"
+  name="myfile"
+  (change)="onFileSelect($event.target.files)"
+  #UploadFileInput
+>  -->

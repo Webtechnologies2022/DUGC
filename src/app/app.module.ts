@@ -38,6 +38,35 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LoginComponent } from './endsem-analysis/login/login.component';
 import { AnalysisComponent } from './endsem-analysis/analysis/analysis.component';
+import { LabAnalysisMainComponent } from './lab-analysis/lab-analysis-main/lab-analysis-main.component';
+
+//Lab analysis module
+import { HomeComponent } from './lab-analysis/home/home.component';
+import { Adiv2021Component } from './lab-analysis/adiv2021/adiv2021.component';
+import { Aml2021Component } from './lab-analysis/aml2021/aml2021.component';
+import { Ass2021Component } from './lab-analysis/ass2021/ass2021.component';
+import { Awt2021Component } from './lab-analysis/awt2021/awt2021.component';
+import { Adiv2020Component } from './lab-analysis/adiv2020/adiv2020.component';
+import { Adiv2022Component } from './lab-analysis/adiv2022/adiv2022.component';
+import { UploadComponent } from './lab-analysis/upload/upload.component';
+import { A32021Component } from './lab-analysis/a32021/a32021.component';
+import { Adsa2021Component } from './lab-analysis/adsa2021/adsa2021.component';
+import { Adbms2021Component } from './lab-analysis/adbms2021/adbms2021.component';
+import { Asnp2021Component } from './lab-analysis/asnp2021/asnp2021.component';
+import { A32020Component } from './lab-analysis/a32020/a32020.component';
+import { Upload5Component } from './lab-analysis/upload5/upload5.component';
+import { Upload7Component } from './lab-analysis/upload7/upload7.component';
+import { DxChartModule } from 'devextreme-angular';
+import { A42021Component } from './lab-analysis/a42021/a42021.component';
+import { Amcp2021Component } from './lab-analysis/amcp2021/amcp2021.component';
+import { A42020Component } from './lab-analysis/a42020/a42020.component';
+import { Aoops2021Component } from './lab-analysis/aoops2021/aoops2021.component';
+import { Aeda2021Component } from './lab-analysis/aeda2021/aeda2021.component';
+import { Aos2021Component } from './lab-analysis/aos2021/aos2021.component';
+import { Acn2021Component } from './lab-analysis/acn2021/acn2021.component';
+import { Bsnp2021Component } from './lab-analysis/bsnp2021/bsnp2021.component';
+import { Bcn2021Component } from './lab-analysis/bcn2021/bcn2021.component';
+import { Sem8Component } from './lab-analysis/sem8/sem8.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +92,34 @@ import { AnalysisComponent } from './endsem-analysis/analysis/analysis.component
     LoginComponent,
     EndsemAnalysisMainComponent,
     AnalysisComponent,
+    LabAnalysisMainComponent,
+
+    //Lab analysis components
+    HomeComponent,
+    Adiv2021Component,
+    Aml2021Component,
+    Ass2021Component,
+    Awt2021Component,
+    Adiv2020Component,
+    Adiv2022Component,
+    UploadComponent,
+    A32021Component,
+    Adsa2021Component,
+    Adbms2021Component,
+    Asnp2021Component,
+    A32020Component,
+    Upload5Component,
+    Upload7Component,
+    A42021Component,
+    Amcp2021Component,
+    A42020Component,
+    Aoops2021Component,
+    Aeda2021Component,
+    Aos2021Component,
+    Acn2021Component,
+    Bsnp2021Component,
+    Bcn2021Component,
+    Sem8Component,
   ],
   imports: [
     FlexLayoutModule,
@@ -77,6 +134,7 @@ import { AnalysisComponent } from './endsem-analysis/analysis/analysis.component
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    DxChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
