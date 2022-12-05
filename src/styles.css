@@ -359,3 +359,39 @@ button.toast-close-button {
 } */
 
 /* !!Circular styles -END */
+
+/*eligibility starts*/
+
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+/* body
+{
+    background: linear-gradient(90deg, rgba(217,210,208,1) 8%, rgba(255,255,247,1) 77%);
+} */
+
+
+#card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    color: black;
+  }
+
+   #card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+#card
+{
+    background:#C62128;
+      color: white;
+      transition: all 0.2s ease-in-out;
+      line-height: 24px;
+}
+
+ svg.material-icons path {
+    fill:whitesmoke;
+  }
+
+
+
