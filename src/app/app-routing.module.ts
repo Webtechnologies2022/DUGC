@@ -87,7 +87,7 @@ import { LabComponent } from './eligibility/lab/lab.component';
 import { ApListComponent } from './eligibility/ap-list/ap-list.component';
 import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
-
+import { HomeComponentEligiblity } from './eligibility/home/home.component';
 const routes: Routes = [
   {
     path: 'Minor',
@@ -196,14 +196,16 @@ const routes: Routes = [
         component: LoginComponentCircular,
       },
     ],
-  },{path:'eligibility',component:EligibilityComponent,
+  },
+  {
+    path: 'eligibility',
+    component: EligibilityComponent,
     children: [
-      {path:'home',component:HomeComponent},
-      {path:'ap-list',component:ApListComponent},
-      {path:'lab',component:LabComponent},
-      {path:'upload',component:UploadStudentComponent},
-      {path:'**',component:PagenotfoundComponent}
-    ]}
+      { path: 'ap-list', component: ApListComponent },
+      { path: 'lab', component: LabComponent },
+      { path: 'upload', component: UploadStudentComponent },
+    ],
+  },
 ];
 
 @NgModule({
