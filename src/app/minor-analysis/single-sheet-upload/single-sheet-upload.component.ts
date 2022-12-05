@@ -93,7 +93,6 @@ export class SingleSheetUploadComponent implements OnInit {
     return true;
   }
   submitForm(): void {
-    this.upload();
     if (!this.validateInput()) {
       this.statusMessage = 'ERROR: Invalid or missing field(s)';
       console.log(this.inp);
