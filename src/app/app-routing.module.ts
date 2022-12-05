@@ -79,6 +79,14 @@ import { HomeComponentCircular } from './circular/home/home.component';
 import { NiComponent } from './circular/ni/ni.component';
 import { NavComponent } from './circular/nav/nav.component';
 import { CircularMainComponent } from './circular/circular-main/circular-main.component';
+import { EligibilityComponent } from './eligibility/eligibility.component';
+
+//eligibility list
+// import { HomeComponent } from './eligibility/home/home.component';
+import { LabComponent } from './eligibility/lab/lab.component';
+import { ApListComponent } from './eligibility/ap-list/ap-list.component';
+import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
+import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
 
 const routes: Routes = [
   {

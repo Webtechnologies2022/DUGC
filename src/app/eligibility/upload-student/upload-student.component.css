@@ -1,0 +1,19 @@
+.nav-des {
+      color: #C62128;
+    font-weight: 700;
+    font-size: 2vw;
+    letter-spacing: -0.10vw;
+    position: relative;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  .center
+{
+  text-align: center;
+  position: relative;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}

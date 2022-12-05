@@ -1,0 +1,47 @@
+@import "~font-awesome/css/font-awesome.css";
+
+@media print {
+    button{
+        display: none;
+    }
+  }
+
+  #print h2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #0d0d0c;
+
+   }
+
+   #print h4,h5{
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    color: #0d0d0c;
+    display: flex;
+    justify-content: space-between;
+
+   }
+   #print
+   {
+    margin-left: 5%;
+    margin-right: 5%;
+   }
+   #print .head
+   {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    text-align: end;
+    visibility: hidden;
+
+   }
+   @media print
+   {
+    #print .head
+    {
+      visibility: visible;
+    }
+  }

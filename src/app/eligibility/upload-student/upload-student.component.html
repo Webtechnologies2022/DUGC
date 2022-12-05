@@ -1,0 +1,125 @@
+<br>
+<br>
+<h1 class="nav-des">upload Ineligible student list</h1>
+<div class="center"></div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+  <button type="button" id="card" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    TheorySheet
+  </button>
+  <div>      </div>
+  <button type="button" id="card" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal_2">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+  LabSheet
+  </button>
+  
+  </div>
+  
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form (submit)="uploadstudent()" #get="ngForm" >
+        <div class="modal-body">
+
+          <label class="control-label" for="course">SelectSem</label>
+               
+          <select class="form-select mb-3" name="sem"  id="type" ngModel [required]="true">
+          <option >3</option>
+          <option>4</option>
+          <option>5</option>
+          <option >6</option>
+          <option >7</option>
+          <option>8</option>
+          </select>
+      
+          <label class="control-label" for="course">Select Sem</label><br>
+          <div class="btn-group">
+            <input type="radio"  class="btn-check" name="div" value="A" id="opt1" autocomplete="off" checked  ngModel/>
+            <label class="btn btn-secondary" for="opt1">A</label>
+          
+            <input type="radio" class="btn-check" name="div" value="B" id="opt2" autocomplete="off"  ngModel/>
+            <label class="btn btn-secondary" for="opt2">B</label>
+          
+            <input type="radio" class="btn-check" name="div" value="C" id="opt3" autocomplete="off"  ngModel/>
+            <label class="btn btn-secondary" for="opt3">C</label>
+        
+            <input type="radio" class="btn-check" name="div" value="D" id="opt4" autocomplete="off"  ngModel/>
+            <label class="btn btn-secondary" for="opt4">D</label>
+        
+            <input type="radio" class="btn-check" name="div"  value="E" id="opt5" autocomplete="off"  ngModel />
+            <label class="btn btn-secondary" for="opt5">E</label>
+          </div>
+          <div id="">
+            <input type="file" class="form-control" id="customFile" (change)="readfile($event)"/>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Submit</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ////////////////////////////////lab section////////////////////////////////////////////////////////////////////////////// -->    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal_2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+  
+          <form (submit)="uploadstudentlab()" #get="ngForm" >
+          <div class="modal-body">
+  
+            <label class="control-label" for="course">SelectSem</label>
+                 
+            <select class="form-select mb-3" name="sem"  id="type" ngModel [required]="true">
+            <option >3</option>
+            <option>4</option>
+            <option>5</option>
+            <option >6</option>
+            <option >7</option>
+            <option>8</option>
+            </select>
+        
+            <label class="control-label" for="course">Select Sem</label><br>
+            <div class="btn-group">
+              <input type="radio"  class="btn-check" name="div" value="A" id="opt1" autocomplete="off" checked  ngModel/>
+              <label class="btn btn-secondary" for="opt1">A</label>
+            
+              <input type="radio" class="btn-check" name="div" value="B" id="opt2" autocomplete="off"  ngModel/>
+              <label class="btn btn-secondary" for="opt2">B</label>
+            
+              <input type="radio" class="btn-check" name="div" value="C" id="opt3" autocomplete="off"  ngModel/>
+              <label class="btn btn-secondary" for="opt3">C</label>
+          
+              <input type="radio" class="btn-check" name="div" value="D" id="opt4" autocomplete="off"  ngModel/>
+              <label class="btn btn-secondary" for="opt4">D</label>
+          
+              <input type="radio" class="btn-check" name="div"  value="E" id="opt5" autocomplete="off"  ngModel />
+              <label class="btn btn-secondary" for="opt5">E</label>
+            </div>
+            <div id="">
+              <input type="file" class="form-control" id="customFile" (change)="readfile2($event)"/>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Submit</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
