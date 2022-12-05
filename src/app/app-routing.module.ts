@@ -196,7 +196,14 @@ const routes: Routes = [
         component: LoginComponentCircular,
       },
     ],
-  },
+  },{path:'eligibility',component:EligibilityComponent,
+    children: [
+      {path:'home',component:HomeComponent},
+      {path:'ap-list',component:ApListComponent},
+      {path:'lab',component:LabComponent},
+      {path:'upload',component:UploadStudentComponent},
+      {path:'**',component:PagenotfoundComponent}
+    ]}
 ];
 
 @NgModule({
