@@ -3,9 +3,10 @@
 @import "~font-awesome/css/font-awesome.css";
 
 .moda
-{
-  width:50%;
-}
+  {
+    width:30%;
+    align-items: center; 
+    margin-left: 30%; }
   #print h2{
     display: flex;
     text-align: center;

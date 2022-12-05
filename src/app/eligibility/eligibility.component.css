@@ -105,11 +105,11 @@ background-color: #C62128;
     font-weight: 500;
   }
 
-  .navbar {
+  .navbar1 {
     display: flex;
     flex-direction: row;
     padding-bottom: 0.7em;
-    border-bottom: 0.3vh solid #C62128;
+    /* border-bottom: 0.3vh solid #C62128; */
   }
   
   .nav-des-section {

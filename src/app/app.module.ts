@@ -99,6 +99,8 @@ import { ApListComponent } from './eligibility/ap-list/ap-list.component';
 import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
 import { NgxPrintModule } from 'ngx-print';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
 
 @NgModule({
   declarations: [
@@ -179,6 +181,7 @@ import { NgxPrintModule } from 'ngx-print';
     UploadStudentComponent,
     ApListComponent,
     PagenotfoundComponent,
+    EligibilityHomeComponent,
   ],
   imports: [
     FlexLayoutModule,
@@ -194,7 +197,8 @@ import { NgxPrintModule } from 'ngx-print';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     DxChartModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NgbModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

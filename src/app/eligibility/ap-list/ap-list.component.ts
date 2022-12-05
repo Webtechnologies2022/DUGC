@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { StudentsService } from '../services/students.service';
 import  * as XLSX from 'xlsx';
 import { tick } from '@angular/core/testing';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-ap-list',
   templateUrl: './ap-list.component.html',
@@ -46,6 +49,8 @@ export class ApListComponent implements OnInit {
     this.Showdate = studentService.displayDate();
     }
     
+   
+
   ngOnInit(): void {
    
   }

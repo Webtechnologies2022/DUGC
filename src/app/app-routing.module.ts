@@ -87,6 +87,7 @@ import { LabComponent } from './eligibility/lab/lab.component';
 import { ApListComponent } from './eligibility/ap-list/ap-list.component';
 import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
+import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
 
 const routes: Routes = [
   {
@@ -198,11 +199,12 @@ const routes: Routes = [
     ],
   },{path:'eligibility',component:EligibilityComponent,
     children: [
-      {path:'home',component:HomeComponent},
+
+      {path:'eligiblehome',component:EligibilityHomeComponent},
       {path:'ap-list',component:ApListComponent},
       {path:'lab',component:LabComponent},
       {path:'upload',component:UploadStudentComponent},
-      {path:'**',component:PagenotfoundComponent}
+      { path: '', redirectTo: 'eligibility/eligiblehome', pathMatch: 'full' }
     ]}
 ];
 
