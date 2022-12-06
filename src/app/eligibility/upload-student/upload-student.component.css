@@ -22,3 +22,10 @@
   padding: 2em;
 }
 
+.center2 h5{
+  margin-left: 33%;
+  color: #C62128;
+  font-weight: 700;
+  font-size: 1.5vw;
+  letter-spacing: -0.10vw;
+}
