@@ -60,3 +60,21 @@ th {
 .chart-row div:first-of-type {
   margin-right: 5em;
 }
+
+.title {
+  font-weight: 700;
+  color: #636363;
+}
+
+.title:first-of-type {
+  margin-top: 1.4em;
+}
+
+.subtitle {
+  font-weight: 500;
+  color: #636363;
+}
+
+.bold {
+  font-weight: 700 !important;
+}

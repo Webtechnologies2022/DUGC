@@ -23,6 +23,8 @@ export class DugcComponent implements OnInit {
   goToURL() {
     this.dataService.in_sem_val = this.inp_sem_num;
     this.dataService.in_exam = this.inp_exam;
+    console.log('val =', this.dataService.in_sem_val);
+    console.log('exam =', this.dataService.in_exam);
     this.router.navigate(['/Minor/charts']);
   }
 }
