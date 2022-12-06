@@ -1,0 +1,52 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* width: max-content; */
+    /* align-items: center; */
+  }
+  
+  select{
+    width: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid rgb(185, 33, 33);
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    padding: .4em;
+  }
+  
+  @media print {
+    .nav-options {
+      visibility: collapse;
+      display: none;
+    }
+  
+    select{
+      visibility: collapse;
+      display: none;
+    }
+  
+    button {
+      display: none;
+    }
+  
+    main{
+      margin-top: -80px;
+    }
+  }
+  
+  
+  th{
+    text-align: center;
+  }
+
+  button
+  {
+     color: rgb(253, 254, 255);
+     font-size: 100%;
+     padding: 14px 28px;
+     background-color: rgb(195, 53, 53);
+
+  }

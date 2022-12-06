@@ -105,7 +105,14 @@ import { TheoryComponent } from './eligibility/ap-list/theory/theory.component';
 import { LabresultsComponent } from './eligibility/lab/labresults/labresults.component';
 import { Uploadlist2Component } from './eligibility/upload-student/uploadlist2/uploadlist2.component';
 import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/uploadlist3.component';
-
+//makeupMinor
+import { MakeupMinorComponent } from './makeup-minor/makeup-minor.component';
+import { StudenteditComponent } from './makeup-minor/studentedit/studentedit.component';
+import { StudentlistComponent } from './makeup-minor/studentlist/studentlist.component';
+import { AddStudentComponent } from './makeup-minor/add-student/add-student.component';
+import { RegisterComponent } from './makeup-minor/register/register.component';
+import { MinorMainComponent } from './makeup-minor/minor-main/minor-main.component';
+import { DugcLoginComponent } from './dugc-login/dugc-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -189,6 +196,15 @@ import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/u
     LabresultsComponent,
     Uploadlist2Component,
     Uploadlist3Component,
+
+    //makeupminor
+    MakeupMinorComponent,
+    RegisterComponent,
+    AddStudentComponent,
+    StudenteditComponent,
+    StudentlistComponent,
+    MinorMainComponent,
+    DugcLoginComponent,
   ],
   imports: [
     FlexLayoutModule,

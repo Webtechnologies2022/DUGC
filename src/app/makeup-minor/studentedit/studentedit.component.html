@@ -1,0 +1,106 @@
+<head>
+    <title>DUGC | Makup Minor</title>
+  </head>
+  <body>
+    
+  <main>
+    <h1>Makup Minor Approval</h1>
+    <table  class="pop">
+      <tr>
+        <th>Sl no.</th>
+        <th>Sem</th>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Reason</th>
+        <th>Approve/Reject</th>
+      </tr>
+      {{resetSno()}}
+      <thead *ngFor="let student of students; let i = index">
+  
+      <tr *ngIf="student.status == 'pending'">
+        <td>{{sno}}</td>
+        <td>{{student.sem}}</td>
+        <td>{{student.srn}}</td>
+        <td>{{student.name}}</td>
+        <td>
+          <b *ngFor="let course of student.selectedCourseToWithdraw">
+            {{course.name}} <br>
+            Attendance-{{course.attendance}}% <br>
+            ISA1-{{course.isa1}} <br>
+            ISA2-{{course.isa2}}
+          </b>
+        </td>
+        <!-- <td>{{course.name}}</td> -->
+        <td>{{student.reason}}</td>
+        <td>
+          <button (click)="approve(student._id)">✅</button> 
+          <button (click)="reject(student._id)">❌</button>
+        </td>
+        {{incrementSno()}}
+      </tr>
+      </thead>
+  <!-- </table>
+  <table> -->
+    <!-- <tbody>
+       <tr>
+        <td>1</td>
+        <td>3rd</td>
+        <td>01FE20BCS123</td>
+        <td>Ajay</td>
+        <td>ML(15ECS419)</td>
+        <td>Health issues</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3rd</td>
+        <td>01FE20BCS124</td>
+        <td>Bharath</td>
+        <td>SS(15ECS499)</td>
+        <td>Accident</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3rd</td>
+        <td>01FE20BCS123</td>
+        <td>Ajay</td>
+        <td>ML(15ECS419)</td>
+        <td>Health issues</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>4rd</td>
+        <td>01FE20BCS124</td>
+        <td>Bharath</td>
+        <td>SS(15ECS499)</td>
+        <td>Accident</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>2rd</td>
+        <td>01FE20BCS123</td>
+        <td>Ajay</td>
+        <td>ML(15ECS419)</td>
+        <td>Health issues</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>4rd</td>
+        <td>01FE20BCS124</td>
+        <td>Bharath</td>
+        <td>SS(15ECS499)</td>
+        <td>Accident</td>
+        <td><button>✅</button> <button>❌</button></td>
+      </tr> 
+    </tbody> -->
+    </table>
+  
+   
+  </main>
+  </body>
+  

@@ -1,0 +1,15 @@
+<h2 align="center">Login User</h2>
+
+<form (submit)="loginUser(get.value)"  #get="ngForm">
+    <div class="container">
+    <div>
+      <input name="username" type="text" autocomplete="off" placeholder="Username" id="username" [(ngModel)]="logindata.username">
+    </div>
+    <div>
+      <input name="password" type="password" autocomplete="off" placeholder="Password" id="password" [(ngModel)]="logindata.password">
+    </div><br>
+    <div>
+      <button type="submit" id="submit">Submit</button>
+    </div>
+  </div>
+  </form>

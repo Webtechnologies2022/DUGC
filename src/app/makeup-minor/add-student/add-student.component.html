@@ -1,0 +1,122 @@
+<main class="container">
+  <h1 class="main-title">Application for Makeup Minor</h1>
+  <br>
+  <div class="stud-details">
+    <form >
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td>
+            <input [(ngModel)]="studentName"  type="text" placeholder="Enter Name" name="name" id="name" />
+
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><label for="sem">Sem:</label></td>
+          <td>
+            <!-- <select [(ngModel)]="selectedSem" name="sem" id="sem" (change)="getSemCourses()"> -->
+            <select #semester (change)="getSemCourses(semester.value)">
+              <option default>Choose semester</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><label for="srn">SRN:</label></td>
+          <td>
+            <input [(ngModel)]="srn" type="text" placeholder="SRN" name="srn" id="srn" />
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><label for="rno">Roll No:</label></td>
+          <td>
+            <input [(ngModel)]="rno" type="text" placeholder="Roll no" name="rno" id="rno" />
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><label for="div">Division:</label></td>
+          <td>
+            <select [(ngModel)]="div" name="div" id="div">
+              <option value="a">A</option>
+              <option value="b">B</option>
+              <option value="c">C</option>
+              <option value="d">D</option>
+              <option value="e">E</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <br>
+    <br>
+    <h2 align="center">Select the Courses you want apply for Makeup</h2>
+    <br>
+    <div style="padding: 100px;">
+      <div class="table">
+        <div *ngFor="let course of selectedSemCourses" style="padding:10px ;">
+          {{course.name}} <br>
+          {{course.code}} <br>
+          {{course.credits}} credits <br>
+          <input type="checkbox" (change)="selectedCourse($event,course)">
+        </div>
+        
+      </div>
+      <br>
+        <!-- <td>
+          System software <br>
+          15cs51<br>
+          3 credits <br>
+          <input type="text" placeholder="Attendance"> <br>
+          <input type="text" placeholder="ISA 1 "> <br>
+          <input type="text" placeholder="ISA 2">
+        </td>
+        <td>
+          Machine learning <br>
+          15cs51<br>
+          3 credits <br>
+          <input type="text" placeholder="Attendance"> <br>
+          <input type="text" placeholder="ISA 1 "> <br>
+          <input type="text" placeholder="ISA 2">
+        </td> -->
+      </div>
+    </div>
+    <br>
+
+  <!-- </div> -->
+
+  <!-- <div class="footer">
+    Credits <input type="text" value={{totalCredits}} readonly> <br>
+  <br></div>-->
+
+
+
+  <!-- <div class="input-section" align="center">
+    <div class="input-section-title">
+      <label for="exam"><b>Choose from the spreadsheets directory:</b></label>
+    </div>
+    <div class="input-section-content">
+      <input type="file" name="filename" id="filename" accept=".xls,.xlsx">
+    </div>
+  </div> -->
+  <div style="padding-left: 150px; font-size: 20px;">Reason:</div>
+  <br>
+  <div style="text-align: center;">
+    <div id="omas"> <textarea [(ngModel)]="reason" class="momsa" name="" id="" cols="5" rows="10"></textarea> </div>
+  </div>
+  <br> <br>
+  <br>
+  <div style="text-align: center;">
+    <button class="kop" (click)="submitDetails()">Submit</button>
+  </div>
+  <br>
+  <br>
+</main>

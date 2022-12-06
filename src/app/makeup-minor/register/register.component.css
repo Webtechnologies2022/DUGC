@@ -1,0 +1,35 @@
+form {
+    display: flex;
+    position: absolute;
+    width: 100%;
+     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+    background: #eee;
+    border-radius: 20px;
+}
+
+input#firstname, input#lastname ,input#password , input#email {
+    outline: 0;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    min-width: 300px;
+}
+
+button
+  {
+     color: rgb(253, 254, 255);
+     font-size: 100%;
+     padding: 14px 28px;
+     background-color: rgb(195, 53, 53);
+
+  }

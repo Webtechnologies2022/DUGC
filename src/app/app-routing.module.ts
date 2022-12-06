@@ -92,6 +92,13 @@ import { TheoryComponent } from './eligibility/ap-list/theory/theory.component';
 import { Uploadlist2Component } from './eligibility/upload-student/uploadlist2/uploadlist2.component';
 import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/uploadlist3.component';
 import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
+//makeupminor
+import { MinorMainComponent } from './makeup-minor/minor-main/minor-main.component';
+import { MakeupMinorComponent } from './makeup-minor/makeup-minor.component';
+import { StudenteditComponent } from './makeup-minor/studentedit/studentedit.component';
+import { StudentlistComponent } from './makeup-minor/studentlist/studentlist.component';
+import { AddStudentComponent } from './makeup-minor/add-student/add-student.component';
+import { RegisterComponent } from './makeup-minor/register/register.component';
 const routes: Routes = [
   {
     path: 'Minor',
@@ -219,8 +226,17 @@ const routes: Routes = [
       {path:'uploadlab',component:Uploadlist3Component}
     ]},
     ]},
-    {path:'**',component:PagenotfoundComponent}
-
+    
+    {path:"makeup",component:MinorMainComponent,
+    children:[
+      // {path: 'login',component:LoginComponent},
+     {path: 'register',component:RegisterComponent},
+     {path:'add-student',component:AddStudentComponent},
+     {path:'edit-student',component:StudenteditComponent},
+     {path: 'list-student',component:StudentlistComponent},
+    //  {path:'',redirectTo:'/makeup/add-student',pathMatch: 'full'}
+    ]},
+    {path:'**',component:PagenotfoundComponent},
 ];
 
 @NgModule({
