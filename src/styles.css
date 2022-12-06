@@ -260,6 +260,8 @@ button.toast-close-button {
   flex-direction: column;
   align-items: flex-end;
   margin-left: auto;
+  margin-bottom: 0.2em;
+  margin-top: -0.2em;
 }
 
 .nav-img-section {
@@ -272,13 +274,15 @@ button.toast-close-button {
   color: #817f7f;
   font-weight: 600;
   letter-spacing: -0.05vw;
+  margin-bottom: -0.38em;
 }
 
 .nav-des {
   color: #C62128;
   font-weight: 700;
   font-size: 3vw;
-  letter-spacing: -0.20vw;
+  letter-spacing: -0.20vw !important;
+  margin-bottom: -0.09em !important;
 }
 
 .nav-logo {
@@ -297,10 +301,10 @@ button.toast-close-button {
 }
 
 .nav-op {
-  padding: 0.4em 0.9em;
+  padding: 0.3em 0.9em !important;
   border: 0.15em solid #C62128;
   border-radius: 0.5em;
-  margin: 0.4em 0.4em;
+  margin: 0.3em 0.3em !important;
   font-weight: 600;
   color: #636363;
   letter-spacing: -0.03em;
@@ -328,6 +332,11 @@ button.toast-close-button {
 #disabled-option {
   opacity: 20%;
   pointer-events: none;
+}
+
+
+.navbar {
+  margin-top: -0.7em;
 }
 
 /* !!!Course withdrawal styles - END */
@@ -373,29 +382,25 @@ button.toast-close-button {
 
 
 #card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-    color: black;
-  }
-
-   #card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-#card
-{
-    background:#C62128;
-      color: white;
-      transition: all 0.2s ease-in-out;
-      line-height: 24px;
-      font-weight: 700;
-    font-size: 18px;
-    letter-spacing: -0.05vw;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  color: black;
 }
 
- svg.material-icons path {
-    fill:whitesmoke;
-  }
+#card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
 
+#card {
+  background: #C62128;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.05vw;
+}
 
-  
+svg.material-icons path {
+  fill: whitesmoke;
+}
