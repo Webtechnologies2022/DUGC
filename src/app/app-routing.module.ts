@@ -99,7 +99,9 @@ import { StudenteditComponent } from './makeup-minor/studentedit/studentedit.com
 import { StudentlistComponent } from './makeup-minor/studentlist/studentlist.component';
 import { AddStudentComponent } from './makeup-minor/add-student/add-student.component';
 import { RegisterComponent } from './makeup-minor/register/register.component';
+import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 const routes: Routes = [
+  {path:'homeMain',component:MainHomepageComponent},
   {
     path: 'Minor',
     component: MinorAnalysisMainComponent,
@@ -236,6 +238,7 @@ const routes: Routes = [
      {path: 'list-student',component:StudentlistComponent},
     //  {path:'',redirectTo:'/makeup/add-student',pathMatch: 'full'}
     ]},
+    {path:"",component:MainHomepageComponent},
     {path:'**',component:PagenotfoundComponent},
 ];
 

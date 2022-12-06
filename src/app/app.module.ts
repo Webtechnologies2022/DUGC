@@ -113,6 +113,7 @@ import { AddStudentComponent } from './makeup-minor/add-student/add-student.comp
 import { RegisterComponent } from './makeup-minor/register/register.component';
 import { MinorMainComponent } from './makeup-minor/minor-main/minor-main.component';
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
+import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -205,6 +206,7 @@ import { DugcLoginComponent } from './dugc-login/dugc-login.component';
     StudentlistComponent,
     MinorMainComponent,
     DugcLoginComponent,
+    MainHomepageComponent,
   ],
   imports: [
     FlexLayoutModule,

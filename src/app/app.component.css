@@ -171,3 +171,24 @@
     font-weight: 500;
   }
 
+  .center3 {
+    text-align: center;
+  }
+  
+  .center3 div {
+    color: #C62128;
+    font-weight: 700;
+    font-size: 2vw;
+    letter-spacing: -0.10vw;
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .nav-des3 {
+    color: #C62128;
+    font-weight: 700;
+    font-size: 2vw;
+    letter-spacing: -0.20vw;
+    position: relative;
+    margin-right: 20px;
+  }
