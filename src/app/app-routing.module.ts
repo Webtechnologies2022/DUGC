@@ -205,22 +205,27 @@ const routes: Routes = [
     path: 'eligibility',
     component: EligibilityComponent,
     children: [
-      {path:'E-home',component:EligibilityHomeComponent},
-      {path:'ap-list',component:ApListComponent,
-    children:[
-      {path:'theoryresults',component:TheoryComponent}
-    ]},
-      {path:'lab',component:LabComponent,children:[
-        {path:'labresults',component:LabresultsComponent}
-      ]},
-      {path:'upload',component:UploadStudentComponent,
-    children:[
-      {path:'uploadtheory',component:Uploadlist2Component},
-      {path:'uploadlab',component:Uploadlist3Component}
-    ]},
-    ]},
-    {path:'**',component:PagenotfoundComponent}
-
+      { path: 'E-home', component: EligibilityHomeComponent },
+      {
+        path: 'ap-list',
+        component: ApListComponent,
+        children: [{ path: 'theoryresults', component: TheoryComponent }],
+      },
+      {
+        path: 'lab',
+        component: LabComponent,
+        children: [{ path: 'labresults', component: LabresultsComponent }],
+      },
+      {
+        path: 'upload',
+        component: UploadStudentComponent,
+        children: [
+          { path: 'uploadtheory', component: Uploadlist2Component },
+          { path: 'uploadlab', component: Uploadlist3Component },
+        ],
+      },
+    ],
+  },
 ];
 
 @NgModule({
