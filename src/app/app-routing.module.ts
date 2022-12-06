@@ -91,7 +91,7 @@ import { LabresultsComponent } from './eligibility/lab/labresults/labresults.com
 import { TheoryComponent } from './eligibility/ap-list/theory/theory.component';
 import { Uploadlist2Component } from './eligibility/upload-student/uploadlist2/uploadlist2.component';
 import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/uploadlist3.component';
-
+import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
 const routes: Routes = [
   {
     path: 'Minor',
@@ -205,7 +205,7 @@ const routes: Routes = [
     path: 'eligibility',
     component: EligibilityComponent,
     children: [
-      {path:'home',component:HomeComponent},
+      {path:'E-home',component:EligibilityHomeComponent},
       {path:'ap-list',component:ApListComponent,
     children:[
       {path:'theoryresults',component:TheoryComponent}

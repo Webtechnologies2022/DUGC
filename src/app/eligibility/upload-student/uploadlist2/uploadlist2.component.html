@@ -1,8 +1,10 @@
-<h2 class="nav-des">upload Ineligible student list</h2>
- <div class="mod">
+<br>
+<h2 class="nav-des">upload Ineligible student list for courses</h2>
+<br>
+<div class="mod">
+    
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         </div>
 
         <form (submit)="uploadstudent()" #get="ngForm" >
@@ -18,8 +20,8 @@
           <option >7</option>
           <option>8</option>
           </select>
-      
-          <label class="control-label" for="course">Select Sem</label><br>
+          <br>
+          <label class="control-label" for="course">selectdivision</label><br>
           <div class="btn-group">
             <input type="radio"  class="btn-check" name="div" value="A" id="opt1" autocomplete="off" checked  ngModel/>
             <label class="btn btn-secondary" for="opt1">A</label>
@@ -36,17 +38,18 @@
             <input type="radio" class="btn-check" name="div"  value="E" id="opt5" autocomplete="off"  ngModel />
             <label class="btn btn-secondary" for="opt5">E</label>
           </div>
-          <div id="">
+          <br>
+          <br>
+
             <input type="file" class="form-control" id="customFile" (change)="readfile($event)"/>
         </div>
-        </div>
+        <br>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" >Close</button>
-          <button type="submit" class="btn btn-outline-danger" >Submit</button>
-        </div>
+            <button type="submit" id="card" class="btn" [routerLink]="['/eligibility/upload/uploadtheory']">
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+               upload
+              </button>
+               </div>
       </form>
       </div>
-  
-      hhfnjgfninbbnjignbjgnbkjgbmlkdfmbkjfnbkdfkbdfkb lkm km kjn
-
-
+    </div>
