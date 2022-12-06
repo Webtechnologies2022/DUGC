@@ -3,8 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { StudentsService } from '../../services/students.service';
 import  * as XLSX from 'xlsx';
-import { tick } from '@angular/core/testing';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-theory',
@@ -44,7 +43,8 @@ export class TheoryComponent implements OnInit {
   studdentcourseid:any = [];
 
 
-  constructor(private studentService:StudentsService) {
+  constructor(private studentService:StudentsService,
+    private toast:ToastrService) {
     this.Showdate = studentService.displayDate();
     }
     
@@ -75,6 +75,8 @@ this.studentService.getattendance().subscribe((data1:any)=>
       this.attendance = this.attendanceresult.results;
       console.log(this.attendance);
       this.getstudent();
+      this.toast.success("student list fetched successfully");
+      
 
 })
 }

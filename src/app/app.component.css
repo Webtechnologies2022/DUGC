@@ -92,7 +92,7 @@
   }
 }
 
-@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
 #kle
@@ -145,19 +145,14 @@
 
   }
 
-  /* #header1
-  {
-    /* background-color: #C62128; */
-    /* background: linear-gradient(270deg, rgba(204,49,0,1) 15%, rgba(224,137,88,1) 95%); 
-  } */
+ 
   #c1
   {
     color: #C62128;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(270deg, rgba(204,49,0,1) 15%, rgba(224,137,88,1) 95%); */
-  }
+    }
   #c1 a{
     text-decoration: none;
     font-weight: 500;
@@ -170,4 +165,4 @@
   #c1 p{
     font-weight: 500;
   }
-
+ */

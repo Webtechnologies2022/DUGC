@@ -219,7 +219,9 @@ const routes: Routes = [
       {path:'uploadlab',component:Uploadlist3Component}
     ]},
     ]},
-    {path:'**',component:PagenotfoundComponent}
+
+    { path: '', component: MinorAnalysisMainComponent },
+    {path:'**',component:PagenotfoundComponent},
 
 ];
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LabService } from '../../services/lab.service';
 import  * as XLSX from 'xlsx';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-labresults',
@@ -35,7 +36,8 @@ showdate:any;
 
 datatemp:any;
 
-  constructor(private labservice:LabService) {
+  constructor(private labservice:LabService,
+    private toast:ToastrService) {
     this.showdate=this.labservice.displayDate();
     this.datatemp=[];
   }
@@ -59,6 +61,7 @@ datatemp:any;
       this.studentResult =data;
       this.studentList = this.studentResult.results;
       console.log(this.studentList);
+      this.toast.success("student list fetched successfully");
     //  this.studentList.forEach((e:any)=>
     //  {
     //   if(!e["17ECSC302"])
