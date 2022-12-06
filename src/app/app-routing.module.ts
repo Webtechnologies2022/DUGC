@@ -100,7 +100,10 @@ import { StudentlistComponent } from './makeup-minor/studentlist/studentlist.com
 import { AddStudentComponent } from './makeup-minor/add-student/add-student.component';
 import { RegisterComponent } from './makeup-minor/register/register.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
+import { DugcLoginComponent } from './dugc-login/dugc-login.component';
+
 const routes: Routes = [
+  {path:'loginMain',component:DugcLoginComponent},
   {path:'homeMain',component:MainHomepageComponent},
   {
     path: 'Minor',
@@ -232,7 +235,7 @@ const routes: Routes = [
     {path:"makeup",component:MinorMainComponent,
     children:[
       // {path: 'login',component:LoginComponent},
-     {path: 'register',component:RegisterComponent},
+    //  {path: 'register',component:RegisterComponent},
      {path:'add-student',component:AddStudentComponent},
      {path:'edit-student',component:StudenteditComponent},
      {path: 'list-student',component:StudentlistComponent},
