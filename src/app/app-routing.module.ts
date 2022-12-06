@@ -85,8 +85,12 @@ import { EligibilityComponent } from './eligibility/eligibility.component';
 // import { HomeComponent } from './eligibility/home/home.component';
 import { LabComponent } from './eligibility/lab/lab.component';
 import { ApListComponent } from './eligibility/ap-list/ap-list.component';
-import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
+import { LabresultsComponent } from './eligibility/lab/labresults/labresults.component';
+import { TheoryComponent } from './eligibility/ap-list/theory/theory.component';
+import { Uploadlist2Component } from './eligibility/upload-student/uploadlist2/uploadlist2.component';
+import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/uploadlist3.component';
 
 const routes: Routes = [
   {
@@ -202,11 +206,21 @@ const routes: Routes = [
     component: EligibilityComponent,
     children: [
       {path:'home',component:HomeComponent},
-      {path:'ap-list',component:ApListComponent},
-      {path:'lab',component:LabComponent},
-      {path:'upload',component:UploadStudentComponent},
-      {path:'**',component:PagenotfoundComponent}
-    ]}
+      {path:'ap-list',component:ApListComponent,
+    children:[
+      {path:'theoryresults',component:TheoryComponent}
+    ]},
+      {path:'lab',component:LabComponent,children:[
+        {path:'labresults',component:LabresultsComponent}
+      ]},
+      {path:'upload',component:UploadStudentComponent,
+    children:[
+      {path:'uploadtheory',component:Uploadlist2Component},
+      {path:'uploadlab',component:Uploadlist3Component}
+    ]},
+    ]},
+    {path:'**',component:PagenotfoundComponent}
+
 ];
 
 @NgModule({

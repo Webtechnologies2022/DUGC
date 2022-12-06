@@ -96,11 +96,15 @@ import { NavComponent } from './circular/nav/nav.component';
 import { EligibilityComponent } from './eligibility/eligibility.component';
 import { LabComponent } from './eligibility/lab/lab.component';
 import { ApListComponent } from './eligibility/ap-list/ap-list.component';
-import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
 import { NgxPrintModule } from 'ngx-print';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
+import { TheoryComponent } from './eligibility/ap-list/theory/theory.component';
+import { LabresultsComponent } from './eligibility/lab/labresults/labresults.component';
+import { Uploadlist2Component } from './eligibility/upload-student/uploadlist2/uploadlist2.component';
+import { Uploadlist3Component } from './eligibility/upload-student/uploadlist3/uploadlist3.component';
 
 @NgModule({
   declarations: [
@@ -181,6 +185,10 @@ import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibi
     UploadStudentComponent,
     ApListComponent,
     PagenotfoundComponent,
+    TheoryComponent,
+    LabresultsComponent,
+    Uploadlist2Component,
+    Uploadlist3Component,
   ],
   imports: [
     FlexLayoutModule,
