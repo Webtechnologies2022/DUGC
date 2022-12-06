@@ -1,35 +1,13 @@
 <<div class="nav-container">
     <div class="navbar1">
-        <!-- <div class="nav-section nav-img-section">
-          <a href="/"><img width="300" src="assets/logo.png" alt="KLE Tech logo" class="nav-logo"></a>
-          
-        </div> -->
+        
         <ul class="list col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0">
-            <button [routerLink]="['/eligibility/home']" type="button" class="nav-op btn">Home</button>
-            <button [routerLink]="['/eligibility/ap-list']" type="button" class="nav-op btn">Thoery</button>
-            <button [routerLink]="['/eligibility/lab']" type="button" class="nav-op btn">Lab</button>
-            <button [routerLink]="['/eligibility/upload']" type="button" class="nav-op btn">upload</button>
+            <button [routerLink]="['/eligibility/home']" [routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Home</button>
+            <button [routerLink]="['/eligibility/ap-list']" [routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Thoery</button>
+            <button [routerLink]="['/eligibility/lab']"[routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Lab</button>
+            <button [routerLink]="['/eligibility/upload']"[routerLinkActive]="['selected-option']" type="button" class="nav-op btn">upload</button>
         </ul>
-        <!-- <div class="nav-section nav-des-section">
-            <div class="nav-des">DUGC</div>
-            <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
-            <div class="nav-des-sub"></div>
-            <div class="op-end">
-              <button [routerLink]="['/eligibility/home']" type="button" class="nav-op btn me-4 justify-content-md-end">Home</button>
-              <button [routerLink]="['/eligibility/ap-list']" type="button" class="nav-op btn">Thoery</button>
-              <button [routerLink]="['/eligibility/lab']" type="button" class="nav-op btn">Lab</button>
-              <button [routerLink]="['/eligibility/upload']" type="button" class="nav-op btn">upload</button>
-            
-            </div>
-        </div>
-    </div> -->
-    
-    <!-- <div class="nav-options">
-        <div class="nav-op" routerLink="/coordinator" [routerLinkActive]="['selected-option']">Coordinator</div>
-        <div class=" nav-op" routerLink="/dugc" [routerLinkActive]="['selected-option']">DUGC
-        </div>
-        <div class="nav-op" routerLink="/dugc_chairman" [routerLinkActive]="['selected-option']">DUGC Chairman</div>
-    </div> -->
+        
   </div>
   
   

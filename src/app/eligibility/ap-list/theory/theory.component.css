@@ -1,11 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-.moda
+.mod
   {
     width:30%;
     align-items: center; 
-    margin-left: 30%; }
+    margin-left: 35%; }
   #print h2{
     display: flex;
     text-align: center;

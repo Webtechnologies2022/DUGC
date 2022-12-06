@@ -48,3 +48,17 @@
       visibility: visible;
     }
   }
+
+  .center {
+    text-align: center;
+  }
+  
+  .center div {
+    color: #C62128;
+    font-weight: 700;
+    font-size: 2vw;
+    letter-spacing: -0.10vw;
+    position: relative;
+    margin-right: 20px;
+  }
+  
