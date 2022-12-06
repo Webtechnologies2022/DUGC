@@ -1,1 +1,17 @@
-<p>dugc-login works!</p>
+
+
+<form (submit)="loginUser(get.value)"  #get="ngForm">
+    <div class="container">
+    <div>
+      <input name="username" type="text" autocomplete="off" placeholder="Username" id="username" [(ngModel)]="logindata.username">
+    </div>
+    <div>
+      <input name="password" type="password" autocomplete="off" placeholder="Password" id="password" [(ngModel)]="logindata.password">
+    </div>
+    <div class="">
+      <button class="nav-op2" type="submit" id="submit">Submit</button>
+    </div>
+  </div>
+  </form>
+  <br>
+  <br>
