@@ -175,13 +175,12 @@ import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibi
     HomeComponentCircular,
     NiComponent,
     NavComponent,
-    //elibility 
+    //elibility
     EligibilityComponent,
     LabComponent,
     UploadStudentComponent,
     ApListComponent,
     PagenotfoundComponent,
-    EligibilityHomeComponent,
   ],
   imports: [
     FlexLayoutModule,
@@ -197,8 +196,7 @@ import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibi
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     DxChartModule,
-    NgxPrintModule,
-    NgbModule
+    NgxPrintModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

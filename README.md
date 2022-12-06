@@ -7,4 +7,4 @@
   - Lab Analysis
   - Course Withdrawal
   - Circular
- 
+  - Eligibility

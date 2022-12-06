@@ -87,7 +87,6 @@ import { LabComponent } from './eligibility/lab/lab.component';
 import { ApListComponent } from './eligibility/ap-list/ap-list.component';
 import { PagenotfoundComponent } from './eligibility/pagenotfound/pagenotfound.component';
 import { UploadStudentComponent } from './eligibility/upload-student/upload-student.component';
-import { EligibilityHomeComponent } from './eligibility/eligibility-home/eligibility-home.component';
 
 const routes: Routes = [
   {
@@ -197,14 +196,16 @@ const routes: Routes = [
         component: LoginComponentCircular,
       },
     ],
-  },{path:'eligibility',component:EligibilityComponent,
+  },
+  {
+    path: 'eligibility',
+    component: EligibilityComponent,
     children: [
-
-      {path:'eligiblehome',component:EligibilityHomeComponent},
+      {path:'home',component:HomeComponent},
       {path:'ap-list',component:ApListComponent},
       {path:'lab',component:LabComponent},
       {path:'upload',component:UploadStudentComponent},
-      { path: '', redirectTo: 'eligibility/eligiblehome', pathMatch: 'full' }
+      {path:'**',component:PagenotfoundComponent}
     ]}
 ];
 
