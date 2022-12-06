@@ -1,7 +1,7 @@
 <main>
   <h1 class="main-title">Application for Course Withdrawal</h1>
   <br><div class="stud-details">
-    <form>
+    <form #appForm="ngForm">
       <table>
         <tr>
           <td><label for="name">Name:</label></td>
@@ -99,9 +99,9 @@
         {{course.name}} <br>
         {{course.code}} <br>
         {{course.credits}} <br>
-        <input type="text" [(ngModel)]="attendance[i]" placeholder="Attendance"> <br>
-        <input type="text" [(ngModel)]="ia1[i]" placeholder="ISA 1"> <br>
-        <input type="text" [(ngModel)]="ia2[i]" placeholder="ISA 2">
+        <input type="number" [(ngModel)]="attendance[i]" placeholder="Attendance"> <br>
+        <input type="number" [(ngModel)]="cie[i]" placeholder="CIE"> <br>
+        <!-- <input type="text" [(ngModel)]="ia2[i]" placeholder="ISA 2"> -->
       </div>
       <!-- <td>
         System software <br>
@@ -126,7 +126,8 @@
   </div>
 
   <div class="footer">
-  Credits <input type="text" value={{totalCredits}} readonly> <br>
+  Credits Selected <input type="text" value={{totalCredits}} readonly> 
+  Total Credits <input type="text" value={{totalCreditsForSem}} readonly><br>
 <br></div>
 <div style="padding-left: 150px; font-size: 20px;">Reason:</div>
 <br>
@@ -136,7 +137,7 @@
   <br> <br>
   <br>
   <div style="text-align: center;">
-  <button class="kop" (click)="submitDetails()">Submit</button></div>
+  <button class="kop" (click)="submitDetails(appForm)">Submit</button></div>
   <br>
   <br>
 </main>
