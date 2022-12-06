@@ -1,8 +1,10 @@
-<h2 id="head-val">Analysis Report</h2>
+<h2 class="title">Analysis Report</h2>
 <br>
 
 <div class="container">
-  <h3>Analysis for {{exam_val2}} | Sem {{sem_val}} | {{this_year}}</h3>
+  <h5 class="subtitle">Analysis for <span class="bold">{{exam_input_name}}</span> | Sem <span
+      class="bold">{{sem_input}}</span>
+    | <span class="bold">{{current_year}}</span></h5>
 
   <div>
     <table>
@@ -11,8 +13,8 @@
         <td rowspan="3"><b>Course code</b></td>
         <td colspan="25"><b>No. of students scoring, marks</b></td>
         <td colspan="5" rowspan="2"><b>Total students</b></td>
-        <td colspan="5" rowspan="2"><b>Average Marks {{this_year}}</b></td>
-        <td colspan="5" rowspan="2"><b>Average Marks {{prev_year}}</b></td>
+        <td colspan="5" rowspan="2"><b>Average Marks {{current_year}}</b></td>
+        <td colspan="5" rowspan="2"><b>Average Marks {{previous_year}}</b></td>
       </tr>
       <tr>
         <td colspan="5"><b>0-4</b></td>
@@ -73,14 +75,25 @@
       <tr *ngFor="let course_item of course_codes; let myIndex = index">
         <td>{{myIndex + 1}}</td>
         <td>{{course_item}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].a1; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].a2; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].a3; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].a4; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].a5; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].aT; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].avg; let inIndex = index">{{num1}}</td>
-        <td *ngFor="let num1 of content_array[myIndex].pre; let inIndex = index">{{num1}}</td>
+        <ng-container *ngFor="let i of all_particulars">
+          <ng-container *ngFor="let j of all_sections">
+            <td>{{getCurrentMarks(course_item,j,i)}}</td>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngFor="let j of all_sections">
+          <td>{{getPreviousMarks(course_item,j,'Average')}}</td>
+        </ng-container>
+      </tr>
+      <tr>
+        <td colspan="2"><span class="bold">Total</span></td>
+        <ng-container *ngFor="let i of all_total_particulars">
+          <ng-container *ngFor="let j of all_sections">
+            <td>{{getTotalParticular(j,i)}}</td>
+          </ng-container>
+        </ng-container>
+        <td colspan="5"></td>
+        <td colspan="5"></td>
+        <td colspan="5"></td>
       </tr>
     </table>
   </div>

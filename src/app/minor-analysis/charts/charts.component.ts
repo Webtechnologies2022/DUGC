@@ -12,175 +12,201 @@ import { DxChartModule } from 'devextreme-angular';
   styleUrls: ['./charts.component.css'],
 })
 export class ChartsComponent implements OnInit {
-  exam_val: any;
-  exam_val2: any; // do not use this in further code
-  sem_val: any;
-  this_year: any = '2022-23';
-  prev_year: any = '2020-21';
-
-  sections: any = ['A', 'B', 'C', 'D', 'E'];
-  exams: any = ['Minor 1', 'Minor 2', 'Activity'];
-  analysis1: any = {}; // this_year data
-  analysis2: any = {}; // prev_year data
   analysis: any = {};
-  tempanalysis: any = {};
-  tempanalysis2: any = {};
-  temparr: any = {};
-  temparr2: any = {};
-  sno: any = 0;
-  exam_index: any = 0;
-
+  current_analysis: any = {};
+  previous_analysis: any = {};
+  current_required_analysis: any = {};
+  previous_required_analysis: any = {};
+  current_year = '2022-23';
+  previous_year = '2020-21';
+  sem_input: string = '';
+  exam_input: string = '';
+  exam_input_index: number = 0;
+  course_codes: any = [];
+  course_with_names: any = {};
+  all_courses: any = {};
+  all_sections = ['A', 'B', 'C', 'D', 'E'];
+  all_particulars = ['D', 'C', 'B', 'A', 'S', 'Total', 'Average'];
+  all_total_particulars = ['D', 'C', 'B', 'A', 'S'];
+  set_marks: string = '';
+  exam_input_name: string = '';
   yValues: any = [];
   y2Values: any = [];
-
-  course_count: number = 0;
-  course_codes: any = [];
-  content: any = {
-    a1: [' ', ' ', ' ', ' ', ' '],
-    a2: [' ', ' ', ' ', ' ', ' '],
-    a3: [' ', ' ', ' ', ' ', ' '],
-    a4: [' ', ' ', ' ', ' ', ' '],
-    a5: [' ', ' ', ' ', ' ', ' '],
-    aT: [' ', ' ', ' ', ' ', ' '],
-    avg: [' ', ' ', ' ', ' ', ' '],
-    pre: [' ', ' ', ' ', ' ', ' '],
-  };
-  content_array: any = [];
-  div_count: number = 0;
-  runThis() {
-    this.analysis1 = this.analysis1[this.sem_val];
-    this.analysis2 = this.analysis2[this.sem_val];
-    console.log(this.analysis1);
-    console.log(this.analysis2);
+  constructor(private dataService: DataService, private router: Router) {}
+  getCurrentMarks(courseCode: any, sectionName: any, particular: any): string {
+    let marks: string = ' ';
+    if (this.current_required_analysis == undefined) {
+      return marks;
+    }
+    try {
+      marks = String(
+        this.current_required_analysis[courseCode][sectionName][particular]
+      );
+      return marks;
+    } catch (e) {
+      console.log(e);
+      marks = ' ';
+    }
+    if (marks == null || marks == undefined) {
+      marks = ' ';
+    }
+    return marks;
   }
-  constructor(private dataService: DataService, private router: Router) {
-    this.sem_val = this.dataService.in_sem_val;
-    this.exam_val = this.dataService.in_exam;
-    if (this.exam_val === 'm1') {
-      this.exam_val2 = 'Minor 1';
-    } else if (this.exam_val === 'm2') {
-      this.exam_val2 = 'Minor 2';
+
+  getPreviousMarks(courseCode: any, sectionName: any, particular: any): string {
+    let marks: string = ' ';
+    if (this.previous_required_analysis == undefined) {
+      return marks;
+    }
+    try {
+      marks = String(
+        this.previous_required_analysis[courseCode][sectionName][particular]
+      );
+      return marks;
+    } catch (e) {
+      console.log(e);
+      marks = ' ';
+    }
+    if (marks == null || marks == undefined) {
+      marks = ' ';
+    }
+    return marks;
+  }
+
+  getTotalParticular(sectionName: any, particular: any) {
+    let totalMarks = 0;
+    let num: any;
+    for (let i of this.course_codes) {
+      num = Number(this.getCurrentMarks(i, sectionName, particular));
+      if (num == null || num == NaN) {
+        num = 0;
+      }
+      totalMarks += num;
+      num = 0;
+    }
+    return totalMarks;
+  }
+
+  initGraphs(): void {
+    let course_count = 1;
+    for (let course of this.course_codes) {
+      let xValues: any = ['A', 'B', 'C', 'D', 'E'];
+      let courseName: any = 'myChart1';
+      let chartNumber: any = 'chartLabel1';
+      let graphName = '';
+      let color1 = ['#4cc9f0'];
+      let color2 = ['#70e000'];
+      this.yValues = [];
+      this.y2Values = [];
+      for (let j of this.all_sections) {
+        this.yValues.push(Number(this.getCurrentMarks(course, j, 'Average')));
+        this.y2Values.push(Number(this.getPreviousMarks(course, j, 'Average')));
+      }
+      courseName = courseName.split('');
+      courseName[7] = course_count;
+      courseName = courseName.join('');
+
+      chartNumber = chartNumber.split('');
+      chartNumber[10] = course_count;
+      chartNumber = chartNumber.join('');
+      let tempString =
+        '<span class = "bold">' +
+        this.course_codes[course_count - 1] +
+        '</span>' +
+        ' - ' +
+        this.course_with_names[this.course_codes[course_count - 1]] +
+        ' : Average Marks';
+      // console.log(tempString);
+      (<HTMLInputElement>document.getElementById(chartNumber)).innerHTML =
+        tempString;
+
+      (<HTMLInputElement>document.getElementById(courseName)).style.width =
+        '400%';
+      (<HTMLInputElement>document.getElementById(courseName)).style.maxWidth =
+        '400px';
+      (<HTMLInputElement>document.getElementById(courseName)).style.height =
+        '300%';
+      (<HTMLInputElement>document.getElementById(courseName)).style.maxHeight =
+        '300px';
+      var myChart = new Chart(courseName, {
+        type: 'bar',
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              label: 'Current Year',
+              backgroundColor: color1,
+              data: this.yValues,
+            },
+            {
+              label: 'Previous Year',
+              backgroundColor: color2,
+              data: this.y2Values,
+            },
+          ],
+        },
+      });
+      course_count += 1;
     }
   }
 
   ngOnInit(): void {
-    this.dataService.getAnalysis().subscribe((resp) => {
-      this.analysis = resp;
-      console.log(this.sem_val);
-      this.analysis1 = this.analysis['new_data'][this.this_year][this.sem_val];
-      console.log(this.analysis1);
-      this.analysis2 = this.analysis['new_data'][this.prev_year][this.sem_val];
-      this.content_array = [];
-      for (let [i, j] of Object.entries(this.analysis1)) {
-        this.course_codes.push(i);
-        this.course_count = this.course_count + 1;
-        if (this.exam_val == 'm1') {
-          this.exam_index = 0;
-        } else if (this.exam_val == 'm2') {
-          this.exam_index = 1;
-        } else if (this.exam_val == 'Activity') {
-          this.exam_index = 1;
+    this.dataService.getAnalysis().subscribe(
+      (resp) => {
+        this.analysis = resp;
+        this.all_courses = this.analysis['course_file'];
+        this.analysis = this.analysis['new_data'];
+        console.log('Analysis fetched');
+        console.log('Courses fetched');
+        this.current_analysis = this.analysis[this.current_year];
+        this.previous_analysis = this.analysis[this.previous_year];
+        this.sem_input = this.dataService.in_sem_val;
+        this.exam_input = this.dataService.in_exam;
+        for (let i in this.all_courses[this.sem_input]) {
+          this.course_codes.push(i);
+          this.course_with_names[i] =
+            this.all_courses[this.sem_input][i]['Name'];
+        }
+        console.log(this.course_codes);
+        if (this.sem_input == undefined || this.exam_input == undefined) {
+          this.router.navigate(['/Minor/dugc']);
+        }
+        if (this.exam_input == 'm1') {
+          this.exam_input_index = 0;
+          this.exam_input_name = 'Minor 1';
+        } else if (this.exam_input == 'm2') {
+          this.exam_input_index = 1;
+          this.exam_input_name = 'Minor 2';
         } else {
-          this.exam_val = 0;
+          this.exam_input_index = 2;
+          this.exam_input_name = 'Activity';
         }
-        this.tempanalysis = this.analysis1[i][this.exam_index];
-        console.log(this.tempanalysis);
-        this.tempanalysis2 = this.analysis2[i][this.exam_index];
-        this.div_count = 0;
-        for (let [k, l] of Object.entries(this.tempanalysis)) {
-          console.log(k);
-          console.log(l);
-          this.temparr = this.tempanalysis[k];
-          this.temparr2 = this.tempanalysis2[k];
-          this.content.a1[this.div_count] = String(this.temparr['D']);
-          this.content.a2[this.div_count] = String(this.temparr['C']);
-          this.content.a3[this.div_count] = String(this.temparr['B']);
-          this.content.a4[this.div_count] = String(this.temparr['A']);
-          this.content.a5[this.div_count] = String(this.temparr['S']);
-          this.content.aT[this.div_count] = String(this.temparr['Total']);
-          this.content.avg[this.div_count] = String(this.temparr['Average']);
-          this.content.pre[this.div_count] = String(this.temparr2['Average']);
-          this.div_count = this.div_count + 1;
+        for (let i of this.course_codes) {
+          try {
+            this.current_required_analysis[i] =
+              this.current_analysis[this.sem_input][i][this.exam_input_index];
+          } catch (e) {
+            console.log(e);
+            this.current_required_analysis = {};
+            console.log('Current year not found!');
+          }
+          try {
+            this.previous_required_analysis[i] =
+              this.previous_analysis[this.sem_input][i][this.exam_input_index];
+          } catch (e) {
+            this.previous_required_analysis = {};
+            console.log('Previous year not found!');
+          }
         }
-        this.content_array.push(Object.assign({}, this.content));
-        console.log(this.content_array);
-        console.log('hihihi');
-        console.log(this.content.avg);
-        this.yValues = this.content.avg;
-        this.y2Values = this.content.pre;
-        this.content.a1 = [' ', ' ', ' ', ' ', ' '];
-        this.content.a2 = [' ', ' ', ' ', ' ', ' '];
-        this.content.a3 = [' ', ' ', ' ', ' ', ' '];
-        this.content.a4 = [' ', ' ', ' ', ' ', ' '];
-        this.content.a5 = [' ', ' ', ' ', ' ', ' '];
-        this.content.aT = [' ', ' ', ' ', ' ', ' '];
-        this.content.avg = [' ', ' ', ' ', ' ', ' '];
-        this.content.pre = [' ', ' ', ' ', ' ', ' '];
-
-        // for(let o in this.yValues) {
-        //   try {
-        //     this.yValues[o] = parseFloat(this.yValues[o]);
-        //   }
-        //   catch(err) {
-        //     this.yValues[o] = 0;
-        //   }
-        // }
-        // for(let o in this.y2Values) {
-        //   try {
-        //     this.y2Values[o] = parseFloat(this.y2Values[o]);
-        //   }
-        //   catch(err) {
-        //     this.y2Values[o] = 0;
-        //   }
-        // }
-        let xValues: any = ['A', 'B', 'C', 'D', 'E'];
-        let courseName: any = 'myChart1';
-        let chartNumber: any = 'chartLabel1';
-        let graphName = '';
-        let color1 = ['#4cc9f0'];
-        let color2 = ['#70e000'];
-
-        courseName = courseName.split('');
-        courseName[7] = this.course_count;
-        courseName = courseName.join('');
-
-        chartNumber = chartNumber.split('');
-        chartNumber[10] = this.course_count;
-        chartNumber = chartNumber.join('');
-        let tempString =
-          this.course_codes[this.course_count - 1] + ' : Average Marks';
-        // console.log(tempString);
-        (<HTMLInputElement>document.getElementById(chartNumber)).innerHTML =
-          tempString;
-
-        (<HTMLInputElement>document.getElementById(courseName)).style.width =
-          '400%';
-        (<HTMLInputElement>document.getElementById(courseName)).style.maxWidth =
-          '400px';
-        (<HTMLInputElement>document.getElementById(courseName)).style.height =
-          '300%';
-        (<HTMLInputElement>(
-          document.getElementById(courseName)
-        )).style.maxHeight = '300px';
-        var myChart = new Chart(courseName, {
-          type: 'bar',
-          data: {
-            labels: xValues,
-            datasets: [
-              {
-                label: 'Current Year',
-                backgroundColor: color1,
-                data: this.yValues,
-              },
-              {
-                label: 'Previous Year',
-                backgroundColor: color2,
-                data: this.y2Values,
-              },
-            ],
-          },
-        });
+        console.log(
+          this.current_required_analysis,
+          this.previous_required_analysis
+        );
+        this.initGraphs();
+      },
+      (error) => {
+        console.log(error);
       }
-    });
+    );
   }
 }
