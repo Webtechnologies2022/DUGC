@@ -14,69 +14,12 @@ export class UploadStudentComponent implements OnInit {
   ExelData:any;
   exeldata:any;
   
-  constructor(private studentService:StudentsService,private labService:LabService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
     //read xl file to store data in json
-readfile(event:any)
-{
-  let file = event.target.files[0];
-  let fileReader = new FileReader();
-
-  fileReader.readAsBinaryString(file);
-
-  fileReader.onload=(e)=>
-  {
-    var workbook = XLSX.read(fileReader.result,{type:'binary'});  
-    var sheetNames = workbook.SheetNames;
-   this.ExelData= XLSX.utils.sheet_to_json(workbook.Sheets[sheetNames[0]]);
-    console.log(this.ExelData);
-  }
-
-  
-}
-readfile2(event:any)
-{
-  let file = event.target.files[0];
-  let fileReader = new FileReader();
-
-  fileReader.readAsBinaryString(file);
-
-  fileReader.onload=(e)=>
-  {
-    var workbook = XLSX.read(fileReader.result,{type:'binary'});  
-    var sheetNames = workbook.SheetNames;
-   this.exeldata= XLSX.utils.sheet_to_json(workbook.Sheets[sheetNames[0]]);
-    console.log(this.exeldata);
-  }
-
-}
-
-//upload captured json to database 
-uploadstudent()
-{
-  this.studentService.uploadlist(this.exeldata).subscribe((data)=>
-  {
-    console.log('students are added',data);
-  },err=>
-  {
-    console.log(err);
-  })
-}
-
-uploadstudentlab()
-{
- this.labService.uploadlist(this.exeldata).subscribe((data:any)=>
- {
-  console.log('students are added',data);
-},err=>
-{
-  console.log(err);
-})
- 
-}
 
 }
 

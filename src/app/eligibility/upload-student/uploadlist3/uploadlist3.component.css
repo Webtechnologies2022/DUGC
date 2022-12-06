@@ -1,0 +1,20 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.mod
+  {
+    width:30%;
+    align-items: center; 
+    margin-left: 35%; }
+.nav-des {
+      color: #C62128;
+    font-weight: 700;
+    font-size: 27px;
+    letter-spacing: -0.10vw;
+    position: relative;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+ 
+

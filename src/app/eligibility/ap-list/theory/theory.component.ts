@@ -1,18 +1,17 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { StudentsService } from '../services/students.service';
+import { StudentsService } from '../../services/students.service';
 import  * as XLSX from 'xlsx';
 import { tick } from '@angular/core/testing';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
-  selector: 'app-ap-list',
-  templateUrl: './ap-list.component.html',
-  styleUrls: ['./ap-list.component.css']
+  selector: 'app-theory',
+  templateUrl: './theory.component.html',
+  styleUrls: ['./theory.component.css']
 })
-export class ApListComponent implements OnInit {
+export class TheoryComponent implements OnInit {
 
   ExelData:any;
   count:number=0;
@@ -225,5 +224,5 @@ uploadstudent(e:any)
             }
         
   
-  
+
 }

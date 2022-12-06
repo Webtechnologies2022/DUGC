@@ -1,14 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-
-
-@media print {
-    button{
-        display: none;
-    }
-  }
-
+.mod
+  {
+    width:30%;
+    align-items: center; 
+    margin-left: 35%; }
   #print h2{
     display: flex;
     text-align: center;
@@ -34,11 +31,13 @@
    }
    #print .head
    {
+    position: relative;
     display: flex;
     justify-content: space-between;
     color: red;
     text-align: end;
     visibility: hidden;
+ 
 
    }
    @media print
@@ -47,18 +46,27 @@
     {
       visibility: visible;
     }
-  }
+   }
+   #card1
+   {
+    transition: all 0.2s ease-in-out;
+      line-height: 24px;
+      justify-content:flex-start;
+      position: relative;
+      width: 30%;
+      margin-top: 10px;
 
-  .center {
-    text-align: center;
-  }
-  
-  .center div {
+   }
+
+   .center2 h5{
+    margin-left: 33%;
     color: #C62128;
     font-weight: 700;
-    font-size: 2vw;
+    font-size: 1.5vw;
     letter-spacing: -0.10vw;
-    position: relative;
-    margin-right: 20px;
   }
+
+  
+  
+  
   

@@ -1,12 +1,19 @@
-<div class="nav-container">
-  <div class="nav-options">
-    <div class="nav-op" [routerLink]="['/eligibility/ap-list']" [routerLinkActive]="['selected-option']">
-      Theory</div>
-    <div class="nav-op" [routerLink]="['/eligibility/lab']" [routerLinkActive]="['selected-option']">Lab</div>
-    <div class="nav-op" [routerLink]="['/eligibility/upload']" [routerLinkActive]="['selected-option']">Upload List
-    </div>
+<<div class="nav-container">
+    <div class="navbar1">
+        
+        <ul class="list col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0">
+            <button [routerLink]="['/eligibility/E-home']" [routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Home</button>
+            <button [routerLink]="['/eligibility/ap-list']" [routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Thoery</button>
+            <button [routerLink]="['/eligibility/lab']"[routerLinkActive]="['selected-option']" type="button" class="nav-op btn">Lab</button>
+            <button [routerLink]="['/eligibility/upload']"[routerLinkActive]="['selected-option']" type="button" class="nav-op btn">upload</button>
+        </ul>
+        
   </div>
-</div>
-<div class="container">
+  
+  
+  
+  <div class="center"><div class="nav-des">Department Of Undergraduate Courses</div></div>
   <router-outlet></router-outlet>
-</div>
+  
+  
+ 
