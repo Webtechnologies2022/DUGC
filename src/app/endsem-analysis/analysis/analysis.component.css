@@ -188,3 +188,15 @@ td {
   width: 400px;
   margin: 0 auto;
 }
+
+.chartbox1{
+  position:relative;
+  width : 500px;
+  margin: 0 auto;
+}
+
+.charts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
