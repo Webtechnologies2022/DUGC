@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthMainService } from '../auth-main.service';
+import { Router } from '@angular/router';
 // import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class DugcLoginComponent implements OnInit {
     username:'',
     password:''
   }
-  constructor(private auth:AuthMainService) { }
+  constructor(private auth:AuthMainService,private route:Router) { }
   
     ngOnInit(): void {
     }
@@ -26,5 +27,7 @@ export class DugcLoginComponent implements OnInit {
       console.log(this.logindata);
       this.auth.loginauth(this.logindata);
       alert('login successfull');
+      this.route.navigate(['/homeMain']);
+
   }
 }

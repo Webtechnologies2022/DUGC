@@ -23,9 +23,9 @@ export class StudenteditComponent implements OnInit {
     // })
     this.studentService.getAllStudents().subscribe((data:any)=>{
       this.students = data;
-      // console.log(this.students)
-      // this.students = this.students;
-      // console.log(this.students[0].selectedCourseToWithdraw[0].name);
+      console.log(this.students)
+      this.students = this.students;
+      console.log(this.students[0].selectedCourseToWithdraw[0].name);
     })
   }
   approve(id:any){

@@ -10,7 +10,36 @@ export class AuthMainService {
   jwthelp =new JwtHelperService;
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
   private url = 'http://localhost:8080';
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    this.loaduser();
+   }
+
+  loaduser()
+  {
+    const userdata1 =this.userCredentials.getValue();
+    if(!userdata1)
+    {
+       const accesstoken=localStorage.getItem("tkn");
+
+       if(accesstoken)
+       {
+        const decrrpt= this.jwthelp.decodeToken(accesstoken);
+        console.log(decrrpt);
+        const data = 
+        {
+          access:accesstoken,
+          refresh:localStorage.getItem("rtkn"),
+          username:decrrpt.username,
+          userid:decrrpt.sub,
+          exp:decrrpt.exp
+        };
+        this.userCredentials.next(data);
+
+       }
+     
+
+    }
+  }
 
   loginauth(user:any)
   {

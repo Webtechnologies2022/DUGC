@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class TheoryComponent implements OnInit {
 
   ExelData:any;
-  count:number=0;
+  count:number=1;
 
   //get student data from database
   studentResult:any;
@@ -226,5 +226,11 @@ uploadstudent(e:any)
             }
         
   
-
+            incrementSno(){
+              this.count+=1;
+            }
+          
+            resetSno(){
+              this.count = 1;
+            }
 }

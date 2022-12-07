@@ -21,7 +21,7 @@
           <option>8</option>
           </select>
           <br>
-          <label class="control-label" for="course">selectdivision</label><br>
+          <!-- <label class="control-label" for="course">selectdivision</label><br>
           <div class="btn-group">
             <input type="radio"  class="btn-check" name="div" value="A" id="opt1" autocomplete="off" checked  ngModel/>
             <label class="btn btn-secondary" for="opt1">A</label>
@@ -38,7 +38,7 @@
             <input type="radio" class="btn-check" name="div"  value="E" id="opt5" autocomplete="off"  ngModel />
             <label class="btn btn-secondary" for="opt5">E</label>
           </div>
-          <br>
+          <br> -->
           <br>
 
             <input type="file" class="form-control" id="customFile" (change)="readfile2($event)"/>
@@ -53,3 +53,42 @@
       </form>
       </div>
     </div>
+
+    <br>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm caption-top" style="text-align:center;border:2px;">
+      
+        <thead class="table-active">
+          <tr>
+              <!-- <th  scope="col">Sl no.</th> -->
+              <th scope="col">USN</th>
+              <th scope="col">Name</th>
+              <th scope="col"  >courseid</th>
+              <th scope="col" >coursename</th>
+              <th scope="col" >sem</th>
+              <th scope="col" >div</th>
+              <th scope="col" >cie</th>
+              <th scope="col" >attendance</th>
+
+          </tr>
+        <tbody *ngFor="let student of exeldata">
+          <tr>
+            <!-- <td>{{1}}</td> -->
+              <td >{{student.USN}}</td>
+              <td >{{student.Name}}</td>
+              <td >{{student.CourseId}}</td>
+              <td >{{student.CourseName}}</td>
+              <td >{{student.Sem}}</td>
+              <td >{{student.div}}</td>
+              <td >{{student.CIE}}</td>
+              <td >{{student.Attendance}}</td>
+             
+             
+              <!-- <td><button class="btn btn-success btn-rounded">Approve</button></td>
+              <td><button class="btn btn-danger btn-rounded">disapprove</button></td> -->
+          </tr>  
+        </tbody>
+      </table>
+      </div>
+    

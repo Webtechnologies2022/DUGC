@@ -318,6 +318,6 @@ export class  AddStudentComponent implements OnInit {
     // alert('Details added.')
     // })
     console.log(`${this.studentName} from ${this.selectedSem} semester wants to withdraw course. His SRN is ${this.srn} and his roll no is ${this.rno} belongs to ${this.div} divison. Because ${this.reason}`)
-  this.route.navigate(['/','edit-student']);
+  // this.route.navigate(['/makeup/','edit-student']);
   }
 }

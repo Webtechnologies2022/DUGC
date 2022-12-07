@@ -18,6 +18,8 @@ export class LabresultsComponent implements OnInit {
   sem :any= [];
   courses :any= [];
 
+  count:number=1;
+
 
   studentResult:any;
   studentList:any;
@@ -45,6 +47,14 @@ datatemp:any;
   ngOnInit(): void {
     // this.getLabList();
     
+  }
+
+  incrementSno(){
+    this.count+=1;
+  }
+
+  resetSno(){
+    this.count = 1;
   }
 
    getStudentList(e:any)

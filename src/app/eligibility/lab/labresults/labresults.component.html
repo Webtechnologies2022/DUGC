@@ -31,7 +31,7 @@
               </select>
            <br>
 
-              <label class="control-label" for="course">Select Sem</label><br>
+              <!-- <label class="control-label" for="course">Select Sem</label><br>
               <div class="btn-group">
                 <input type="radio"  class="btn-check" name="div" id="opt1"  value="A" autocomplete="off" checked   ngModel/>
                 <label class="btn btn-secondary" for="opt1">A</label>
@@ -47,10 +47,10 @@
             
                 <input type="radio" class="btn-check" name="div" id="opt5"   value="E" autocomplete="off" ngModel />
                 <label class="btn btn-secondary" for="opt5">E</label>
-              </div>
+              </div> -->
 
         </div>
-        <br>
+        <!-- <br> -->
         <div class="modal-footer">
             <button type="submit" id="card" class="btn">
                 <svg class="material-icons"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
@@ -145,9 +145,11 @@
       <th scope="col">Att</th>
   </tr>
 </thead>
+
+{{resetSno()}}  
 <tbody *ngFor="let student of studentList;let student12 of lablist">
   <tr *ngIf="student.sem ==showSem && student.div ==showdiv" >
-      <td>{{1}}</td>
+      <td>{{count}}</td>
       <td>{{student.USN}}</td>
       <td>{{student.Name}}</td>
       <td >{{student[lab1]}}</td>
@@ -169,7 +171,8 @@
       <!-- <td>{{student.courses[2].ATT}}</td> -->
       <!-- <td><button class="btn btn-success btn-rounded">Approve</button></td>
       <td><button class="btn btn-danger btn-rounded">disapprove</button></td> -->
-  </tr> 
+  </tr>
+  {{incrementSno()}} 
 </table>
 </div>
 </div>

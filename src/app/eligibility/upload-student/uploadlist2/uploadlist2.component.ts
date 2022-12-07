@@ -59,7 +59,7 @@ readfile2(event:any)
 //upload captured json to database 
 uploadstudent()
 {
-  this.studentService.uploadlist(this.exeldata).subscribe((data)=>
+  this.studentService.uploadlist(this.ExelData).subscribe((data)=>
   {
     console.log('students are added',data);
     this.toast.success("student thoery for lab fetched uploaded");

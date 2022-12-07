@@ -101,6 +101,8 @@ import { AddStudentComponent } from './makeup-minor/add-student/add-student.comp
 import { RegisterComponent } from './makeup-minor/register/register.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
+import { AuthMainService } from './auth-main.service';
+import { GuardService } from './guards/guard.service';
 
 const routes: Routes = [
   {path:'loginMain',component:DugcLoginComponent},

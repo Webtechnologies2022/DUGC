@@ -114,6 +114,7 @@ import { RegisterComponent } from './makeup-minor/register/register.component';
 import { MinorMainComponent } from './makeup-minor/minor-main/minor-main.component';
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
+import { GuardService } from './guards/guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -224,7 +225,7 @@ import { MainHomepageComponent } from './main-homepage/main-homepage.component';
     DxChartModule,
     NgxPrintModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,GuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
