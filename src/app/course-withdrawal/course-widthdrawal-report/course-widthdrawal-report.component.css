@@ -3,7 +3,7 @@
 }
 .pop {
   font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   table-layout: auto;
   /* margin-left: 80px; */
   margin-top: 20px;
@@ -11,10 +11,10 @@
 }
 
 .pop td,
-#customers th {
+ th {
   border: 0.15em solid #ddd;
-  padding: 8px;
-  /*text-align: left;*/
+  padding: 4px;
+  text-align: center;
 }
 
 .pop tr:nth-child(even) {
@@ -29,9 +29,9 @@
 }
 
 .pop th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
+  /* padding-top: 6px;
+  padding-bottom: 6px; */
+  text-align: center;
   background-color: #c62128;
   color: white;
 }
@@ -196,13 +196,13 @@ select {
   }
 }
 
-th {
+th, td {
   text-align: center;
 }
 
 @page {
   size: a4 landscape;
-  /* margin: 0;
-  padding: 0;
-  margin-top: 20mm; */
+   margin: 0;
+  padding: 0; 
+    /* margin-top: 20mm; */ 
 }
