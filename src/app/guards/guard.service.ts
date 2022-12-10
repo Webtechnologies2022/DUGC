@@ -18,7 +18,7 @@ if(state.url=="/")
    const userdata =this.authservice.userCredentials.getValue();
    if(userdata  && userdata.userid)
    {
-      if(state.url.indexOf("login")> -1)
+      if(state.url.indexOf("login")> -1)  
       {
         this.route.navigate(['/Minor']);
         return false;

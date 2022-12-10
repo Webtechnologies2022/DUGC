@@ -148,7 +148,7 @@
 
 {{resetSno()}}  
 <tbody *ngFor="let student of studentList;let student12 of lablist">
-  <tr *ngIf="student.sem ==showSem && student.div ==showdiv" >
+  <tr *ngIf="student.sem ==showSem" >
       <td>{{count}}</td>
       <td>{{student.USN}}</td>
       <td>{{student.Name}}</td>

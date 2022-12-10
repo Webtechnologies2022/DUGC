@@ -9,59 +9,42 @@ import  { JwtHelperService} from '@auth0/angular-jwt'
 export class AuthMainService {
   jwthelp =new JwtHelperService;
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
-  private url = 'http://localhost:8080';
+  private  Loginurl = 'http://localhost:3000/login/finduser';
+  private  registerurl = 'http://localhost:3000/login/add';
   constructor(private http:HttpClient) {
-    this.loaduser();
+
    }
 
-  loaduser()
+  LoginUser(user:any)
   {
-    const userdata1 =this.userCredentials.getValue();
-    if(!userdata1)
-    {
-       const accesstoken=localStorage.getItem("tkn");
+  return this.http.post(this.Loginurl,user) 
+  }
 
-       if(accesstoken)
-       {
-        const decrrpt= this.jwthelp.decodeToken(accesstoken);
-        console.log(decrrpt);
-        const data = 
-        {
-          access:accesstoken,
-          refresh:localStorage.getItem("rtkn"),
-          username:decrrpt.username,
-          userid:decrrpt.sub,
-          exp:decrrpt.exp
-        };
-        this.userCredentials.next(data);
-
-       }
-     
-
-    }
+  RegisterUser(user:any)
+  {
+    return this.http.post(this.registerurl,user) 
   }
 
   loginauth(user:any)
   {
-    console.log(user);
-    const accesstoken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
-    const refreshtoken = "dummy";
+  //   console.log(user);
+  //   const accesstoken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
+  //   const refreshtoken = "dummy";
 
-    localStorage.setItem("tkn", accesstoken);
-    localStorage.setItem("rtkn", refreshtoken);
-    // return this.http.post(this.url+'/user/add-user', user);
-
-    const decrrpt= this.jwthelp.decodeToken(accesstoken);
-    console.log(decrrpt);
-      const data = 
-  {
-    access:accesstoken,
-    refresh:refreshtoken,
-    username:decrrpt.username,
-    userid:decrrpt.sub,
-    exp:decrrpt.exp
-  }
-  this.userCredentials.next(data);
+  //   localStorage.setItem("tkn", accesstoken);
+  //   localStorage.setItem("rtkn", refreshtoken);
+  //   // return this.http.post(this.url+'/user/add-user', user);
+  //   const decrrpt= this.jwthelp.decodeToken(accesstoken);
+  //   console.log(decrrpt);
+  //     const data = 
+  // {
+  //   access:accesstoken,
+  //   refresh:refreshtoken,
+  //   username:decrrpt.username,
+  //   userid:decrrpt.sub,
+  //   exp:decrrpt.exp
+  // }
+  // this.userCredentials.next(data);
   
   }
 }

@@ -12,7 +12,7 @@ export class DugcLoginComponent implements OnInit {
 
   logindata=
   {
-    username:'',
+    email:'',
     password:''
   }
   constructor(private auth:AuthMainService,private route:Router) { }
@@ -25,9 +25,17 @@ export class DugcLoginComponent implements OnInit {
   
      
       console.log(this.logindata);
-      this.auth.loginauth(this.logindata);
-      alert('login successfull');
-      this.route.navigate(['/homeMain']);
+      this.auth.LoginUser(this.logindata).subscribe(
+       res=>console.log(res),
+       err=>console.log(err));
+    //  alert('login successfull');
+      // this.route.navigate(['/homeMain']);
 
   }
 }
+// (data:any)=>
+//     {
+//       this.studentResult =data;
+//       this.studentList = this.studentResult.results;
+//       console.log(this.studentList);
+//       this.toast.success("student list fetched successfully");

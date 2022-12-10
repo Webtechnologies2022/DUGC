@@ -5,8 +5,9 @@
 #jumbotron {
   position: absolute;
   width: 84.5vw;
-  opacity: 30%;
+  opacity: 70%;
   z-index: 0;
+  border-radius: 5px;
 }
 
 #overlay-text {
