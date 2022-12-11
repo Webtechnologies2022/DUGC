@@ -10,249 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./course-withdrawal-application.component.css'],
 })
 export class CourseWithdrawalApplicationComponent implements OnInit {
-  /* allCourses = [
-    {
-      sem: 3,
-      courses: [
-        {
-          id: 1,
-          name: 'Graph Theory and Linear Algebra',
-          code: '15EMAB204',
-          credits: '4',
-        },
-        {
-          id: 2,
-          name: 'Discrete Mathematical Structure',
-          code: '19ECSC202',
-          credits: '4',
-        },
-        {
-          id: 3,
-          name: 'Computer Organization and Architecture',
-          code: '21ECSC201',
-          credits: '4',
-        },
-        {
-          id: 4,
-          name: 'Database Management System',
-          code: '15ECSC208',
-          credits: '4',
-        },
-        {
-          id: 5,
-          name: 'Data Structure and Algorithms',
-          code: '20ECSC205',
-          credits: '4',
-        },
-        {
-          id: 6,
-          name: 'Data Structure and Algorithms Lab',
-          code: '19ECSP201',
-          credits: '2',
-        },
-        {
-          id: 7,
-          name: 'Database Applications Lab',
-          code: '15ECSP204',
-          credits: '1.5',
-        },
-      ],
-    },
-    {
-      sem: 4,
-      courses: [
-        {
-          id: 1,
-          name: 'Applied Statistics with R',
-          code: '20EMAB209',
-          credits: '4',
-        },
-        {
-          id: 2,
-          name: 'Principles of Compiler Design',
-          code: '19ECSC203',
-          credits: '3',
-        },
-        {
-          id: 3,
-          name: 'Object Oriented Programming',
-          code: '20ECSC204',
-          credits: '3',
-        },
-        {
-          id: 4,
-          name: 'Object Oriented Programming Lab',
-          code: '20ECSP203',
-          credits: '1.5',
-        },
-        {
-          id: 5,
-          name: '	Operating Systems Principles and Programming',
-          code: '18ECSC202',
-          credits: '4',
-        },
-        {
-          id: 6,
-          name: 'Exploratory Data Analysis',
-          code: '21ECSC210',
-          credits: '4',
-        },
-        {
-          id: 7,
-          name: 'Microcontroller Programming and Interfacing',
-          code: '21ECSC206',
-          credits: '4',
-        },
-      ],
-    },
-    {
-      sem: 5,
-      courses: [
-        {
-          id: 1,
-          name: 'Computer Networks- 1',
-          code: '19ECSC302',
-          credits: '4',
-        },
-        {
-          id: 2,
-          name: 'System Software',
-          code: '17ECSC302',
-          credits: '3',
-        },
-        {
-          id: 3,
-          name: 'Web Technologies Lab',
-          code: '21ECSP304',
-          credits: '2',
-        },
-        {
-          id: 4,
-          name: 'System Software Lab',
-          code: '19ECSP302',
-          credits: '1.5',
-        },
-        {
-          id: 5,
-          name: 'Software Engineering',
-          code: '22ECSC301',
-          credits: '3',
-        },
-        {
-          id: 6,
-          name: 'Machine Learning',
-          code: '22ECSC306',
-          credits: '4',
-        },
-        {
-          id: 7,
-          name: 'Natural Language Processing',
-          code: '22ECSE315',
-          credits: '3',
-        },
-        {
-          id: 8,
-          name: 'Statistics & Probability',
-          code: '15EMAB303',
-          credits: '4',
-        },
-        {
-          id: 9,
-          name: 'Internet Of Things',
-          code: '17ECSC303',
-          credits: '3',
-        },
-      ],
-    },
-    {
-      sem: 6,
-      courses: [
-        {
-          id: 1,
-          name: 'Computer Network-2',
-          code: '20ECSC303',
-          credits: '3',
-        },
-        {
-          id: 2,
-          name: 'Computer Network Lab',
-          code: '20ECSP305',
-          credits: '1.5',
-        },
-        {
-          id: 3,
-          name: 'Distributed and Cloud Computing',
-          code: '20ECSP305',
-          credits: '3',
-        },
-        {
-          id: 4,
-          name: 'Professional Aptitude & Logical Reasoning',
-          code: '16EHCS301',
-          credits: '3',
-        },
-        {
-          id: 5,
-          name: 'Blockchain & Distributed Ledgers',
-          code: '22ECSC307',
-          credits: '3',
-        },
-        {
-          id: 6,
-          name: 'Minor Project',
-          code: '15ECSW302',
-          credits: '6',
-        },
-      ],
-    },
-    {
-      sem: 7,
-      courses: [
-        {
-          id: 1,
-          name: 'Big Data and Analytics',
-          code: '17ECSC401',
-          credits: '3',
-        },
-        {
-          id: 2,
-          name: 'Information Security',
-          code: '20ECSC402',
-          credits: '3',
-        },
-        {
-          id: 3,
-          name: 'Social Network Analysis',
-          code: '18ECSE402',
-          credits: '3',
-        },
-        {
-          id: 4,
-          name: 'Cyber Security',
-          code: '19ECSE401',
-          credits: '3',
-        },
-        {
-          id: 5,
-          name: 'Software Defined Networks',
-          code: '20ECSE405',
-          credits: '3',
-        },
-        {
-          id: 6,
-          name: 'Senior Design Project',
-          code: '20ECSW401',
-          credits: '3',
-        },
-        {
-          id: 7,
-          name: 'Capstone Project',
-          code: '20ECSW402',
-          credits: '3',
-        },
-      ],
-    },
-  ];*/
+ 
   allCourses = [
     {
       sem: 3,
@@ -641,10 +399,10 @@ export class CourseWithdrawalApplicationComponent implements OnInit {
   details: any;
   sc: any = [];
   s: any;
-  attendance: number[] = [0,0,0,0,0];
+  attendance: number[] = [];
   // ia1: any = [];
   // ia2: any = [];
-  cie: number[] = [0,0,0,0,0];
+  cie: number[] = [];
   submitDetails(form: NgForm) {
 
     if(this.studentName.length == 0 || this.srn.length == 0 || this.rno.length ==0 || this.div.length == 0 || this.selectedSem.length == 0 || this.reason.length == 0){
@@ -658,6 +416,10 @@ export class CourseWithdrawalApplicationComponent implements OnInit {
     }
     for(let i = 0; i < this.selectedCourses.length; i++){
       console.log(this.cie[i],this.attendance[i])
+      if(isNaN(this.cie[i]) || isNaN(this.attendance[i])){
+        this.toastr.error('Empty CIE or Attendace', 'CIE marks or Attendance cannot be blank.');
+        return;
+      }
       if(Number(this.cie[i]) <= 0){
       this.toastr.error('Negative Input', 'CIE marks cannot be less than or equal to 0.');
         return;

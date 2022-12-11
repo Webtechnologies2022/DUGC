@@ -121,6 +121,7 @@ input,select{
   
   display: grid;
   grid-template-columns:auto auto auto ;
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 20px;
   /* background-color: #2196F3; */
   padding-left: 180px;
@@ -130,6 +131,14 @@ input,select{
   place-self: center;
    
 }
+
+input[type="checkbox"]{
+  width: 20px; /*Desired width*/
+  height: 20px; /*Desired height*/
+  cursor: pointer;
+  background-color: #C62128;
+}
+
 .table > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -140,7 +149,10 @@ input,select{
   justify-content: space-around;    
   align-content: space-evenly;    
   place-self: center;
-
+  min-width: 200px;
+  min-height: 140px;
+  width: 100%;
+  height: 100%;
 }
 
 .sel-course-table > div > input{
