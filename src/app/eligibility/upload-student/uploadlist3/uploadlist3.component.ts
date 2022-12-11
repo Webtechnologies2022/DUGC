@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../services/students.service';
 import { LabService } from '../../services/lab.service';
 import  * as XLSX from 'xlsx';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-uploadlist3',
@@ -12,7 +13,8 @@ export class Uploadlist3Component implements OnInit {
   ExelData:any;
   exeldata:any;
   
-  constructor(private studentService:StudentsService,private labService:LabService) { }
+  constructor(private studentService:StudentsService,private labService:LabService,
+              private toast:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -67,14 +69,22 @@ uploadstudent()
 
 uploadstudentlab()
 {
+  if(!this.exeldata)
+  {
+    this.toast.error("cannot upload empty data");
+  }
+  else
+  {
  this.labService.uploadlist(this.exeldata).subscribe((data:any)=>
  {
   console.log('students are added',data);
+  this.toast.success("uploaded successfully");
 },err=>
 {
   console.log(err);
+  this.toast.error("server error cannot add student list");
 })
- 
+}
 }
 
 

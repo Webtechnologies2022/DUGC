@@ -59,15 +59,22 @@ readfile2(event:any)
 //upload captured json to database 
 uploadstudent()
 {
+  if(!this.ExelData)
+  {
+    this.toast.error("cannot upload empty data");
+  }
+  else
+  {
   this.studentService.uploadlist(this.ExelData).subscribe((data)=>
   {
     console.log('students are added',data);
-    this.toast.success("student thoery for lab fetched uploaded");
+    this.toast.success("student marks uploaded successfully");
   },err=>
   {
     console.log(err);
     this.toast.error("server error cannot add student list");
   })
+}
 }
 
 uploadstudentlab()
