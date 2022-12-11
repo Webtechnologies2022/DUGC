@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var jwt  = require('jsonwebtoken')
 
 var cors = require('cors');
 
@@ -47,7 +48,7 @@ function verifyToken(req,res,next){
     return res.status(401).send('unauthorized request')
   }
   let token =req.headers.authorization.split(' ')[1]
-  if(token=== null)
+  if(token=== 'null')
   {
     return res.status(401).send('unauthorized request')
   }
@@ -60,7 +61,7 @@ req.userId =payload1.subject;
 next()
 }
 
-app.use('/', indexRouter);
+app.use('/',indexRouter);
 app.use('/lab',labRouter);
 app.use('/users', usersRouter);
 app.use('/student',studentRouter);

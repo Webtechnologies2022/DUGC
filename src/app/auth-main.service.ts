@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs'
 import  { JwtHelperService} from '@auth0/angular-jwt'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthMainService {
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
   private  Loginurl = 'http://localhost:3000/login/finduser';
   private  registerurl = 'http://localhost:3000/login/add';
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,private route:Router) {
 
    }
 
@@ -34,8 +35,10 @@ export class AuthMainService {
   {
    return localStorage.getItem('token');
   }
-  loginauth(user:any)
+  logout()
   {
+    localStorage.removeItem('token');
+    this.route.navigate(['/']);
   //   console.log(user);
   //   const accesstoken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
   //   const refreshtoken = "dummy";

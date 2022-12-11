@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthMainService } from '../auth-main.service';
 import { Router } from '@angular/router';
-// import { AuthService } from '../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dugc-login',
@@ -17,7 +17,9 @@ export class DugcLoginComponent implements OnInit {
     email:'',
     password:''
   }
-  constructor(private auth:AuthMainService,private route:Router) { }
+  constructor(private auth:AuthMainService,
+    private route:Router,
+    private toast:ToastrService) { }
   
     ngOnInit(): void {
     }
@@ -35,8 +37,13 @@ export class DugcLoginComponent implements OnInit {
         console.log(this.userdata.user);
         localStorage.setItem('token',this.userdata.user);
         this.route.navigate(['/homeMain']);
+        this.toast.success("welcome to KLETECH");
        },
-       err=>console.log(err));
+       err=>
+       {
+        console.log(err.error.msg);
+        this.toast.error(err.error.msg);
+       });
     //  alert('login successfull');
       // this.route.navigate(['/homeMain']);
 

@@ -1,6 +1,5 @@
 import { Injectable,Injector } from '@angular/core';
 import {HttpInterceptor} from '@angular/common/http';
-import { AuthService } from '../circular/auth.service';
 import { AuthMainService } from '../auth-main.service';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class TokenVerificationService implements HttpInterceptor{
     let authservice = this.inject.get(AuthMainService)
     let validtoken =req.clone({
       setHeaders:{
-        Authurization:`bearer ${authservice.gettoken()}`
+        Authorization:`Bearer ${authservice.gettoken()}`
       }
     })
     return next.handle(validtoken)

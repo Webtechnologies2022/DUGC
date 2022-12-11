@@ -31,23 +31,6 @@
               </select>
            <br>
 
-              <!-- <label class="control-label" for="course">Select Sem</label><br>
-              <div class="btn-group">
-                <input type="radio"  class="btn-check" name="div" id="opt1"  value="A" autocomplete="off" checked   ngModel/>
-                <label class="btn btn-secondary" for="opt1">A</label>
-              
-                <input type="radio" class="btn-check" name="div" id="opt2"  value="B"  autocomplete="off" ngModel />
-                <label class="btn btn-secondary" for="opt2">B</label>
-              
-                <input type="radio" class="btn-check" name="div" id="opt3"   value="C" autocomplete="off" ngModel  />
-                <label class="btn btn-secondary" for="opt3">C</label>
-            
-                <input type="radio" class="btn-check" name="div" id="opt4"  value="D"  autocomplete="off" ngModel />
-                <label class="btn btn-secondary" for="opt4">D</label>
-            
-                <input type="radio" class="btn-check" name="div" id="opt5"   value="E" autocomplete="off" ngModel />
-                <label class="btn btn-secondary" for="opt5">E</label>
-              </div> -->
 
         </div>
         <!-- <br> -->
@@ -111,8 +94,6 @@
       <td >{{student12[lab2]}}</td>
       <td >{{student[lab3]}}</td>
       <td>{{student12[lab3]}}</td>
-      <td >{{student["22ECSC303"]}}</td>
-      <td>{{student12["22ECSC303"]}}</td>
       <!-- <td >{{student["17ECSC302"]}}</td> -->
       <!-- <td>{{datatemp[1]}}</td>
       <td>{{datatemp[2]}}</td>
@@ -145,52 +126,3 @@ img:{'width':'350px'}}"
 </div>
 <br>
 
-<!--do not delete below code -->
-
-<!-- <div class="table-responsive">
-
-  <table id="t1"class="table  table-striped  table-bordered table-sm caption-top" style="text-align:center;border:2px;">
-    <caption>
-      list of Ineligible students
-   </caption>
-    <thead class="table-active">
-      <tr>
-          <th scope="col" rowspan="2">Sl no.</th>
-          <th scope="col" rowspan="2">USN</th>
-          <th scope="col" rowspan="2">Name</th>
-          <th id="l1" scope="col" colspan="2" >{{lab1}}</th>
-          <th id="l2" scope="col" colspan="2">{{lab2}}</th>
-          <th id="l3" scope="col" colspan="2">{{lab3}}</th>
-      </tr>
-      <tr>
-        <th scope="col">CIE</th>
-        <th scope="col">Att</th>
-        <th scope="col">CIE</th>
-        <th scope="col">Att</th>
-        <th scope="col">CIE</th>
-        <th scope="col">Att</th>
-    </tr>
-  </thead>
-    <tbody *ngFor="let student of lablist;let i of 0">
-      <tr  >
-          <td>{{i+1}}</td>
-          <td>{{student._id.USN}}</td>
-          <td>{{student._id.Name}}</td>
-          <td *ngFor="let score of student.courses">{{score.CIE}}</td>
-          <td *ngFor="let score of student.courses">{{score.ATT}}</td>
-          <td>{{student.courses[1].CIE}}</td>
-          <td>{{student.courses[1].ATT}}</td>
-          <td>{{student.courses[2].CIE}}</td>
-          <td>{{student.courses[2].ATT}}</td>
-          <td><button class="btn btn-success btn-rounded">Approve</button></td>
-          <td><button class="btn btn-danger btn-rounded">disapprove</button></td>
-      </tr>  
-    </tbody>
-  </table>
-  </div> -->
-
-  
-
-
-
- 

@@ -52,17 +52,17 @@ router.post('/finduser',function(req,res,next)
         }else
         if(!data)
         {
-            res.send({status:401,message:'invalid user'});
+            res.status(401).send({msg:'invalid user'});
         }else 
         if(data.password!==userdata.password)
         {
-            res.send({status:401,message:'invalid password'});
+            res.status(401).send({msg:'invalid password'});
         }
         else
         {
             let userload = {subject:data._id}
             let usertoken = jwt.sign(userload,'secrectKey')
-             res.send({status:200,message:'found user',user:usertoken})
+             res.status(200).send({user:usertoken});
         }
 
     })

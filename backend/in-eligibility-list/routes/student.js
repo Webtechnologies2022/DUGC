@@ -67,9 +67,26 @@ router.get('/view', function(req, res, next) {
 });
 
 
+function verifyToken(req,res,next){
+  if(!req.headers.authorization)
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let token =req.headers.authorization.split(' ')[1];
+  if(token=== 'null')
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let payload1=jwt.verify(token,'secretKey');
+if (!payload1) 
+{
+  return res.status(401).send('unauthorized request')
+}
+req.userId =payload1.subject;
+next()
+}
 
-
-router.get('/marks', function(req, res, next) {
+router.get('/marks', function(req, res) {
 
  studentModel.aggregate(
   [
@@ -134,11 +151,8 @@ router.get('/marks', function(req, res, next) {
 });
 
 //get students by query
-router.get('/attendance', function(req, res, next) {
+router.get('/attendance', function(req, res ) {
 
-    // const USN=req.body.USN;
-    // const Name=req.body.Name;
-    // const CourseId =req.body.CourseId;
  studentModel.aggregate(
   [
     {

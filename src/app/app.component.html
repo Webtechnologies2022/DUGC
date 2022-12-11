@@ -10,8 +10,12 @@
         <!-- <div class="nav-des-sub">UNDERGRADUATE COURSES</div> -->
       </div>
       <div class="nav-options2">
-        <div class="nav-op2" [routerLink]="['/loginMain']">Login</div>
-        <div class="nav-op2" [routerLink]="['/register']">Logout</div>
+        <button class="nav-op2"  [routerLink]="['/loginMain']" *ngIf="!log()">Login</button>
+        <button class="nav-op2"  [routerLink]="['/register']"  *ngIf="!log()">register</button>
+        <button class="nav-op2" *ngIf="log()" (click)="logout()">Logout</button>
+        <!-- <div class="nav-op2"  [routerLink]="['/loginMain']" *ngIf="!auth.LoggedIn()">Login</div>
+        <div class="nav-op2" [routerLink]="['/register']"  *ngIf="!auth.LoggedIn()">Logout</div>
+        <div class="nav-op2" *ngIf="auth.LoggedIn()" (click)="auth.logout()">Logout</div> -->
       </div>
     </div>
   </div>
