@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class DugcLoginComponent implements OnInit {
 
+  userdata:any;
+
   logindata=
   {
     email:'',
@@ -26,7 +28,14 @@ export class DugcLoginComponent implements OnInit {
      
       console.log(this.logindata);
       this.auth.LoginUser(this.logindata).subscribe(
-       res=>console.log(res),
+       res=>
+       {
+        console.log(res);
+        this.userdata = res;
+        console.log(this.userdata.user);
+        localStorage.setItem('token',this.userdata.user);
+        this.route.navigate(['/homeMain']);
+       },
        err=>console.log(err));
     //  alert('login successfull');
       // this.route.navigate(['/homeMain']);

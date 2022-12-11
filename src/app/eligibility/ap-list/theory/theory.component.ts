@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Route, Router } from '@angular/router';
 import { StudentsService } from '../../services/students.service';
 import  * as XLSX from 'xlsx';
 import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-theory',
@@ -44,7 +44,8 @@ export class TheoryComponent implements OnInit {
 
 
   constructor(private studentService:StudentsService,
-    private toast:ToastrService) {
+    private toast:ToastrService,
+    private route:Router) {
     this.Showdate = studentService.displayDate();
     }
     
@@ -68,6 +69,16 @@ export class TheoryComponent implements OnInit {
       console.log(this.studentList);
       this.getstudent();
 
+},
+(err:any)=>
+{
+  if(err instanceof HttpErrorResponse)
+  {
+    if(err.status===401)
+    {
+      this.route.navigate(['/loginMain'])
+    }
+  }
 })
 this.studentService.getattendance().subscribe((data1:any)=>
     {
@@ -78,40 +89,20 @@ this.studentService.getattendance().subscribe((data1:any)=>
       this.toast.success("student list fetched successfully");
       
 
+},(err:any)=>
+{
+  if(err instanceof HttpErrorResponse)
+  {
+    if(err.status===401)
+    {
+      this.route.navigate(['/loginMain'])
+    }
+  }
 })
 }
 
 //read xl file to store data in json
-readfile(event:any)
-{
-  let file = event.target.files[0];
-  let fileReader = new FileReader();
 
-  fileReader.readAsBinaryString(file);
-
-  fileReader.onload=(e)=>
-  {
-    var workbook = XLSX.read(fileReader.result,{type:'binary'});  
-    var sheetNames = workbook.SheetNames;
-   this.ExelData= XLSX.utils.sheet_to_json(workbook.Sheets[sheetNames[0]]);
-    console.log(this.ExelData);
-  }
-
-}
-
-//upload captured json to database 
-uploadstudent(e:any)
-{
-   console.log(e.sem);
-    console.log(e.div);
-  this.studentService.uploadlist(this.ExelData).subscribe((data)=>
-  {
-    console.log('students are added',data);
-  },err=>
-  {
-    console.log(err);
-  })
-}
   
 
     formvalue(E:any)

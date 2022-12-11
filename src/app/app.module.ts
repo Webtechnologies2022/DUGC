@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -115,6 +115,7 @@ import { MinorMainComponent } from './makeup-minor/minor-main/minor-main.compone
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { GuardService } from './guards/guard.service';
+import { TokenVerificationService } from './guards/token-verification.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -225,7 +226,12 @@ import { GuardService } from './guards/guard.service';
     DxChartModule,
     NgxPrintModule
   ],
-  providers: [AuthService,GuardService],
+  providers: [AuthService,GuardService,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenVerificationService,
+    multi:true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

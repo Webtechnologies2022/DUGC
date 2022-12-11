@@ -106,10 +106,11 @@ import { GuardService } from './guards/guard.service';
 
 const routes: Routes = [
   {path:'loginMain',component:DugcLoginComponent},
-  {path:'homeMain',component:MainHomepageComponent},
+  {path:'homeMain',component:MainHomepageComponent,
+canActivate:[GuardService]},
   {
     path: 'Minor',
-    component: MinorAnalysisMainComponent,
+    component: MinorAnalysisMainComponent,canActivate:[GuardService],
     children: [
       {
         path: 'dugc_chairman',
@@ -143,7 +144,7 @@ const routes: Routes = [
   },
   {
     path: 'Withdrawal',
-    component: CourseWithdrawalMainComponent,
+    component: CourseWithdrawalMainComponent,canActivate:[GuardService],
     children: [
       { path: 'Home', component: CourseWithdrawalComponent },
       { path: 'Application', component: CourseWithdrawalApplicationComponent },
@@ -152,7 +153,7 @@ const routes: Routes = [
   },
   {
     path: 'Endsem',
-    component: EndsemAnalysisMainComponent,
+    component: EndsemAnalysisMainComponent,canActivate:[GuardService],
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'analysis', component: AnalysisComponent },
@@ -160,7 +161,7 @@ const routes: Routes = [
   },
   {
     path: 'Lab',
-    component: LabAnalysisMainComponent,
+    component: LabAnalysisMainComponent,canActivate:[GuardService],
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'adiv2021', component: Adiv2021Component },
@@ -192,7 +193,7 @@ const routes: Routes = [
   },
   {
     path: 'Circular',
-    component: CircularMainComponent,
+    component: CircularMainComponent,canActivate:[GuardService],
     children: [
       { path: 'home', component: HomeComponentCircular },
       { path: 'ns', component: NsComponent },
@@ -217,7 +218,7 @@ const routes: Routes = [
   },
   {
     path: 'eligibility',
-    component: EligibilityComponent,
+    component: EligibilityComponent,canActivate:[GuardService],
     children: [
       {path:'E-home',component:EligibilityHomeComponent},
       {path:'ap-list',component:ApListComponent,
@@ -234,7 +235,7 @@ const routes: Routes = [
     ]},
     ]},
     
-    {path:"makeup",component:MinorMainComponent,
+    {path:"makeup",component:MinorMainComponent,canActivate:[GuardService],
     children:[
       // {path: 'login',component:LoginComponent},
     //  {path: 'register',component:RegisterComponent},

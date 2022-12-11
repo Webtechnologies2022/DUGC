@@ -64,54 +64,7 @@
 
   <!-- ////////////////////////////////course_wise section////////////////////////////////////////////////////////////////////////////// -->    
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal_2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">select details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-         
-         <form (submit)="uploadstudent(upload.value)" #upload="ngForm"> 
-          <div class="modal-body">
-
-              <label class="control-label" for="course">Select_Sem</label>
-               
-              <select class="form-select mb-3" id="type" name="Sem" ngModel>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              </select>
-          
-              <label class="control-label" for="course" >Select_Div</label>
-              <br>
-              <select class="form-select mb-3" id="type" name="div" ngModel>
-                <option >A</option>
-                <option >B</option>
-                <option >C</option>
-                <option >D</option>
-                <option >E</option>
-                </select>
-                        <br>
-                        <div id="">
-                          <input type="file" class="form-control" id="customFile" (change)="readfile($event)"/>
-                      </div>
-          </div>
-          
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Submit</button>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-<br>
-
-
+    
 <!-- /////////////////////////////////table section////////////////////////////////////////////////////////////////////////////// -->
 <div id="print">
 

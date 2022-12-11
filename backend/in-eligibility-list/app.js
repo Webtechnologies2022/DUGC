@@ -40,6 +40,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+function verifyToken(req,res,next){
+  if(!req.headers.authorization)
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let token =req.headers.authorization.split(' ')[1]
+  if(token=== null)
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let payload1=jwt.verify(token,'secretKey');
+if (!payload1) 
+{
+  return res.status(401).send('unauthorized request')
+}
+req.userId =payload1.subject;
+next()
+}
+
 app.use('/', indexRouter);
 app.use('/lab',labRouter);
 app.use('/users', usersRouter);
@@ -61,5 +81,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

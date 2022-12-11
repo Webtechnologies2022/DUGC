@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const jwt =require('jsonwebtoken');
+const { token } = require('morgan');
 const userModel =require('../models/user');
 
 
@@ -7,15 +9,17 @@ router.post('/add',function (req,res,next) {
 
     let userobj2 =new userModel(req.body);
 
- userobj2.save(function(err,studentObj)
+ userobj2.save(function(err,userObj)
  {
     if(err)
     {
-        res.send({status:500,message:'unbale to add user'});
+        res.send({status:500,message:'unbale to add user',err});
     }
     else
     {
-        res.send({status:200,message:'user added',studentdetails:studentObj})
+        let payload = {subject:userObj._id}
+        let token =jwt.sign(payload,'secrectKey')
+        res.send({status:200,message:'user added',user:token})
     }
  });
 });
@@ -56,10 +60,15 @@ router.post('/finduser',function(req,res,next)
         }
         else
         {
-            res.send({status:200,message:'found user',user:data})
+            let userload = {subject:data._id}
+            let usertoken = jwt.sign(userload,'secrectKey')
+             res.send({status:200,message:'found user',user:usertoken})
         }
 
     })
 })
+
+
+  
 
 module.exports = router;

@@ -25,6 +25,15 @@ export class AuthMainService {
     return this.http.post(this.registerurl,user) 
   }
 
+  LoggedIn()
+  {
+    return !!localStorage.getItem('token');
+  }
+
+  gettoken()
+  {
+   return localStorage.getItem('token');
+  }
   loginauth(user:any)
   {
   //   console.log(user);
