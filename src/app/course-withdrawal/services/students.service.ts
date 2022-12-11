@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class StudentsService {
-  private url = 'http://localhost:8080';
+  private url = 'http://localhost:8008';
   constructor(private httpClient: HttpClient) { }
 
   getAllStudents(){

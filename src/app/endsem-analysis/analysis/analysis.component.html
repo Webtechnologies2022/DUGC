@@ -45,7 +45,7 @@
             <td> {{sch.name}} </td>
             <td>
                 <!-- <input #my2 name = "" type="text" [(ngModel)]="sch.passing"> -->
-                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" oninput="validity.valid||(value='');">
+                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" max= "100" oninput="validity.valid||(value='');">
             </td>
         </tr>
     </table>
@@ -56,7 +56,7 @@
         </tr>
         <tr>
             <td>
-                <input type="number" [(ngModel)]="pt" min="0" oninput="validity.valid||(value='');">
+                <input type="number" [(ngModel)]="pt" min="0" max= "100" oninput="validity.valid||(value='');">
             </td>
         </tr>
     </table>
@@ -72,12 +72,12 @@
     <br>
     <div class="charts">
         <div class="chartbox">
-            <h4 *ngIf = check><b>Course Passing Percentage</b></h4>
+            <!-- <h4 *ngIf = check><b>Course Passing Percentage</b></h4> -->
             <canvas id="myChart" width="100" height="100" #mychart></canvas>
         </div>
 
         <div class="chartbox1">
-            <h4 *ngIf = check><b>Total Passing Percentage</b></h4>
+            <!-- <h4 *ngIf = check><b>Total Passing Percentage</b></h4> -->
             <canvas id="myChart1" width="100" height="100" #mychart1></canvas>
         </div>
     </div>
