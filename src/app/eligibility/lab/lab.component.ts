@@ -3,6 +3,9 @@ import { StudentsService } from '../services/students.service';
 import { LabService } from '../services/lab.service';
 import  * as XLSX from 'xlsx';
 import { LowerCasePipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lab',
@@ -38,7 +41,9 @@ showdate:any;
 
 datatemp:any;
 
-  constructor(private labservice:LabService) {
+  constructor(private labservice:LabService,
+    private toast:ToastrService,
+    private route:Router) {
     this.showdate=this.labservice.displayDate();
     this.datatemp=[];
   }
@@ -62,91 +67,41 @@ datatemp:any;
       this.studentResult =data;
       this.studentList = this.studentResult.results;
       console.log(this.studentList);
-    //  this.studentList.forEach((e:any)=>
-    //  {
-    //   if(!e["17ECSC302"])
-    //   {
-    //     this.datatemp.push("");
-    //   }
-    //   else
-    //   {
-    //     this.datatemp.push(e["17ECSC302"]);
-    //   }
-    //   console.log(this.datatemp);
-    //  })
-
-    })
+      this.toast.success("student list fetched successfully");
+    },
+    (err:any)=>
+{
+  this.toast.error("server error data not found",err);
+  if(err instanceof HttpErrorResponse)
+  {
+    if(err.status===401)
+    {
+      this.route.navigate(['/loginMain'])
+    }
+  }
+})
     this.labservice.getattendance().subscribe((data:any)=>
     {
       this.labResults=data;
          console.log(this.labResults);
          this.lablist=this.labResults.results;
         console.log(this.lablist);
-    })
+        this.toast.success("student list fetched successfully");
+    },
+    (err:any)=>
+{
+  this.toast.error("server error data not found",err);
+  if(err instanceof HttpErrorResponse)
+  {
+    if(err.status===401)
+    {
+      this.route.navigate(['/loginMain'])
+    }
+  }
+})
    
    } 
   
-  //  getineligible()
-  //  {
-  //   this.labservice.getIneligible().subscribe((data:any)=>
-  //   {
-  //     this.labResults=data;
-  //     console.log(this.labResults);
-  //     this.lablist=this.labResults.results;
-  //    console.log(this.lablist);
-  //    console.log(this.lablist);
-  //   })
-  //  }
-CIE:any=[];
-  //  getLabList()
-  //  {
-  //   this.labservice. getIneligible().subscribe((data:any)=>
-  //   {
-  //     this.labResults=data;
-  //     console.log(this.labResults);
-  //     this.lablist=this.labResults.results;
-  //     console.log(this.lablist);
-  //   //   this.lablist.forEach((e:any) => {
-  //   //     this.datatemp.push(e.courses[0][0].ATT);
-  //   //     this.CIE.push(e.courses[0][0].CIE);
-  //   //     console.log(this.datatemp);
-  //   //     console.log(this.CIE);
-  //   // })
-    
-  //  })
-
-  //  }
-
-
-   readfile(event:any)
-{
-  let file = event.target.files[0];
-  let fileReader = new FileReader();
-
-  fileReader.readAsBinaryString(file);
-
-  fileReader.onload=(e)=>
-  {
-    var workbook = XLSX.read(fileReader.result,{type:'binary'});  
-    var sheetNames = workbook.SheetNames;
-   this.ExelData= XLSX.utils.sheet_to_json(workbook.Sheets[sheetNames[0]]);
-    console.log(this.ExelData);
-  }
-
-}
-
-uploadstudent(e:any)
-{
-  this.labservice.uploadlist(this.ExelData).subscribe((data)=>
-  {
-    console.log('students are added',data);
-    console.log(e.Sem);
-    console.log(e.div);
-  },err=>
-  {
-    console.log(err);
-  })
-}
 
 
    

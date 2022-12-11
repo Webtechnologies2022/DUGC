@@ -67,11 +67,13 @@ export class TheoryComponent implements OnInit {
       this.studentResult =data;
       this.studentList = this.studentResult.results;
       console.log(this.studentList);
-      this.getstudent();
+      this.toast.success("student list fetched successfully");
+      // this.getstudent();
 
 },
 (err:any)=>
 {
+  this.toast.error("server error data not found",err.error);
   if(err instanceof HttpErrorResponse)
   {
     if(err.status===401)
@@ -85,12 +87,13 @@ this.studentService.getattendance().subscribe((data1:any)=>
       this.attendanceresult =data1;
       this.attendance = this.attendanceresult.results;
       console.log(this.attendance);
-      this.getstudent();
+      // this.getstudent();
       this.toast.success("student list fetched successfully");
       
 
 },(err:any)=>
 {
+  this.toast.error("server error data not found",err.error);
   if(err instanceof HttpErrorResponse)
   {
     if(err.status===401)
