@@ -68,8 +68,8 @@
       <div  class="table">
         <div *ngFor="let course of selectedSemCourses" style="padding:10px ;">
           {{course.name}} <br>
-          {{course.code}} <br>
-          {{course.credits}} credits <br>
+          ({{course.code}}) <br>
+          {{course.credit}} credits <br>
           <input type="checkbox" (change)="selectedCourse($event,course)">
         </div>
       <!-- <td>
@@ -98,7 +98,7 @@
       <div *ngFor="let course of selectedCourses; let i = index" style="padding: 10px;">
         {{course.name}} <br>
         {{course.code}} <br>
-        {{course.credits}} <br>
+        {{course.credit}} <br>
         <input type="number" [(ngModel)]="attendance[i]" placeholder="Attendance"> <br>
         <input type="number" [(ngModel)]="cie[i]" placeholder="CIE"> <br>
         <!-- <input type="text" [(ngModel)]="ia2[i]" placeholder="ISA 2"> -->
