@@ -2,20 +2,22 @@
 /* @import "~font-awesome/css/font-awesome.css"; */
 
 
-  .divider:after,
+.divider:after,
 .divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }
+
 .h-custom {
-height: calc(100% - 73px);
+  height: calc(100% - 73px);
 }
+
 @media (max-width: 450px) {
-.h-custom {
-height: 100%;
-}
+  .h-custom {
+    height: 100%;
+  }
 }
 
 #card:not(.highlight-card):hover {
@@ -24,17 +26,16 @@ height: 100%;
   color: black;
 }
 
- #card:not(.highlight-card):hover .material-icons path {
+#card:not(.highlight-card):hover .material-icons path {
   fill: rgb(105, 103, 103);
 }
 
-#card
-{
-  background:#C62128;
-    color: white;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-    font-weight: 700;
+#card {
+  background: #C62128;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  font-weight: 700;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03vw;
@@ -43,7 +44,7 @@ height: 100%;
 }
 
 svg.material-icons path {
-  fill:whitesmoke;
+  fill: whitesmoke;
 }
 
 .container1 {
@@ -56,46 +57,49 @@ svg.material-icons path {
   transform: translateY(-1px);
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
-label,input,button
-{
+
+label,
+input,
+button {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03em;
-  font-size:large;
-    font-weight: 500;
+  font-size: large;
+  font-weight: 500;
 }
-a{
+
+a {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03em;
   font-weight: 300;
 }
 
-.img1
-{
+.img1 {
   transform: translateY(-3px);
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  border-radius:10px;
+  border-radius: 10px;
+  width: 49vw;
 }
 
 #overlay-text {
   margin-top: -0.7em;
   font-weight: 700;
-  z-index:2;
+  z-index: 2;
   padding: 1.5em 2em;
   display: flex;
   align-items: center;
-  position:absolute;
-  
+  position: absolute;
+
 }
 
 #title {
   color: #C62128;
-  font-size: 3em;
+  font-size: 2.5em;
   padding-right: 0.5em;
 }
 
 #subtitle {
-  font-size: 2em;
+  font-size: 1.5em;
   border-left: 0.1em solid black;
   padding-left: 0.6em;
 }
