@@ -285,24 +285,24 @@ export class  AddStudentComponent implements OnInit {
   submitDetails(){
 
     console.log(this.selectedCourses)
-    for (let i = 0; i < this.selectedCourses.length; i++){
-      this.sc.push({
-        "name": this.selectedCourses[i].name,
-        "code": this.selectedCourses[i].code,
-        "credits": this.selectedCourses[i].credits,
-        // "attendance": this.attendance[i],
-        // "isa1": this.ia1[i],
-        // "isa2": this.ia2[i]
-      });
-    } 
+    // for (let i = 0; i < this.selectedCourses.length; i++){
+    //   this.sc.push({
+    //     "name": this.selectedCourses[i].name,
+    //     "code": this.selectedCourses[i].code,
+    //     "credits": this.selectedCourses[i].credits,
+    //     // "attendance": this.attendance[i],
+    //     // "isa1": this.ia1[i],
+    //     // "isa2": this.ia2[i]
+    //   });
+    // } 
     this.details = {
       "name": this.studentName,
       "sem": this.selectedSem,
       "srn": this.srn,
       "rollNo": this.rno,
       "division": this.div,
-      // "selectedCourseToWithdraw": this.sc,
-      "selectedCourseToWithdraw": "DMS",
+      "selectedCourseToWithdraw": this.selectedCourses,
+      // "selectedCourseToWithdraw": "DMS",
       "status": "pending",
       "reason": this.reason
     }

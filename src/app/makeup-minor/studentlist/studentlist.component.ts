@@ -22,7 +22,7 @@ export class StudentlistComponent implements OnInit {
 selectedSem: any;
 students: any
 getSemReport(arg0: string) {
-throw new Error('Method not implemented.');
+  this.selectedSem = arg0
 }
 
   constructor(private http:HttpClient, private studentService:StudentsService) { }

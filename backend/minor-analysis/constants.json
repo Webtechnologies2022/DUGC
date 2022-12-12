@@ -1,4 +1,4 @@
 {
     "LOCATION": "http://localhost:",
-    "BACKEND_PORT": 3000
+    "BACKEND_PORT": 9000
 }

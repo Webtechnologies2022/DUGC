@@ -332,7 +332,8 @@ export class AnalysisComponent {
             data: this.temp,
             backgroundColor: "#cd2c10",
             borderColor: "#A30000",
-            borderWidth:1
+            borderWidth:1,
+            maxBarThickness:30,
             // fill: true,
           }],
           labels: ['Previous year','This year']

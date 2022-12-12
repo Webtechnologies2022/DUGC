@@ -79,3 +79,7 @@
   opacity: 20%;
   pointer-events: none;
 }
+
+a{
+  text-decoration: none;
+}

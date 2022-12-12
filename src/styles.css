@@ -3,6 +3,10 @@
   margin-top: -1em;
 }
 
+a{
+  text-decoration: none;
+}
+
 * {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03em;
