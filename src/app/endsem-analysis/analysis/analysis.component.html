@@ -45,7 +45,8 @@
             <td> {{sch.name}} </td>
             <td>
                 <!-- <input #my2 name = "" type="text" [(ngModel)]="sch.passing"> -->
-                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" max= "100" oninput="validity.valid||(value='');">
+                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" max= "100" >
+                <!-- oninput="validity.valid||(value='');" -->
             </td>
         </tr>
     </table>
@@ -56,7 +57,8 @@
         </tr>
         <tr>
             <td>
-                <input type="number" [(ngModel)]="pt" min="0" max= "100" oninput="validity.valid||(value='');">
+                <input type="number" [(ngModel)]="pt" min="0" max= "100" >
+                <!-- oninput="validity.valid||(value='');" -->
             </td>
         </tr>
     </table>
