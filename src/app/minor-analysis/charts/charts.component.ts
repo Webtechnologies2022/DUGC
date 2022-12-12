@@ -78,7 +78,7 @@ export class ChartsComponent implements OnInit {
     let num: any;
     for (let i of this.course_codes) {
       num = Number(this.getCurrentMarks(i, sectionName, particular));
-      if (num == null || num == NaN) {
+      if (num == null) {
         num = 0;
       }
       totalMarks += num;
