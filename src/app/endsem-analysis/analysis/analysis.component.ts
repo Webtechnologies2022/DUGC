@@ -212,6 +212,15 @@ export class AnalysisComponent {
       this.courses.push(this.data.code)
     }
 
+    
+    for(let i = 0; i < this.passPercentages.length; i++){
+      // console.log(this.cie[i],this.attendance[i])
+      if(Number(this.passPercentages[i]) <= 0 ){
+        alert('Negative percentges are not allowed.');
+        return;
+      }
+    }
+
     console.log(this.passPercentages)
     console.log("hi " + this.store);
     // if (this.counter == 0 ) {
@@ -333,7 +342,7 @@ export class AnalysisComponent {
             backgroundColor: "#cd2c10",
             borderColor: "#A30000",
             borderWidth:1,
-            maxBarThickness:30,
+            maxBarThickness:25,
             // fill: true,
           }],
           labels: ['Previous year','This year']
