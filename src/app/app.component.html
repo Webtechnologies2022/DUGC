@@ -10,7 +10,7 @@
         <!-- <div class="nav-des-sub">UNDERGRADUATE COURSES</div> -->
       </div>
       <div class="nav-options2">
-        <button class="nav-op2"  [routerLink]="['/loginMain']" *ngIf="!log()">Login</button>
+        <button class="nav-op2" [routerLink]="['/loginMain']" *ngIf="!log()">Login</button>
         <!-- <button class="nav-op2"  [routerLink]="['/register']"  *ngIf="!log()">register</button> -->
         <button class="nav-op2" *ngIf="log()" (click)="logout()">Logout</button>
         <!-- <div class="nav-op2"  [routerLink]="['/loginMain']" *ngIf="!auth.LoggedIn()">Login</div>
@@ -23,11 +23,11 @@
 
   <div class="nav-options">
     <div class="nav-op" routerLink="/Minor" [routerLinkActive]="['selected-option']">
-      Minor Analysis</div>
+      ISA Analysis</div>
     <div class="nav-op" routerLink="/Endsem" [routerLinkActive]="['selected-option']">
       End sem Analysis</div>
     <div class="nav-op" routerLink="/Lab" [routerLinkActive]="['selected-option']">
-      Lab Analysis</div>
+      Lab CIE Analysis</div>
     <div class="nav-op" routerLink="/Withdrawal" [routerLinkActive]="['selected-option']">
       Course Withdrawal</div>
     <div class="nav-op" routerLink="/Circular" [routerLinkActive]="['selected-option']">

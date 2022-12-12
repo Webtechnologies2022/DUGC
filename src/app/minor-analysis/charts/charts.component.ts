@@ -90,7 +90,7 @@ export class ChartsComponent implements OnInit {
   initGraphs(): void {
     let course_count = 1;
     for (let course of this.course_codes) {
-      let xValues: any = ['A', 'B', 'C', 'D', 'E'];
+      let xValues: any = ['Div A', 'Div B', 'Div C', 'Div D', 'Div E'];
       let courseName: any = 'myChart1';
       let chartNumber: any = 'chartLabel1';
       let graphName = '';
@@ -134,12 +134,12 @@ export class ChartsComponent implements OnInit {
           labels: xValues,
           datasets: [
             {
-              label: 'Current Year',
+              label: 'Current Year 2022-23',
               backgroundColor: color1,
               data: this.yValues,
             },
             {
-              label: 'Previous Year',
+              label: 'Previous Year 2021-22',
               backgroundColor: color2,
               data: this.y2Values,
             },
