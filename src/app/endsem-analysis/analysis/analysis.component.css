@@ -6,6 +6,7 @@
   align-content: space-between;
 }
 
+
 table,
 th,
 td {
@@ -13,6 +14,7 @@ td {
   border-collapse: collapse;
   padding: 8px;
   width: 20%;
+
 }
 
 .id {
@@ -189,13 +191,13 @@ td {
   margin: 0 auto;
 }
 
-.chartbox1{
-  position:relative;
-  width : 400px;
+.chartbox1 {
+  position: relative;
+  width: 400px;
   margin: 0 auto;
 }
 
-.charts{
+.charts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
