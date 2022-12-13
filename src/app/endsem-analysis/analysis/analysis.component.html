@@ -36,16 +36,17 @@
     <table id="customers" align="center">
 
         <tr>
-            <th class="id">Course Name</th>
-            <th class="name">Course Code</th>
-            <th class="pass-per">Passing percentage</th>
+            <th class="id" style="text-align:center">Course Name</th>
+            <th class="name" style="text-align:center">Course Code</th>
+            <th class="pass-per" style="text-align:center">Passing Percentage</th>
         </tr>
         <tr *ngFor="let sch of scheduleData">
             <td> {{sch.code}} </td>
             <td> {{sch.name}} </td>
             <td>
                 <!-- <input #my2 name = "" type="text" [(ngModel)]="sch.passing"> -->
-                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" max= "100" >
+                <input #myname name="" type="number" [(ngModel)]="sch.passing" min="0" max="100"
+                    oninput="validity.valid||(value='');">
                 <!-- oninput="validity.valid||(value='');" -->
             </td>
         </tr>
@@ -53,17 +54,17 @@
     <br>
     <table id="customers" align="center">
         <tr>
-            <th>Total Passing percentage</th>
+            <th>Total Passing Percentage</th>
         </tr>
         <tr>
             <td>
-                <input type="number" [(ngModel)]="pt" min="0" max= "100" >
-                <!-- oninput="validity.valid||(value='');" -->
+                <input type="number" [(ngModel)]="pt" min="0" max="100" oninput="validity.valid||(value='');">
+                <!--  -->
             </td>
         </tr>
     </table>
     <br>
-    <button class="btn" (click)="onClick(myname)">Analyze</button>
+    <button class="btn btn-danger" (click)="onClick(myname)">Analyze</button>
     <!-- <table>
         <tr *ngFor="let i of store">
             <td>{{i}}</td>
