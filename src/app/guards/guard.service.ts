@@ -12,6 +12,8 @@ export class GuardService implements CanActivate {
   constructor(private authservice:AuthMainService,private route:Router,private toast:ToastrService) { }
   canActivate(): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if (this.authservice.LoggedIn()) {
+      var token=localStorage.getItem('token');
+      console.log(token);
       return true;
     }
     else{

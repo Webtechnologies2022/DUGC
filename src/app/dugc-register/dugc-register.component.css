@@ -1,0 +1,79 @@
+@import "~font-awesome/css/font-awesome.css";
+
+#overlay-text {
+    margin-top: 0.3em;
+    font-weight: 700;
+    z-index: 2;
+    padding: 1.5em 2em;
+    display: flex;
+    align-items: center;
+    position:absolute;
+  
+  }
+  
+  #title {
+    color: #C62128;
+    font-size: 2.5em;
+    padding-right: 0.5em;
+  }
+  
+  #subtitle {
+    font-size: 1.5em;
+    border-left: 0.1em solid black;
+    padding-left: 0.6em;
+  }
+
+  label,
+input,
+button {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
+  font-size: large;
+  font-weight: 500;
+}
+
+.img1
+{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    width: 49vw;
+}
+
+.container1 {
+    /* border-radius: 10px;
+    border-color: #C62128; */
+    padding: 5px 10px;
+    border: 0.10em solid #C62128;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  #card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    color: black;
+  }
+  
+  #card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+  
+  #card {
+    background: #C62128;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.03vw;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+  
+  svg.material-icons path {
+    fill: whitesmoke;
+  }

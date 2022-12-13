@@ -63,7 +63,7 @@ next()
 }
 
 app.use('/',indexRouter);
-app.use('/lab',labRouter);
+app.use('/lab', labRouter);
 app.use('/users', usersRouter);
 app.use('/student',studentRouter);
 app.use('/login',userRouter);

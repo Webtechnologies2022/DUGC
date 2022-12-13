@@ -117,6 +117,7 @@ import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { GuardService } from './guards/guard.service';
 import { TokenVerificationService } from './guards/token-verification.service';
 import { SendComponent } from './circular/send/send.component';
+import { DugcRegisterComponent } from './dugc-register/dugc-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -211,6 +212,7 @@ import { SendComponent } from './circular/send/send.component';
     DugcLoginComponent,
     MainHomepageComponent,
     SendComponent,
+    DugcRegisterComponent,
   ],
   imports: [
     FlexLayoutModule,
