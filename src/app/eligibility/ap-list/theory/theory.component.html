@@ -1,31 +1,31 @@
 <br>
 <br>
 <div class="center2">
-<h5 >please select deatils to view Ineligible students list </h5>
+  <h5>Please select the details to view Ineligible students list </h5>
 </div>
 <br>
 <div class="mod">
-   
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="">
-         
-        </div>
 
-        <form (submit)="getStudentList(get.value)" #get="ngForm" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="">
+
+      </div>
+
+      <form (submit)="getStudentList(get.value)" #get="ngForm">
         <div class="modal-body">
 
           <label class="control-label" for="course">SelectSem</label>
-               
+
           <select class="form-select mb-3" name="sem" (change)="formvalue($event)" id="type" ngModel [required]="true">
-          <option >3</option>
-          <option>4</option>
-          <option>5</option>
-          <option >6</option>
-          <option >7</option>
-          <option>8</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
           </select>
-      <br>
+          <br>
           <!-- <label class="control-label" for="course">Select Sem</label><br>
           <div class="btn-group">
             <input type="radio"  class="btn-check" name="div" value="A" id="opt1" autocomplete="off" checked  ngModel/>
@@ -47,102 +47,97 @@
         </div>
         <!-- <br> -->
         <div class="modal-footer">
-            <button type="submit" id="card" class="btn"  >
-                <svg class="material-icons"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                Submit
-              </button>
+          <button type="submit" id="card" class="btn">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+            Submit
+          </button>
         </div>
       </form>
-      </div>
     </div>
   </div>
-  <!-- </div> -->
+</div>
+<!-- </div> -->
 
- 
+
 <br>
 
 
 <!-- /////////////////////////////////table section////////////////////////////////////////////////////////////////////////////// -->
 <div id="print">
-<div class="head">
-  <img src="../assets/logo.png"  class="rounded float-left" width="250px">
-  <p id="BVB">Earlier known as <br>  B. V. B. College of Engineering & Technology</p>
+  <div class="head">
+    <img src="../assets/logo.png" class="rounded float-left" width="250px">
+    <p id="BVB">Earlier known as <br> B. V. B. College of Engineering & Technology</p>
   </div>
   <br>
-  <h2 >List of Students Ineligible for Supplementary Thoery End Semester Assessment</h2>
-  <h4><span> School: Computer Science & Engineering </span>  <span>Examination:{{Showdate|date:"shortDate"}}</span> </h4>
-  <h5><span> Program:  BE </span>  <span> Semester:{{showSem}}</span> </h5>
+  <h2>List of Students Ineligible for Supplementary Thery End Semester Assessment</h2>
+  <h4><span> School: Computer Science & Engineering </span> <span>Examination:{{Showdate|date:"shortDate"}}</span> </h4>
+  <h5><span> Program: BE </span> <span> Semester:{{showSem}}</span> </h5>
   <br>
-<div class="table-responsive">
-<table class="table table-bordered table-sm caption-top" style="text-align:center;border:2px;">
+  <div class="table-responsive">
+    <table class="table table-bordered table-sm caption-top" style="text-align:center;border:2px;">
 
-  <thead class="table-active">
-    <tr>
-        <th  scope="col" rowspan="2">Sl no.</th>
-        <th scope="col" rowspan="2">USN</th>
-        <th scope="col" rowspan="2">Name</th>
-        <th scope="col" colspan="2" >{{course1}}</th>
-        <th scope="col" colspan="2">{{course2}}</th>
-        <th scope="col" colspan="2">{{course3}}</th>
-        <th scope="col" colspan="2">{{course4}}</th>
-        <th scope="col" colspan="2">{{course5}}</th>
-    </tr>
-    <tr>
-      <th scope="col">CIE</th>
-      <th scope="col">Att</th>
-      <th scope="col">CIE</th>
-      <th scope="col">Att</th>
-      <th scope="col">CIE</th>
-      <th scope="col">Att</th>
-      <th scope="col">CIE</th>
-      <th scope="col">Att</th>
-      <th scope="col">CIE</th>
-      <th scope="col">Att</th>
-  </tr>
-  {{resetSno()}}  
-</thead>
-  <tbody *ngFor="let student of studentList; let student1 of attendance">
-    <tr *ngIf="student.sem ==showSem">
-      <td>{{count}}</td>
-        <td>{{student.USN}}</td>
-        <td>{{student.Name}}</td>
-        <td>{{student[course1]}}</td>
-        <td>{{student[course1]}}</td>
-        <td>{{student[course2]}}</td>
-        <td>{{student[course2]}}</td>
-        <td>{{student[course3]}}</td>
-        <td>{{student[course3]}}</td>
-        <td>{{student[course4]}}</td>
-        <td>{{student[course4]}}</td>
-        <td>{{student[course5]}}</td>
-        <td>{{student[course5]}}</td>
-       
-       
-        <!-- <td><button class="btn btn-success btn-rounded">Approve</button></td>
+      <thead class="table-active">
+        <tr>
+          <th scope="col" rowspan="2">Sl no.</th>
+          <th scope="col" rowspan="2">USN</th>
+          <th scope="col" rowspan="2">Name</th>
+          <th scope="col" colspan="2">{{course1}}</th>
+          <th scope="col" colspan="2">{{course2}}</th>
+          <th scope="col" colspan="2">{{course3}}</th>
+          <th scope="col" colspan="2">{{course4}}</th>
+          <th scope="col" colspan="2">{{course5}}</th>
+        </tr>
+        <tr>
+          <th scope="col">CIE</th>
+          <th scope="col">Att</th>
+          <th scope="col">CIE</th>
+          <th scope="col">Att</th>
+          <th scope="col">CIE</th>
+          <th scope="col">Att</th>
+          <th scope="col">CIE</th>
+          <th scope="col">Att</th>
+          <th scope="col">CIE</th>
+          <th scope="col">Att</th>
+        </tr>
+        {{resetSno()}}
+      </thead>
+      <tbody *ngFor="let student of studentList; let student1 of attendance">
+        <tr *ngIf="student.sem ==showSem">
+          <td>{{count}}</td>
+          <td>{{student.USN}}</td>
+          <td>{{student.Name}}</td>
+          <td>{{student[course1]}}</td>
+          <td>{{student[course1]}}</td>
+          <td>{{student[course2]}}</td>
+          <td>{{student[course2]}}</td>
+          <td>{{student[course3]}}</td>
+          <td>{{student[course3]}}</td>
+          <td>{{student[course4]}}</td>
+          <td>{{student[course4]}}</td>
+          <td>{{student[course5]}}</td>
+          <td>{{student[course5]}}</td>
+
+
+          <!-- <td><button class="btn btn-success btn-rounded">Approve</button></td>
         <td><button class="btn btn-danger btn-rounded">disapprove</button></td> -->
-    </tr>  
-    {{incrementSno()}} 
-  </tbody>
-</table>
-</div>
+        </tr>
+        {{incrementSno()}}
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<button id="card" type="button"class="btn me-md-4" printSectionId="print" 
-[printStyle]="
+  <button id="card" type="button" class="btn me-md-4" printSectionId="print" [printStyle]="
 {h4 : {'display':'flex','justify-content':'space-between', 'position':' relative',
 'margin-left': '15%','margin-right': '15%'},
 
 p:{'position':'relative',
 'right':'0',
  ' color':' red','text-align':'end'},
- img:{'width':'350px'}}"
-[useExistingCss]="true" printTitle="KLE Technological University"  ngxPrint>
-<i class="fa fa-download"></i>print
-</button>
+ img:{'width':'350px'}}" [useExistingCss]="true" printTitle="KLE Technological University" ngxPrint>
+    <i class="fa fa-download"></i>print
+  </button>
 </div>
 <br>
-
-
-
-
-
