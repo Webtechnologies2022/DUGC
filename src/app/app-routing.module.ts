@@ -80,7 +80,7 @@ import { NiComponent } from './circular/ni/ni.component';
 import { NavComponent } from './circular/nav/nav.component';
 import { CircularMainComponent } from './circular/circular-main/circular-main.component';
 import { EligibilityComponent } from './eligibility/eligibility.component';
-
+import { SendComponent } from './circular/send/send.component';
 //eligibility list
 // import { HomeComponent } from './eligibility/home/home.component';
 import { LabComponent } from './eligibility/lab/lab.component';
@@ -105,12 +105,16 @@ import { AuthMainService } from './auth-main.service';
 import { GuardService } from './guards/guard.service';
 
 const routes: Routes = [
-  {path:'loginMain',component:DugcLoginComponent},
-  {path:'homeMain',component:MainHomepageComponent,
-canActivate:[GuardService]},
+  { path: 'loginMain', component: DugcLoginComponent },
+  {
+    path: 'homeMain',
+    component: MainHomepageComponent,
+    canActivate: [GuardService],
+  },
   {
     path: 'Minor',
-    component: MinorAnalysisMainComponent,canActivate:[GuardService],
+    component: MinorAnalysisMainComponent,
+    canActivate: [GuardService],
     children: [
       {
         path: 'dugc_chairman',
@@ -144,7 +148,8 @@ canActivate:[GuardService]},
   },
   {
     path: 'Withdrawal',
-    component: CourseWithdrawalMainComponent,canActivate:[GuardService],
+    component: CourseWithdrawalMainComponent,
+    canActivate: [GuardService],
     children: [
       { path: 'Home', component: CourseWithdrawalComponent },
       { path: 'Application', component: CourseWithdrawalApplicationComponent },
@@ -153,7 +158,8 @@ canActivate:[GuardService]},
   },
   {
     path: 'Endsem',
-    component: EndsemAnalysisMainComponent,canActivate:[GuardService],
+    component: EndsemAnalysisMainComponent,
+    canActivate: [GuardService],
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'analysis', component: AnalysisComponent },
@@ -161,7 +167,8 @@ canActivate:[GuardService]},
   },
   {
     path: 'Lab',
-    component: LabAnalysisMainComponent,canActivate:[GuardService],
+    component: LabAnalysisMainComponent,
+    canActivate: [GuardService],
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'adiv2021', component: Adiv2021Component },
@@ -193,7 +200,8 @@ canActivate:[GuardService]},
   },
   {
     path: 'Circular',
-    component: CircularMainComponent,canActivate:[GuardService],
+    component: CircularMainComponent,
+    canActivate: [GuardService],
     children: [
       { path: 'home', component: HomeComponentCircular },
       { path: 'ns', component: NsComponent },
@@ -210,6 +218,7 @@ canActivate:[GuardService]},
       { path: 'mints', component: MintsComponent },
       { path: 'notice', component: NoticeComponent },
       { path: 'nav', component: NavComponent },
+      { path: 'send', component: SendComponent },
       {
         path: 'login',
         component: LoginComponentCircular,
@@ -218,34 +227,46 @@ canActivate:[GuardService]},
   },
   {
     path: 'eligibility',
-    component: EligibilityComponent,canActivate:[GuardService],
+    component: EligibilityComponent,
+    canActivate: [GuardService],
     children: [
-      {path:'E-home',component:EligibilityHomeComponent},
-      {path:'ap-list',component:ApListComponent,
-    children:[
-      {path:'theoryresults',component:TheoryComponent}
-    ]},
-      {path:'lab',component:LabComponent,children:[
-        {path:'labresults',component:LabresultsComponent}
-      ]},
-      {path:'upload',component:UploadStudentComponent,
-    children:[
-      {path:'uploadtheory',component:Uploadlist2Component},
-      {path:'uploadlab',component:Uploadlist3Component}
-    ]},
-    ]},
-    
-    {path:"makeup",component:MinorMainComponent,canActivate:[GuardService],
-    children:[
+      { path: 'E-home', component: EligibilityHomeComponent },
+      {
+        path: 'ap-list',
+        component: ApListComponent,
+        children: [{ path: 'theoryresults', component: TheoryComponent }],
+      },
+      {
+        path: 'lab',
+        component: LabComponent,
+        children: [{ path: 'labresults', component: LabresultsComponent }],
+      },
+      {
+        path: 'upload',
+        component: UploadStudentComponent,
+        children: [
+          { path: 'uploadtheory', component: Uploadlist2Component },
+          { path: 'uploadlab', component: Uploadlist3Component },
+        ],
+      },
+    ],
+  },
+
+  {
+    path: 'makeup',
+    component: MinorMainComponent,
+    canActivate: [GuardService],
+    children: [
       // {path: 'login',component:LoginComponent},
-    //  {path: 'register',component:RegisterComponent},
-     {path:'add-student',component:AddStudentComponent},
-     {path:'edit-student',component:StudenteditComponent},
-     {path: 'list-student',component:StudentlistComponent},
-    //  {path:'',redirectTo:'/makeup/add-student',pathMatch: 'full'}
-    ]},
-    {path:"",component:MainHomepageComponent},
-    {path:'**',component:PagenotfoundComponent},
+      //  {path: 'register',component:RegisterComponent},
+      { path: 'add-student', component: AddStudentComponent },
+      { path: 'edit-student', component: StudenteditComponent },
+      { path: 'list-student', component: StudentlistComponent },
+      //  {path:'',redirectTo:'/makeup/add-student',pathMatch: 'full'}
+    ],
+  },
+  { path: '', component: MainHomepageComponent },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
