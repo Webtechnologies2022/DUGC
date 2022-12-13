@@ -29,7 +29,7 @@
                 /* padding-left:1000px;
                 padding-right: 50px; */
             }
-            .container {   
+            .container1 {   
                 /* margin-top: 17px;   
                 padding-left: 875px;*/
                 /*background-color: rgb(173,176,181);>  */
@@ -60,19 +60,18 @@
                 opacity: 0.7; 
 
             }  
-            .dropdown,.dropdown:hover {
+            .dropdown1,.dropdown1:hover {
                 width: 100px;   
                 padding: 10px 18px;  
                 margin: 10px 5px; 
                 border: 0.15em solid #C62128;
                 border-radius: 0.5em; 
             }
-            .drop{
+            .drop1{
                 text-align: center;
                 font-size: 15px;
                 border: 0.15em solid #C62128;
                 border-radius: 0.5em;
-
             }
             /* body{
                 background-color: rgb(248, 208, 4);
