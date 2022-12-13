@@ -301,9 +301,9 @@ export class  AddStudentComponent implements OnInit {
       "srn": this.srn,
       "rollNo": this.rno,
       "division": this.div,
-      "selectedCourseToWithdraw": this.selectedCourses,
+      "selectedCourse": this.selectedCourses,
       // "selectedCourseToWithdraw": "DMS",
-      "status": "pending",
+      "status":"pending",
       "reason": this.reason
     }
     alert('Application submitted successful.');

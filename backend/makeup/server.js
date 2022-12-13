@@ -25,9 +25,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 const studentRoute = require('./routes/students_routes');
-const userRoute = require('./routes/user_routes');
 app.use('/', studentRoute);
-app.use('/user',userRoute);
 
 const port = process.env.PORT || 8080;
 

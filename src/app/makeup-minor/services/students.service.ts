@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class StudentsService {
-  private url = 'http://localhost:8080';
+  private url = 'http://localhost:3003/makeup';
   constructor(private httpClient: HttpClient) { }
 
   getAllStudents(){
     // console.log(this.httpClient.get(this.url+'/'))
-    return this.httpClient.get(this.url+'/');
+    return this.httpClient.get(this.url+'/getall');
   }
 
 

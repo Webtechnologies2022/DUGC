@@ -29,16 +29,16 @@
 <td>{{student.name}}</td>
 <td>{{student.sem}}</td>
 <td>
-  <b *ngFor="let course of student.selectedCourseToWithdraw">
+  <b *ngFor="let course of student.selectedCourse">
     {{course.name}} <br>
   </b>
 </td>
 <td>
-  <b *ngFor="let course of student.selectedCourseToWithdraw">
-    {{course.attendance}} <br>
+  <b *ngFor="let course of student.selectedCourse">
+    {{course.code}} <br>
   </b>
 </td>
-<td>W</td>    
+<td>{{student.status}}</td>    
 {{incrementSno()}}    
 </tr>
 </tbody>

@@ -16,7 +16,8 @@ var usersRouter = require('./routes/users');
 var studentRouter = require('./routes/student');
 var labRouter =  require('./routes/labs');
 var userRouter = require('./routes/usermodel');
-
+var withdrawalRouter = require('./routes/students_routes');
+var makeupRouter=require('./routes/makeuproute');
 var app = express();
 app.use(cors());
 
@@ -66,6 +67,9 @@ app.use('/lab',labRouter);
 app.use('/users', usersRouter);
 app.use('/student',studentRouter);
 app.use('/login',userRouter);
+app.use('/withdrawal',withdrawalRouter);
+app.use('/makeup',makeupRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

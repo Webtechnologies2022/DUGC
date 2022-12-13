@@ -24,11 +24,11 @@
         <td>{{student.srn}}</td>
         <td>{{student.name}}</td>
         <td>
-          <b *ngFor="let course of student.selectedCourseToWithdraw">
+          <b *ngFor="let course of student.selectedCourse">
+            {{course.id}} <br>
             {{course.name}} <br>
-            Attendance-{{course.attendance}}% <br>
-            ISA1-{{course.isa1}} <br>
-            ISA2-{{course.isa2}}
+            code:{{course.code}}% <br>
+            credits:{{course.credits}} <br>
           </b>
         </td>
         <!-- <td>{{course.name}}</td> -->
