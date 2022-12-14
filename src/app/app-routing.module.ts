@@ -103,9 +103,11 @@ import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
 import { AuthMainService } from './auth-main.service';
 import { GuardService } from './guards/guard.service';
+import { DugcRegisterComponent } from './dugc-register/dugc-register.component';
 
 const routes: Routes = [
   { path: 'loginMain', component: DugcLoginComponent },
+  {path:'registerMain',component:DugcRegisterComponent},
   {
     path: 'homeMain',
     component: MainHomepageComponent,

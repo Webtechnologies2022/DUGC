@@ -1,9 +1,30 @@
 var express = require('express');
 var router = express.Router();
+var jwt =require('jsonwebtoken');
 
  const LabModel = require('../models/lab');
 
- router.post('/addmany',function (req,res,next){
+
+ function verifyToken(req,res,next){
+  if(!req.headers.authorization)
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let token =req.headers.authorization.split(' ')[1];
+  if(token=== 'null')
+  {
+    return res.status(401).send('unauthorized request')
+  }
+  let payload1=jwt.verify(token,'secrectKey');
+if (!payload1) 
+{
+  return res.status(401).send('unauthorized request')
+}
+req.userId =payload1.subject;
+next()
+}
+
+ router.post('/addmany',verifyToken, function (req,res,next){
 
     LabModel.insertMany(req.body).then((students)=>
     {
@@ -45,7 +66,7 @@ labobj.save(function(err,labobj)
  });
 });
 
-router.get('/attendance', function(req, res, next) {
+router.get('/attendance',verifyToken, function(req, res, next) {
 
    LabModel.aggregate(
     [
@@ -109,7 +130,7 @@ router.get('/attendance', function(req, res, next) {
   });
 
 
-  router.get('/marks', function(req, res, next) {
+  router.get('/marks',verifyToken, function(req, res, next) {
 
 LabModel.aggregate(
    [

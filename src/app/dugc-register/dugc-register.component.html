@@ -1,0 +1,59 @@
+<br>
+<br>
+<section class="vh-95" >
+    <div class="container h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100" >
+        <div class="col-lg-12 col-xl-11">
+          <div class="text-black">
+            <div class="card-body">
+              <div class="row justify-content-center" >
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 mt-4" >
+  
+                  <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color:#C62128;">Request for Registration</p>
+  
+                  <form class="mx-1 mx-md-4" (submit)="RegisterUser(get.value)" #get="ngForm">
+                    
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa fa-user fa-lg me-3 mb-2 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                    <select class="container1 p-2 form-select" aria-label="Default select example" name="role" [(ngModel)]="logindata.role">
+                        <option selected>select your role</option>
+                        <option value="admin">admin</option>
+                        <option value="dugc">DUGC</option>
+                        <option value="coordinator">Co-ordinator</option>
+                      </select>
+                      <label class="form-label" for="form3Example3c">Select Role</label>
+                    </div>
+                </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa fa-envelope fa-lg me-3  fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" name="email" placeholder="email" class="container1 form-control" [(ngModel)]="logindata.email"/>
+                        <label class="form-label" for="form3Example3c">Your Email</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" id="card" class="btn btn-lg">Register</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 mt-4 order-1 order-lg-2">
+                    <div id="overlay-text">
+                        <div id="title">DUGC</div>
+                        <div id="subtitle">KLE Technological University</div>
+                      </div>
+                  <img src="assets/statue1.jpg"
+                    class="img1" alt="Sample image">
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
