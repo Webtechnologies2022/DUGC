@@ -152,6 +152,8 @@ export class AnalysisComponent {
   isPasspercentageNull: boolean = false
   i = 0
   data:any
+  colorstemp : any = [];
+  indextemp : number =  0;
   // name = ""
   
   onClick(myname : any) {
@@ -221,6 +223,20 @@ export class AnalysisComponent {
       }
     }
 
+    for(let i = 0; i < this.passPercentages.length; i++){
+      // console.log(this.cie[i],this.attendance[i])
+      if(Number(this.passPercentages[i]) <= 50 ){
+      console.log("Less than 50 percemtage" + this.passPercentages[i]);
+      this.indextemp = i;
+      console.log("Less than 50 percemtage " + i);
+      this.colorstemp[i] = 'rgb(163, 0, 0)';
+      console.log("here : " + this.indextemp)
+      }
+      else {
+        this.colorstemp[i] = 'rgb(76, 201, 240)';
+      }
+    }
+
     console.log(this.passPercentages)
     console.log("hi " + this.store);
     // if (this.counter == 0 ) {
@@ -263,21 +279,24 @@ export class AnalysisComponent {
       data: {
         datasets: [
           {
-            label: 'Pass Percentage',
+            label: 'Current Year Pass Percentage',
             // data: [0, 20, 40, 50],
             data: this.passPercentages,
-            backgroundColor: '#cd2c10',
-            borderColor: '#A30000',
+            backgroundColor: this.colorstemp,
+            // '#cd2c10',
+            // borderColor: '#A30000',
             borderWidth: 1,
+            maxBarThickness:30,
             // fill: true,
           },
           {
-            label: 'Previous year Pass Percentage',
+            label: 'Previous Year Pass Percentage',
             // data: [0, 20, 40, 50],
             data: this.CoursePrevTemp,
+            // barThickness:25,
             maxBarThickness:30,
-            backgroundColor: "#722F37",
-            borderColor: "#A30000",
+            backgroundColor: "rgb(112, 224, 0)",
+            // borderColor: "#A30000",
             borderWidth:1
             // fill: true,
           }
@@ -339,10 +358,11 @@ export class AnalysisComponent {
             label: 'Total Passing Percentage',
             // data: [0, 20, 40, 50],
             data: this.temp,
-            backgroundColor: "#cd2c10",
-            borderColor: "#A30000",
+            backgroundColor: ["rgb(76, 201, 240)","rgb(112, 224, 0)"],
+            // "#cd2c10",
+            // borderColor: "#A30000",
             borderWidth:1,
-            maxBarThickness:25,
+            maxBarThickness:30,
             // fill: true,
           }],
           labels: ['Previous year','This year']
