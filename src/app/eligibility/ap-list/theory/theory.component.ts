@@ -4,6 +4,7 @@ import { StudentsService } from '../../services/students.service';
 import  * as XLSX from 'xlsx';
 import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
+import * as allcourses from '../../../../../backend/server/data_files/courses_with_credits.json';
 
 @Component({
   selector: 'app-theory',
@@ -30,6 +31,7 @@ export class TheoryComponent implements OnInit {
   course5:string="";
   course6:string="";
 
+  couses:any = (allcourses as any).default;
   test:string="22ECSC303";
 
   showSem:number=3;
@@ -52,6 +54,11 @@ export class TheoryComponent implements OnInit {
    
 
   ngOnInit(): void {
+    console.log(this.couses);
+    console.log(this.couses[0].courses)
+    console.log(this.couses[0].sem)
+    console.log(this.couses[0].courses[0].code)
+    console.log(this.couses[0].courses[0].name)
    
   }
 
@@ -144,7 +151,7 @@ this.studentService.getattendance().subscribe((data1:any)=>
   }else if(sem==5)
     {
       console.log(sem);
-      this.course1="22ECSC301";
+      this.course1=this.couses[2].courses[4].code;
       this.course2="19ECSC302";
       this.course3="17ECSC302";
       this.course4="22ECSC306";
@@ -163,7 +170,7 @@ this.studentService.getattendance().subscribe((data1:any)=>
         }else if(sem==3)
       {
         console.log(sem);
-        this.course1="15EMAB204";
+        this.course1=this.couses[0].courses[0].code;
         this.course2="19ECSC202";
         this.course3="20ECSC201";
         this.course4="20ECSC205";

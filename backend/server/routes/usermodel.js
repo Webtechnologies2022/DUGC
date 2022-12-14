@@ -41,7 +41,7 @@ router.get('/allusers',function(req,res,next)
    });
 });
 
-router.post('/finduser',function(req,res,next)
+router.post('/dugc',function(req,res,next)
 {
     let userdata =req.body;
     userModel.findOne({email:userdata.email},function(err,data)
@@ -54,6 +54,12 @@ router.post('/finduser',function(req,res,next)
         {
             res.status(401).send({msg:'invalid user'});
         }else 
+        if(!data.role=='dugc')
+        {
+            res.status(401).send({msg:'you are not authorized to login as dugc member'});
+        }
+        else
+
         if(data.password!==userdata.password)
         {
             res.status(401).send({msg:'invalid password'});
@@ -69,6 +75,69 @@ router.post('/finduser',function(req,res,next)
 })
 
 
+router.post('/coordinator',function(req,res,next)
+{
+    let userdata =req.body;
+    userModel.findOne({email:userdata.email},function(err,data)
+    {
+        if(err)
+        {
+           console.log(err);
+        }else
+        if(!data)
+        {
+            res.status(401).send({msg:'invalid user'});
+        }else 
+        if(!data.role=='admin')
+        {
+            res.status(401).send({msg:'you are not authorized to login as coordinator'});
+        }
+        else
+        if(data.password!==userdata.password)
+        {
+            res.status(401).send({msg:'invalid password'});
+        }
+        else
+        {
+            let userload = {subject:data._id}
+            let usertoken = jwt.sign(userload,'secrectKey')
+             res.status(200).send({user:usertoken});
+        }
+
+    })
+})
+
+router.post('/finduser',function(req,res,next)
+{
+    let userdata =req.body;
+    userModel.findOne({email:userdata.email},function(err,data)
+    {
+        if(err)
+        {
+           console.log(err);
+        }else
+        if(!data)
+        {
+            res.status(401).send({msg:'invalid user'});
+        }
+        else
+        // if(data.role!==userdata.role)
+        // {
+        //     res.status(401).send({msg:'you are not authorized to login as admin'});
+        // }
+        if(data.password!==userdata.password)
+        {
+            res.status(401).send({msg:'invalid password'});
+        }
+        else
+        {
+            let userload = {subject:data._id}
+            let usertoken = jwt.sign(userload,'secrectKey')
+             res.status(200).send({user:usertoken});
+        }
+
+    })
+})
   
 
 module.exports = router;
