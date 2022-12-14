@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as CourseData from './file/data.json';
+import * as CourseData from '../../../backend/server/data_files/courses_for_endsem.json';
 import * as PassingData from './file/passing.json';
 import * as CoursePrevious from './file/courseprevious.json';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceService {
-
   getCourseData() {
     return CourseData;
   }
@@ -17,9 +15,8 @@ export class ServiceService {
     return PassingData;
   }
 
-  getCoursePreviousData()
-  {
+  getCoursePreviousData() {
     return CoursePrevious;
   }
-  constructor() { }
+  constructor() {}
 }

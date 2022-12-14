@@ -337,8 +337,8 @@ app.get("/create_course", (req, res) => {
     "credit": creditFormat
   }
   let inserting_course_for_endsem = {
-    "code": course_code,
-    "name": course_name
+    "code": course_name,
+    "name": course_code
   }
   new_course_data_with_credits[sem_numbers[semester] - 3]['courses'].push(inserting_course);
 
