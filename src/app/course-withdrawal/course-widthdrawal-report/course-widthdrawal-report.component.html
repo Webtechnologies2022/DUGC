@@ -10,7 +10,7 @@
     <option value="8">8</option>
   </select>
 
-  <h1>Approved Students List of sem {{ selectedSem }}.</h1>
+  <h1>Course Withdrawal List of {{ selectedSem }} Semester .</h1>
   <!-- <table border="1" class="pop">
     <tr>
       <th>Sl no.</th>
@@ -85,15 +85,15 @@
   <br />
   <table class="pop">
     <tr>
-        <th>Course name</th>
-        <th>Code</th>
+      <th>Course name</th>
+      <th>Code</th>
     </tr>
     <tr *ngFor="let code of courseCode; let i=index">
       <td>{{courseName[i]}}</td>
       <td>{{courseCode[i]}}</td>
 
     </tr>
-</table>
+  </table>
 
 
   <br />

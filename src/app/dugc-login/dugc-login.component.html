@@ -15,20 +15,21 @@
         <form (submit)="loginUser(get.value)" #get="ngForm">
 
           <div class="form-outline mb-4">
-          <label class="" for="form3Example3">role</label>
-          <select class="container1 p-2 form-select" aria-label="Default select example" name="role" [(ngModel)]="logindata.role" #name2="ngModel"  required>
-            <option selected>select your role</option>
-            <option value="admin">admin</option>
-            <option value="dugc">DUGC</option>
-            <option value="coordinator">Co-ordinator</option>
-          </select>
-        </div>
+            <label class="" for="form3Example3">Role</label>
+            <select class="container1 p-2 form-select" aria-label="Default select example" name="role"
+              [(ngModel)]="logindata.role" #name2="ngModel" required>
+              <option selected>select your role</option>
+              <option value="coordinator">Course Coordinator</option>
+              <option value="dugc">DUGC Coordinator</option>
+              <option value="admin">DUGC Chairman</option>
+            </select>
+          </div>
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="" for="form3Example3">Email</label>
             <input name="email" type="email" id="form3Example3" class="container1 form-control form-control-lg"
-              [(ngModel)]="logindata.email" placeholder="email"  #name2="ngModel"  required minlength="4" />
-              <div *ngIf="name2.invalid && (name2.dirty || name2.touched)" class="alert">
+              [(ngModel)]="logindata.email" placeholder="email" #name2="ngModel" required minlength="4" />
+            <div *ngIf="name2.invalid && (name2.dirty || name2.touched)" class="alert">
             </div>
 
           </div>
@@ -37,9 +38,9 @@
           <div class="form-outline mb-3">
             <label class="" for="form3Example4">Password</label>
             <input name="password" type="password" id="form3Example4" class="container1 form-control form-control-lg"
-              [(ngModel)]="logindata.password" placeholder="password"  #name="ngModel"  required minlength="4"/>
-              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
-           
+              [(ngModel)]="logindata.password" placeholder="password" #name="ngModel" required minlength="4" />
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+
             </div>
 
           </div>
@@ -60,7 +61,7 @@
               Log in
             </button>
             <p class=" mt-2 pt-3 mb-0">Don't have an account? <a [routerLink]="['/registerMain']"
-                  class="link-danger" >Request Registration</a></p>
+                class="link-danger">Request Registration</a></p>
           </div>
 
         </form>
