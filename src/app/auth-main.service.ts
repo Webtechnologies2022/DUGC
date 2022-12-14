@@ -11,8 +11,6 @@ export class AuthMainService {
   jwthelp =new JwtHelperService;
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
   private  Loginurl = 'http://localhost:3003/login/admin';
-  private  Loginurl2= 'http://localhost:3003/login/admin';
-  private  Loginurl3 = 'http://localhost:3003/login/admin';
   private  registerurl = 'http://localhost:3003/login/add';
   constructor(private http:HttpClient,private route:Router) {
 
@@ -33,32 +31,35 @@ export class AuthMainService {
     return !!localStorage.getItem('token');
   }
 
+  coordinator()
+  {
+    return !!localStorage.getItem('coordinator');
+  }
+  dugc()
+  {
+    return !!localStorage.getItem('dugc');
+  }
+
   gettoken()
   {
-   return localStorage.getItem('token');
+    if(this.LoggedIn())
+    {
+      return localStorage.getItem('token');
+    }
+    else
+    if(this.dugc())
+    {
+      return localStorage.getItem('dugc');
+    }else{
+      return localStorage.getItem('coordinator');
+    }
+   
   }
   logout()
   {
+    localStorage.removeItem('dugc');
+    localStorage.removeItem('coordinator');
     localStorage.removeItem('token');
-    this.route.navigate(['/']);
-  //   console.log(user);
-  //   const accesstoken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
-  //   const refreshtoken = "dummy";
-
-  //   localStorage.setItem("tkn", accesstoken);
-  //   localStorage.setItem("rtkn", refreshtoken);
-  //   // return this.http.post(this.url+'/user/add-user', user);
-  //   const decrrpt= this.jwthelp.decodeToken(accesstoken);
-  //   console.log(decrrpt);
-  //     const data = 
-  // {
-  //   access:accesstoken,
-  //   refresh:refreshtoken,
-  //   username:decrrpt.username,
-  //   userid:decrrpt.sub,
-  //   exp:decrrpt.exp
-  // }
-  // this.userCredentials.next(data);
-  
+    this.route.navigate(['/']);  
   }
 }

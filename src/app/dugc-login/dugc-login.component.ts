@@ -31,22 +31,24 @@ export class DugcLoginComponent implements OnInit {
         console.log(res);
         this.userdata = res;
         console.log(this.userdata.user);
-        localStorage.setItem('token', this.userdata.user);
+        if(this.logindata.role=='admin')
+        {
+          localStorage.setItem('token', this.userdata.user);
+        }else
+        if (this.logindata.role=='dugc') {
+          localStorage.setItem('dugc', this.userdata.user);
+        }
+        else
+          if (this.logindata.role=='coordinator') {
+            localStorage.setItem('coordinator',this.userdata.user);
+          }
         this.route.navigate(['/homeMain']);
         this.toast.success('welcome to KLETECH');
       },
       (err) => {
         console.log(err.error.msg);
-        this.toast.error('Unauthorized');
+        this.toast.error(err.error.msg);
       }
     );
-    //  alert('login successfull');
-    // this.route.navigate(['/homeMain']);
   }
 }
-// (data:any)=>
-//     {
-//       this.studentResult =data;
-//       this.studentList = this.studentResult.results;
-//       console.log(this.studentList);
-//       this.toast.success("student list fetched successfully");

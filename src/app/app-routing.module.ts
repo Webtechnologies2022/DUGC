@@ -103,6 +103,8 @@ import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { DugcLoginComponent } from './dugc-login/dugc-login.component';
 import { AuthMainService } from './auth-main.service';
 import { GuardService } from './guards/guard.service';
+import { DugcService } from './guards/dugc.service';
+import { CoordinatorService } from './guards/coordinator.service';
 import { DugcRegisterComponent } from './dugc-register/dugc-register.component';
 
 const routes: Routes = [
@@ -234,16 +236,16 @@ const routes: Routes = [
     children: [
       {
         path: 'ap-list',
-        component: ApListComponent,
+        component: ApListComponent,canActivate:[DugcService],
         children: [{ path: 'theoryresults', component: TheoryComponent }],
       },
       {
-        path: 'lab',
+        path: 'lab',canActivate:[DugcService],
         component: LabComponent,
         children: [{ path: 'labresults', component: LabresultsComponent }],
       },
       {
-        path: 'upload',
+        path: 'upload',canActivate:[CoordinatorService],
         component: UploadStudentComponent,
         children: [
           { path: 'uploadtheory', component: Uploadlist2Component },
