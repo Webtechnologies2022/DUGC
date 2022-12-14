@@ -1,0 +1,145 @@
+{
+    "three": {
+        "15EMAB204": {
+            "Name": "Graph Theory and Linear Algebra",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "19ECSC202": {
+            "Name": "Discrete Mathematical Structures",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "20ECSC205": {
+            "Name": "Data Structures and Algorithms",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "21ECSC201": {
+            "Name": "Computer Organization and Architecture",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "15ECSC208": {
+            "Name": "Database Management System",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        }
+    },
+    "four": {
+        "21ECSC210": {
+            "Name": "Exploratory Data Analysis",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "20EMAB209": {
+            "Name": "Applied Statistics with R",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "20ECSC204": {
+            "Name": "Object Oriented Programming",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "19ECSC203": {
+            "Name": "Principles of Compiler Design",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "18ECSC202": {
+            "Name": "Operating System Principles and Programming",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        }
+    },
+    "five": {
+        "22ECSC301": {
+            "Name": "Software Engineering",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "22ECSC306": {
+            "Name": "Machine Learning",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "19ECSC302": {
+            "Name": "Computer Networks -1",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "17ECSC302": {
+            "Name": "System Software",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "22ECSE315": {
+            "Name": "Natural Language Processing",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "22ECSE303": {
+            "Name": "Internet of Things",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        }
+    },
+    "six": {
+        "20ECSC303": {
+            "Name": "Computer Networks-2 ",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "20ECSC305": {
+            "Name": "Distributed & Cloud Computing ",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "15EHSC301": {
+            "Name": "Professional Aptitude & Logical Reasoning ",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "21ECSC307": {
+            "Name": "Blockchain and Distributed Ledgers ",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        }
+    },
+    "seven": {
+        "17ECSC401": {
+            "Name": "Big Data & Analytics",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        },
+        "20ECSC402": {
+            "Name": "Information Security ",
+            "Minor 1": "Yes",
+            "Minor 2": "Yes",
+            "Activity": "Yes"
+        }
+    },
+    "eight": {}
+}

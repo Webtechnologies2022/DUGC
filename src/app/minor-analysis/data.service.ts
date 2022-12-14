@@ -48,12 +48,15 @@ export class DataService {
   }
 
   createCourse(data: any) {
-    const { semester, course_code, course_name } = data;
+    const { semester, course_code, course_name, cred1, cred2, cred3 } = data;
     return this._http.get(`${this.URI}/create_course`, {
       params: {
         semester,
         course_code,
         course_name,
+        cred1,
+        cred2,
+        cred3,
       },
     });
   }

@@ -17,10 +17,14 @@ export class DugcChairmanComponent implements OnInit {
     semester: '',
     course_code: '',
     course_name: '',
+    cred1: '',
+    cred2: '',
+    cred3: '',
   };
   courses: any = {};
   course_codes: any = [];
-
+  sem_numbers = [3, 4, 5, 6, 7, 8];
+  sem_names = ['three', 'four', 'five', 'six', 'seven', 'eight'];
   statusMessage = '';
   onSubmit(): void {
     console.log("You've called the onclick function.");

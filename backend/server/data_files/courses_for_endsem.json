@@ -1,0 +1,190 @@
+{
+    "sem3": [
+        {
+            "code": "Graph Theory and Linear Algebra",
+            "name": "15MEAB204"
+        },
+        {
+            "code": "Discrete Mathemstical Structures",
+            "name": "19ECSC202"
+        },
+        {
+            "code": "Computer Organization and Architecture",
+            "name": "20ECS201"
+        },
+        {
+            "code": "Data Structures and Algorithms",
+            "name": "20ECS205"
+        },
+        {
+            "code": "Database Management System",
+            "name": "15ECSC208"
+        },
+        {
+            "code": "Data Structure and Algorithms Lab",
+            "name": "19ECSP201"
+        },
+        {
+            "code": "Database Applications Lab",
+            "name": "15ECSP204"
+        }
+    ],
+    "sem4": [
+        {
+            "code": "Applied Statistics with R",
+            "name": "20EMAB209"
+        },
+        {
+            "code": "Microcontroller Programming and Interfacing",
+            "name": "21ECSC206"
+        },
+        {
+            "code": "Object Oriented Programming",
+            "name": "20ECSC204"
+        },
+        {
+            "code": "Principles of Compiler Design",
+            "name": "19ECSC203"
+        },
+        {
+            "code": "Operating Systems Principles and Programming",
+            "name": "22ECSC202"
+        },
+        {
+            "code": "Exploratory Data Analysis",
+            "name": "21ECSC210"
+        },
+        {
+            "code": "Object Oriented Programming Lab",
+            "name": "20ECSP203"
+        }
+    ],
+    "sem5": [
+        {
+            "code": "Software Engineering",
+            "name": "22ECS301"
+        },
+        {
+            "code": "Computer Networks – I",
+            "name": "19ECSC302"
+        },
+        {
+            "code": "System Software",
+            "name": "17ECSC302"
+        },
+        {
+            "code": "Machine Learning",
+            "name": "22ECSC306"
+        },
+        {
+            "code": "Web Technologies Lab",
+            "name": "21ECSP304"
+        },
+        {
+            "code": "System Software Lab",
+            "name": "19ECSP302"
+        },
+        {
+            "code": "Mini Project",
+            "name": "15ECSW301"
+        }
+    ],
+    "sem6": [
+        {
+            "code": "Computer Network-2",
+            "name": "20ECSC303"
+        },
+        {
+            "code": "Distributed and Cloud Computing",
+            "name": "20ECSC305"
+        },
+        {
+            "code": "Blockchain and Distributed Ledgers",
+            "name": "22ECSC307"
+        },
+        {
+            "code": "Computer Network Laboratory",
+            "name": "20ECSP305"
+        },
+        {
+            "code": "Minor Project",
+            "name": "15ECSW302 "
+        },
+        {
+            "code": "Internet of Things",
+            "name": "17ECSE303"
+        },
+        {
+            "code": "Alogrithm Problem Solving",
+            "name": "17ECSE309"
+        },
+        {
+            "code": "Embedded Intelligent System",
+            "name": "18ECSE302"
+        },
+        {
+            "code": "Parallel Computing",
+            "name": "17ECSE307"
+        },
+        {
+            "code": "Quantum Computing",
+            "name": "17ECSE306"
+        },
+        {
+            "code": "Semantic Web",
+            "name": "19ECSE303"
+        },
+        {
+            "code": "Data Integration and Cloud Services",
+            "name": "21ECSE332"
+        }
+    ],
+    "sem7": [
+        {
+            "code": "Bg Data and Analysis",
+            "name": "17ECSC401"
+        },
+        {
+            "code": "Information Security",
+            "name": "20ECS402"
+        },
+        {
+            "code": "Social Network Analysis",
+            "name": "18ECSE402"
+        },
+        {
+            "code": "Cyber Security",
+            "name": "19ECSE401"
+        },
+        {
+            "code": "Software Defined Networks",
+            "name": "20ECSE405"
+        },
+        {
+            "code": "Senior Design Project",
+            "name": "20ECSW401"
+        },
+        {
+            "code": "Natural Language Processing(Swayam)",
+            "name": "noc22-cs-98"
+        },
+        {
+            "code": "Capstone Project",
+            "name": "20ECSW402"
+        }
+    ],
+    "sem8": [
+        {
+            "code": "DF",
+            "name": "22ESD213"
+        },
+        {
+            "code": "FS",
+            "name": "22EBS343"
+        },
+        {
+            "code": "MG",
+            "name": "22EBS233"
+        }
+    ]
+}
