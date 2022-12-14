@@ -77,3 +77,22 @@ button {
   svg.material-icons path {
     fill: whitesmoke;
   }
+
+  #card:hover
+{
+  background: #42A948;
+}
+.ng-valid[required], .ng-valid.required  {
+    border:0.10em solid #42A948;/* green */
+  }
+  
+  .ng-invalid:not(form)  {
+   border:0.10em solid #C62128 /* red */
+  }
+  
+  .alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 0.5rem;
+    
+  }

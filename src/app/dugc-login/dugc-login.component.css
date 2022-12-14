@@ -42,6 +42,10 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
+#card:hover
+{
+  background: #42A948;
+}
 
 svg.material-icons path {
   fill: whitesmoke;
@@ -51,7 +55,7 @@ svg.material-icons path {
   /* border-radius: 10px;
   border-color: #C62128; */
   padding: 5px 10px;
-  border: 0.10em solid #C62128;
+  /* border: 0.10em solid #C62128; */
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03em;
   transform: translateY(-1px);
@@ -102,4 +106,19 @@ a {
   font-size: 1.5em;
   border-left: 0.1em solid black;
   padding-left: 0.6em;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border:0.10em solid #42A948;/* green */
+}
+
+.ng-invalid:not(form)  {
+ border:0.10em solid #C62128 /* red */
+}
+
+.alert div {
+  background-color: #fed3d3;
+  color: #820000;
+  padding: 0.5rem;
+  
 }

@@ -18,7 +18,9 @@
           <div class="form-outline mb-4">
             <label class="" for="form3Example3">Email</label>
             <input name="email" type="email" id="form3Example3" class="container1 form-control form-control-lg"
-              [(ngModel)]="logindata.email" placeholder="email" />
+              [(ngModel)]="logindata.email" placeholder="email"  #name2="ngModel"  required minlength="4" />
+              <div *ngIf="name2.invalid && (name2.dirty || name2.touched)" class="alert">
+            </div>
 
           </div>
 
@@ -26,7 +28,15 @@
           <div class="form-outline mb-3">
             <label class="" for="form3Example4">Password</label>
             <input name="password" type="password" id="form3Example4" class="container1 form-control form-control-lg"
-              [(ngModel)]="logindata.password" placeholder="password" />
+              [(ngModel)]="logindata.password" placeholder="password"  #name="ngModel"  required minlength="4"/>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <!-- <div *ngIf="name.errors?.['required']">
+              password is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+              pass word should be minimum 4 characters
+            </div> -->
+            </div>
 
           </div>
 

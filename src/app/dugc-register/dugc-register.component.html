@@ -16,21 +16,35 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa fa-user fa-lg me-3 mb-2 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                    <select class="container1 p-2 form-select" aria-label="Default select example" name="role" [(ngModel)]="logindata.role">
+                    <select class="container1 p-2 form-select" aria-label="Default select example" name="role" [(ngModel)]="logindata.role" #name2="ngModel"  required>
                         <option selected>select your role</option>
                         <option value="admin">admin</option>
                         <option value="dugc">DUGC</option>
                         <option value="coordinator">Co-ordinator</option>
                       </select>
                       <label class="form-label" for="form3Example3c">Select Role</label>
+                      <div *ngIf="name2.invalid && (name2.dirty || name2.touched)" class="alert">
+                        <div *ngIf="name2.errors?.['required']">
+                        select role
+                        </div>
+                        </div>
                     </div>
                 </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa fa-envelope fa-lg me-3  fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c" name="email" placeholder="email" class="container1 form-control" [(ngModel)]="logindata.email"/>
+                        <input type="email" id="form3Example3c" name="email" placeholder="email"
+                         class="container1 form-control" [(ngModel)]="logindata.email" #name="ngModel"  required minlength="4"/>
                         <label class="form-label" for="form3Example3c">Your Email</label>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+                            <div *ngIf="name.errors?.['required']">
+                             email is required.
+                            </div>
+                            <div *ngIf="name.errors?.['minlength']">
+                              enter valid email adrress
+                            </div>
+                            </div>
                       </div>
                     </div>
   
