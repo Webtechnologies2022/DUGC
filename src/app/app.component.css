@@ -242,3 +242,19 @@ footer {
 .hidden {
   display: none;
 }
+
+
+.nav-right-section {
+  display: flex;
+}
+
+.nav-des-first {
+  margin-right: 0.5em;
+}
+
+.nav-des-second {
+  color: #636363;
+  border-left: 2px solid rgba(0, 0, 0, 0.269);
+  padding-left: 0.5em;
+  height: fit-content;
+}
