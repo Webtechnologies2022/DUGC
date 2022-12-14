@@ -14,6 +14,7 @@ export class DugcLoginComponent implements OnInit {
 
   logindata=
   {
+    role:'',
     email:'',
     password:''
   }

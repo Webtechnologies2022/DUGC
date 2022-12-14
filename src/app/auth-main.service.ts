@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class AuthMainService {
   jwthelp =new JwtHelperService;
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
-  private  Loginurl = 'http://localhost:3003/login/finduser';
+  private  Loginurl = 'http://localhost:3003/login/admin';
+  private  Loginurl2= 'http://localhost:3003/login/admin';
+  private  Loginurl3 = 'http://localhost:3003/login/admin';
   private  registerurl = 'http://localhost:3003/login/add';
   constructor(private http:HttpClient,private route:Router) {
 

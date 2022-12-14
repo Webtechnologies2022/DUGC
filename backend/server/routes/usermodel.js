@@ -54,7 +54,7 @@ router.post('/dugc',function(req,res,next)
         {
             res.status(401).send({msg:'invalid user'});
         }else 
-        if(!data.role=='dugc')
+        if(data.role!==userdata.role)
         {
             res.status(401).send({msg:'you are not authorized to login as dugc member'});
         }
@@ -77,8 +77,8 @@ router.post('/dugc',function(req,res,next)
 
 router.post('/coordinator',function(req,res,next)
 {
-    let userdata =req.body;
-    userModel.findOne({email:userdata.email},function(err,data)
+    let userdata2 =req.body;
+    userModel.findOne({email:userdata2.email},function(err,data)
     {
         if(err)
         {
@@ -88,12 +88,12 @@ router.post('/coordinator',function(req,res,next)
         {
             res.status(401).send({msg:'invalid user'});
         }else 
-        if(!data.role=='admin')
+        if(data.role!==userdata2.role)
         {
             res.status(401).send({msg:'you are not authorized to login as coordinator'});
         }
         else
-        if(data.password!==userdata.password)
+        if(data.password!==userdata2.password)
         {
             res.status(401).send({msg:'invalid password'});
         }
@@ -107,10 +107,10 @@ router.post('/coordinator',function(req,res,next)
     })
 })
 
-router.post('/finduser',function(req,res,next)
+router.post('/admin',function(req,res,next)
 {
-    let userdata =req.body;
-    userModel.findOne({email:userdata.email},function(err,data)
+    let userdata3 =req.body;
+    userModel.findOne({email:userdata3.email},function(err,data)
     {
         if(err)
         {
@@ -121,11 +121,12 @@ router.post('/finduser',function(req,res,next)
             res.status(401).send({msg:'invalid user'});
         }
         else
-        // if(data.role!==userdata.role)
-        // {
-        //     res.status(401).send({msg:'you are not authorized to login as admin'});
-        // }
-        if(data.password!==userdata.password)
+        if(data.role!==userdata3.role)
+        {
+            res.status(401).send({msg:'you are not authorized to login as admin'});
+        }
+        else 
+        if(data.password!==userdata3.password)
         {
             res.status(401).send({msg:'invalid password'});
         }

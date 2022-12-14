@@ -14,6 +14,15 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form (submit)="loginUser(get.value)" #get="ngForm">
 
+          <div class="form-outline mb-4">
+          <label class="" for="form3Example3">role</label>
+          <select class="container1 p-2 form-select" aria-label="Default select example" name="role" [(ngModel)]="logindata.role" #name2="ngModel"  required>
+            <option selected>select your role</option>
+            <option value="admin">admin</option>
+            <option value="dugc">DUGC</option>
+            <option value="coordinator">Co-ordinator</option>
+          </select>
+        </div>
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="" for="form3Example3">Email</label>
