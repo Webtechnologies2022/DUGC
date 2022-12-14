@@ -2,44 +2,42 @@
     <title>HOME PAGE</title>
 </head>
 
-<body>
+<body class="main">
     <!-- <img id="i2" align="left" src="/assets/clite.jpg" alt="CLITE LOGO" ><br><br> -->
-    <h4>Lab CIE Result Analysis</h4>
+    <div class="form">
+        <form class="form-input">
+            <div class="container1">
+                <label for="year" class="input-section-title">Select Year:</label>
+                <select id='year' name='year' class="drop1down1 input-section-content" required [(ngModel)]="year">
+                    <option value="2020" class="drop1">2020</option>
+                    <option value="2021" class="drop1">2021</option>
+                    <option value="2022" class="drop1">2022</option>
+                </select><br><br>
 
-    <form>
-        <div class="container1">
-            <label for="year">Select Year:</label>
-            <select id='year' name='year' class="drop1down1" required [(ngModel)]="year">
-                <option value="2020" class="drop1">2020</option>
-                <option value="2021" class="drop1">2021</option>
-                <option value="2022" class="drop1">2022</option>
-            </select><br><br>
-
-            <label for="Sem">Select Sem:</label>
-            <select id='Sem' name='Semester' class="drop1down1" required [(ngModel)]="Sem">
-                <!-- <option value="1" class = "drop1">1</option>
+                <label for="Sem" class="input-section-title">Select Sem:</label>
+                <select id='Sem' name='Semester' class="drop1down1 input-section-content" required [(ngModel)]="Sem">
+                    <!-- <option value="1" class = "drop1">1</option>
                 <option value="2" class = "drop1">2</option> -->
-                <option value="3" class="drop1">3</option>
-                <option value="4" class="drop1">4</option>
-                <option value="5" class="drop1">5</option>
-                <option value="6" class="drop1">6</option>
-                <option value="7" class="drop1">7</option>
-                <option value="8" class="drop1">8</option>
-            </select><br><br>
+                    <option value="3" class="drop1">3</option>
+                    <option value="4" class="drop1">4</option>
+                    <option value="5" class="drop1">5</option>
+                    <option value="6" class="drop1">6</option>
+                    <option value="7" class="drop1">7</option>
+                    <option value="8" class="drop1">8</option>
+                </select><br><br>
 
 
-            <label for="Div">Select Division:</label>
-            <select id='Div' name='Div' class="drop1down1" required [(ngModel)]="Div">
-                <option value="A" class="drop1">A</option>
-                <option value="B" class="drop1">B</option>
-                <option value="C" class="drop1">C</option>
-                <option value="D" class="drop1">D</option>
-                <option value="E" class="drop1">E</option>
-                <option value="All" class="drop1">All</option>
-            </select><br><br>
-            <button
-                style="width:80px;background-color: #E34234;border: 0ch;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); font-size:25px;width: 125px;"
-                (click)="myFun()">Submit</button>
-        </div>
-    </form>
+                <label for="Div" class="input-section-title">Select Division:</label>
+                <select id='Div' name='Div' class="drop1down1 input-section-content" required [(ngModel)]="Div">
+                    <option value="A" class="drop1">A</option>
+                    <option value="B" class="drop1">B</option>
+                    <option value="C" class="drop1">C</option>
+                    <option value="D" class="drop1">D</option>
+                    <option value="E" class="drop1">E</option>
+                    <option value="All" class="drop1">All</option>
+                </select><br><br>
+                <button id="submit-upload" (click)="myFun()">Submit</button>
+            </div>
+        </form>
+    </div>
     <router-outlet></router-outlet>

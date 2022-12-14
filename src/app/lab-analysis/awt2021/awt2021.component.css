@@ -1,94 +1,77 @@
-
-body {
-  font-family: 'Inter', sans-serif;
-}
-
 .navbar1 {
-  overflow: hidden;
-  background-color: #ede1e1;
-  text-align: center;
-  padding-left: 29%;
-  margin-left: 10%;
-  margin-right: 10%;
-  border: 0.2em solid #C62128;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+.navbar1 a,
+.dropdown-content1 a {
+  padding: 0.4em 0.9em;
+  border: 0.15em solid #E34234;
   border-radius: 0.5em;
-
-}
-
-.navbar1 a {
-  float: left;
-  font-size: 18px;
+  margin: 0.4em 0.4em;
   font-weight: 600;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  color: #636363;
+  letter-spacing: -0.03em;
+  transition: 0.6s;
 }
 
-.dropdown1 {
-  float: left;
-  overflow: hidden;
-  color: black;
+.nav-op:first-of-type {
+  margin-left: 0;
 }
 
-.dropdown1 .dropbtn1 {
-  font-size: 18px;  
-  border: none;
-  outline: none;
-  color: black;
-  font-weight: 600;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0%;
+.navbar1 a:hover,
+.dropdown-content1 a:hover {
+  cursor: pointer;
+  transition: 0.6s;
+  color: #ffffff;
+  background-color: #E34234;
 }
 
-.navbar1 a:hover, .dropdown1:hover .dropbtn1 {
-  background-color: #C62128;
+
+.selected-option {
+  color: #ffffff !important;
+  background-color: #E34234 !important;
 }
+
+#disabled-option {
+  opacity: 20%;
+  pointer-events: none;
+}
+
+.container {
+  margin: 0em 1em;
+}
+
+.dashboard {
+  display: flex;
+}
+
 
 .dropdown-content1 {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
-.dropdown-content1 a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+.courses-label {
+  font-weight: 700;
+  margin-left: 4em;
+  margin-right: 1em;
+  font-size: 1.3em;
+  color: #636363;
+
 }
 
-.dropdown-content1 a:hover {
-  background-color: #ddd;
+.navbar-real {
+  display: flex;
+  align-items: center;
+  padding-top: 0.7em;
+  justify-content: space-between;
 }
 
-.dropdown1:hover .dropdown-content1 {
-  display: block;
+.navbar-real h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #636363;
 }
-#i1{
-          
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          }
-         h2{
-              padding-top: 15px;
-              text-align: center;
-              margin-left: auto;
-              margin-right: auto;
-              font-size: 40px;
-              font-style:inter;
-          } 
-          #if1{
-             /* align-items: center;
-              margin-right: auto;
-              margin-left: -20%;*/
-              padding-left: 250px;
-          }

@@ -1,0 +1,77 @@
+.navbar1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+.navbar1 a,
+.dropdown-content1 a {
+  padding: 0.4em 0.9em;
+  border: 0.15em solid #E34234;
+  border-radius: 0.5em;
+  margin: 0.4em 0.4em;
+  font-weight: 600;
+  color: #636363;
+  letter-spacing: -0.03em;
+  transition: 0.6s;
+}
+
+.nav-op:first-of-type {
+  margin-left: 0;
+}
+
+.navbar1 a:hover,
+.dropdown-content1 a:hover {
+  cursor: pointer;
+  transition: 0.6s;
+  color: #ffffff;
+  background-color: #E34234;
+}
+
+
+.selected-option {
+  color: #ffffff !important;
+  background-color: #E34234 !important;
+}
+
+#disabled-option {
+  opacity: 20%;
+  pointer-events: none;
+}
+
+.container {
+  margin: 0em 1em;
+}
+
+.dashboard {
+  display: flex;
+}
+
+
+.dropdown-content1 {
+  display: flex;
+  align-items: center;
+}
+
+.courses-label {
+  font-weight: 700;
+  margin-left: 4em;
+  margin-right: 1em;
+  font-size: 1.3em;
+  color: #636363;
+
+}
+
+.navbar-real {
+  display: flex;
+  align-items: center;
+  padding-top: 0.7em;
+  justify-content: space-between;
+}
+
+.navbar-real h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #636363;
+}
