@@ -12,7 +12,19 @@ export class AppComponent {
   constructor(private auth:AuthMainService){}
 
   log(){
-   return this.auth.LoggedIn();
+    if(this.auth.LoggedIn())
+    {
+      return this.auth.LoggedIn();
+    }
+    else
+    if(this.auth.dugc()){
+      return this.auth.dugc();
+    }
+  else
+  {
+    return this.auth.coordinator();
+  }
+   
   }
 
   logout()
