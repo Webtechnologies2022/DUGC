@@ -1,35 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs'
-import  { JwtHelperService} from '@auth0/angular-jwt'
+import { BehaviorSubject } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthMainService {
+
   jwthelp =new JwtHelperService;
   userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
-  private  Loginurl = 'http://localhost:3003/login/admin';
-  private  registerurl = 'http://localhost:3003/login/add';
-  constructor(private http:HttpClient,private route:Router) {
+  private  Loginurl = 'http://localhost:3000/login/admin';
+  private  registerurl = 'http://localhost:3000/login/add';
+  constructor(private http:HttpClient,private route:Router) {}
 
-   }
-
-  LoginUser(user:any)
-  {
-  return this.http.post(this.Loginurl,user) 
+  LoginUser(user: any) {
+    return this.http.post(this.Loginurl, user);
   }
 
-  RegisterUser(user:any)
-  {
-    return this.http.post(this.registerurl,user) 
+  RegisterUser(user: any) {
+    return this.http.post(this.registerurl, user);
   }
 
-  LoggedIn()
-  {
+  LoggedIn() {
     return !!localStorage.getItem('token');
   }
+
 
   coordinator()
   {
@@ -62,4 +59,5 @@ export class AuthMainService {
     localStorage.removeItem('token');
     this.route.navigate(['/']);  
   }
+
 }
