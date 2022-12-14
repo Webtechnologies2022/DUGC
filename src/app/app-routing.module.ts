@@ -107,7 +107,7 @@ import { DugcRegisterComponent } from './dugc-register/dugc-register.component';
 
 const routes: Routes = [
   { path: 'loginMain', component: DugcLoginComponent },
-  {path:'registerMain',component:DugcRegisterComponent},
+  { path: 'registerMain', component: DugcRegisterComponent },
   {
     path: 'homeMain',
     component: MainHomepageComponent,
@@ -232,7 +232,6 @@ const routes: Routes = [
     component: EligibilityComponent,
     canActivate: [GuardService],
     children: [
-      { path: 'E-home', component: EligibilityHomeComponent },
       {
         path: 'ap-list',
         component: ApListComponent,
