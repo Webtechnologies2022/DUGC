@@ -63,7 +63,7 @@
   <br>
   <div class="table-responsive">
 
-    <table id="t1" class="table  table-striped  table-bordered table-sm caption-top"
+    <table id="t1" class="table  table-striped table-hover table-bordered table-sm caption-top"
       style="text-align:center;border:2px;">
       <thead class="table-active">
         <tr>
@@ -111,6 +111,27 @@
         {{incrementSno()}}
     </table>
   </div>
+  <div class="courses">
+    <table class="table table-hover table-bordered table-sm caption-top mt-2" style="text-align:center;border:2px;width:50%;">
+     <thead class="table-active">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr>
+        <td scope="row">{{lab1}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{lab2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{lab3}}</td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <button id="card" type="button" class="btn me-md-4" printSectionId="print" [printStyle]="

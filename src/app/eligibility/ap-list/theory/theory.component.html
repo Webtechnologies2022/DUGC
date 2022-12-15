@@ -76,7 +76,7 @@
   <h5><span> Program: BE </span> <span> Semester:{{showSem}}</span> </h5>
   <br>
   <div class="table-responsive">
-    <table class="table table-bordered table-sm caption-top" style="text-align:center;border:2px;">
+    <table class="table table-hover table-bordered table-sm caption-top" style="text-align:center;border:2px;">
 
       <thead class="table-active">
         <tr>
@@ -127,6 +127,34 @@
       </tbody>
     </table>
   </div>
+  <br>
+  <div class="courses">
+    <table class="table table-hover table-bordered table-sm caption-top mt-2" style="text-align:center;border:2px;width:50%;">
+     <thead class="table-active">
+      <tr>
+        <th>Code</th>
+        <th>CourseName</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr>
+        <td scope="row">{{course1}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{course2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{course3}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{course4}}</td>
+      </tr>
+      <tr>
+        <td scope="row">{{course5}}</td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <button id="card" type="button" class="btn me-md-4" printSectionId="print" [printStyle]="
@@ -137,7 +165,22 @@ p:{'position':'relative',
 'right':'0',
  ' color':' red','text-align':'end'},
  img:{'width':'350px'}}" [useExistingCss]="true" printTitle="KLE Technological University" ngxPrint>
-    <i class="fa fa-download"></i>print
+    <i class="fa fa-download"></i>Print
   </button>
 </div>
 <br>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>code</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let course of courses">
+    <tr *ngIf="course ==showSem">
+    <td>{{course}}</td>
+    <td>{{course}}</td>
+  </tr>
+  </tbody>
+</table> -->

@@ -5,6 +5,7 @@ import  * as XLSX from 'xlsx';
 import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
 import * as allcourses from '../../../../../backend/server/data_files/courses_with_credits.json';
+import * as allcourses3 from '../../../../../backend/server/data_files/courses_for_endsem.json';
 
 @Component({
   selector: 'app-theory',
@@ -32,6 +33,7 @@ export class TheoryComponent implements OnInit {
   course6:string="";
 
   couses:any = (allcourses as any).default;
+  courses:any =(allcourses3 as any).default;
   test:string="22ECSC303";
 
   showSem:number=3;
@@ -54,11 +56,14 @@ export class TheoryComponent implements OnInit {
    
 
   ngOnInit(): void {
+    console.log(this.courses);
+    console.log(this.courses.sem3);
+    console.log(this.courses.sem3[0].code);
     console.log(this.couses);
-    console.log(this.couses[0].courses)
-    console.log(this.couses[0].sem)
-    console.log(this.couses[0].courses[0].code)
-    console.log(this.couses[0].courses[0].name)
+    // console.log(this.couses[0].courses)
+    // console.log(this.couses[0].sem)
+    // console.log(this.couses[0].courses[0].code)
+    // console.log(this.couses[0].courses[0].name)
    
   }
 
