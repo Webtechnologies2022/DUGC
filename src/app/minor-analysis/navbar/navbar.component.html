@@ -10,12 +10,20 @@
         </div>
     </div> -->
     <div class="nav-options">
-        <div class="nav-op" routerLink="/Minor/coordinator" [routerLinkActive]="['selected-option']">
-            Course Coordinator</div>
-        <div class=" nav-op" routerLink="/Minor/dugc" [routerLinkActive]="['selected-option']">DUGC Coordinator
+        <div *ngIf="userType =='CourseCoordinator'">
+            <div class="nav-op" routerLink="/Minor/coordinator" [routerLinkActive]="['selected-option']">
+                Upload Marksheets</div>
         </div>
-        <div class="nav-op" routerLink="/Minor/dugc_chairman" [routerLinkActive]="['selected-option']">DUGC
-            Chairman</div>
+        <div *ngIf="userType =='DUGCCoordinator'">
+            <div class=" nav-op" routerLink="/Minor/dugc" [routerLinkActive]="['selected-option']">View ISA Analysis
+            </div>
+        </div>
+        <div *ngIf="userType =='DUGCChairman'">
+            <div class=" nav-op" routerLink="/Minor/dugc" [routerLinkActive]="['selected-option']">View ISA Analysis
+            </div>
+            <div class="nav-op" routerLink="/Minor/dugc_chairman" [routerLinkActive]="['selected-option']">Create Course
+            </div>
+        </div>
         <a href="http://localhost:3000/filemanager" target="_blank">
             <div class="nav-op">
                 View Excel Sheets

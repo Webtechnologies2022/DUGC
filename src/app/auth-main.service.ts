@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthMainService {
-
-  jwthelp =new JwtHelperService;
-  userCredentials:BehaviorSubject<any>=new BehaviorSubject(null);
-  private  Loginurl = 'http://localhost:3000/login/admin';
-  private  registerurl = 'http://localhost:3000/login/add';
-  constructor(private http:HttpClient,private route:Router) {}
+  jwthelp = new JwtHelperService();
+  userCredentials: BehaviorSubject<any> = new BehaviorSubject(null);
+  private Loginurl = 'http://localhost:3000/login/admin';
+  private registerurl = 'http://localhost:3000/login/add';
+  constructor(private http: HttpClient, private route: Router) {}
 
   LoginUser(user: any) {
     return this.http.post(this.Loginurl, user);
@@ -27,37 +26,33 @@ export class AuthMainService {
     return !!localStorage.getItem('token');
   }
 
-
-  coordinator()
-  {
+  coordinator() {
     return !!localStorage.getItem('coordinator');
   }
-  dugc()
-  {
+  dugc() {
     return !!localStorage.getItem('dugc');
   }
 
-  gettoken()
-  {
-    if(this.LoggedIn())
-    {
+  getUserType() {
+    let data = localStorage.getItem('user_type');
+    console.log(data);
+    return data;
+  }
+
+  gettoken() {
+    if (this.LoggedIn()) {
       return localStorage.getItem('token');
-    }
-    else
-    if(this.dugc())
-    {
+    } else if (this.dugc()) {
       return localStorage.getItem('dugc');
-    }else{
+    } else {
       return localStorage.getItem('coordinator');
     }
-   
   }
-  logout()
-  {
+  logout() {
     localStorage.removeItem('dugc');
     localStorage.removeItem('coordinator');
     localStorage.removeItem('token');
-    this.route.navigate(['/']);  
+    localStorage.removeItem('user_type');
+    this.route.navigate(['/']);
   }
-
 }

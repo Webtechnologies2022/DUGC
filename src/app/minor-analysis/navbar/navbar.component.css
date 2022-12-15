@@ -80,6 +80,10 @@
   pointer-events: none;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+.nav-options div {
+  display: flex;
 }

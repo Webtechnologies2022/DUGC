@@ -31,19 +31,18 @@ export class DugcLoginComponent implements OnInit {
         console.log(res);
         this.userdata = res;
         console.log(this.userdata.user);
-        if(this.logindata.role=='admin')
-        {
+        if (this.logindata.role == 'admin') {
           localStorage.setItem('token', this.userdata.user);
-        }else
-        if (this.logindata.role=='dugc') {
+          localStorage.setItem('user_type', 'DUGCChairman');
+        } else if (this.logindata.role == 'dugc') {
           localStorage.setItem('dugc', this.userdata.user);
+          localStorage.setItem('user_type', 'DUGCCoordinator');
+        } else if (this.logindata.role == 'coordinator') {
+          localStorage.setItem('coordinator', this.userdata.user);
+          localStorage.setItem('user_type', 'CourseCoordinator');
         }
-        else
-          if (this.logindata.role=='coordinator') {
-            localStorage.setItem('coordinator',this.userdata.user);
-          }
         this.route.navigate(['/homeMain']);
-        this.toast.success('welcome to KLETECH');
+        this.toast.success("You've successfully logged in!");
       },
       (err) => {
         console.log(err.error.msg);

@@ -8,27 +8,22 @@ import { AuthMainService } from './auth-main.service';
 })
 export class AppComponent {
   title = 'DUGC';
+  user_type: any = '';
+  constructor(private auth: AuthMainService) {}
 
-  constructor(private auth:AuthMainService){}
-
-  log(){
-    if(this.auth.LoggedIn())
-    {
+  log() {
+    if (this.auth.LoggedIn()) {
       return this.auth.LoggedIn();
-    }
-    else
-    if(this.auth.dugc()){
+    } else if (this.auth.dugc()) {
       return this.auth.dugc();
+    } else {
+      return this.auth.coordinator();
     }
-  else
-  {
-    return this.auth.coordinator();
   }
-   
-  }
-
-  logout()
-  {
+  logout() {
     return this.auth.logout();
+  }
+  ngOnInit(): void {
+    this.user_type = this.auth.getUserType();
   }
 }
