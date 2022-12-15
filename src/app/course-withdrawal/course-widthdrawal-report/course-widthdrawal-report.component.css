@@ -1,6 +1,7 @@
 * {
   font-family: "Inter", sans-serif;
 }
+
 .pop {
   font-family: Arial, Helvetica, sans-serif;
   /* border-collapse: collapse; */
@@ -11,7 +12,7 @@
 }
 
 .pop td,
- th {
+th {
   border: 0.15em solid #ddd;
   padding: 4px;
   text-align: center;
@@ -20,6 +21,7 @@
 .pop tr:nth-child(even) {
   background-color: #ffffff;
 }
+
 .pop tr:nth-child(odd) {
   background-color: #f2f2f2f0;
 }
@@ -35,12 +37,15 @@
   background-color: #c62128;
   color: white;
 }
+
 .pop button {
   padding: 2px;
   margin-right: 20px;
 }
+
 .kop {
-  background-color: rgba(255, 255, 255, 0.8); /* Green */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Green */
   border-color: #c62128;
   color: black;
   border-radius: 8px;
@@ -63,7 +68,8 @@
   align-content: space-evenly;
   place-self: center;
 }
-.table > div {
+
+.table>div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   /* padding: 20px ;*/
@@ -75,7 +81,7 @@
   place-self: center;
 }
 
-.sel-course-table > div > input {
+.sel-course-table>div>input {
   margin: 5px;
 }
 
@@ -88,21 +94,25 @@
   color: #ffffff;
   transition: background-color 0.5s linear;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 main {
   display: flex;
   flex-direction: column;
   /* text-align: center; */
   /* align-items: center; */
 }
+
 .main-title {
   font-size: 2em;
   text-align: center;
 }
+
 .stud-details table,
 th,
 td {
@@ -196,13 +206,23 @@ select {
   }
 }
 
-th, td {
+th,
+td {
   text-align: center;
 }
 
 @page {
   size: a4 landscape;
-   margin: 0;
-  padding: 0; 
-    /* margin-top: 20mm; */ 
+  margin: 0;
+  padding: 0;
+  /* margin-top: 20mm; */
+}
+
+
+.main-title-main {
+  font-size: 1.8em !important;
+  font-weight: 700;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
 }

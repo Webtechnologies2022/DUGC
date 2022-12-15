@@ -3,16 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
-main{
+
+main {
   display: flex;
   flex-direction: column;
   /* text-align: center; */
   /* align-items: center; */
 }
-.main-title {
-  font-size: 2em;
+
+.main-title-main {
+  font-size: 1.8em !important;
+  font-weight: 700;
   text-align: center;
 }
+
+.main-title {
+  font-size: 1.4em !important;
+  font-weight: 700;
+  text-align: center;
+}
+
 .stud-details table,
 th,
 td {
@@ -25,7 +35,7 @@ td {
   font-size: 20px;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   width: min-content;
@@ -39,7 +49,7 @@ td {
   font-size: 20px;
 }
 
-footer *{
+footer * {
   margin: 1em;
 }
 
@@ -61,7 +71,8 @@ textarea {
 
 }
 
-input,select{
+input,
+select {
   box-sizing: border-box;
   border: 2px solid rgb(185, 33, 33);
   border-radius: 4px;
@@ -71,26 +82,36 @@ input,select{
 
 * {
   font-family: 'Inter', sans-serif;
-}.pop {
+}
+
+.pop {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   table-layout: auto;
   margin-left: 80px;
-  margin-right:80px;
-  
+  margin-right: 80px;
+
 }
 
 
-.pop td, #customers th {
+.pop td,
+#customers th {
   border: 0.15em solid #ddd;
   padding: 8px;
   /*text-align: left;*/
 }
 
-.pop tr:nth-child(even){background-color: #ffffff;}
-.pop tr:nth-child(odd){background-color: #f2f2f2f0;}
+.pop tr:nth-child(even) {
+  background-color: #ffffff;
+}
 
-.pop tr:hover {background-color: #ddd;}
+.pop tr:nth-child(odd) {
+  background-color: #f2f2f2f0;
+}
+
+.pop tr:hover {
+  background-color: #ddd;
+}
 
 .pop th {
   padding-top: 12px;
@@ -99,12 +120,15 @@ input,select{
   background-color: #C62128;
   color: white;
 }
+
 .pop button {
   padding: 2px;
   margin-right: 20px;
 }
+
 .kop {
-  background-color:rgba(255, 255, 255, 0.8); /* Green */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Green */
   border-color: #C62128;
   color: black;
   border-radius: 8px;
@@ -114,40 +138,42 @@ input,select{
   font-size: 17px;
   height: 50px;
   width: 80px;
-  
+
 }
 
-.table{
-  
+.table {
+
   display: grid;
-  grid-template-columns:auto auto auto ;
+  grid-template-columns: auto auto auto;
   /* grid-template-columns: repeat(3, 1fr); */
   gap: 20px;
   /* background-color: #2196F3; */
   padding-left: 180px;
   padding-right: 180px;
-  justify-content: space-around;   
-  align-content: space-evenly;  
+  justify-content: space-around;
+  align-content: space-evenly;
   place-self: center;
-   
+
 }
 
-input[type="checkbox"]{
-  width: 20px; /*Desired width*/
-  height: 20px; /*Desired height*/
+input[type="checkbox"] {
+  width: 20px;
+  /*Desired width*/
+  height: 20px;
+  /*Desired height*/
   cursor: pointer;
   background-color: #C62128;
 }
 
-.table > div {
+.table>div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
- /* padding: 20px ;*/
+  /* padding: 20px ;*/
   font-size: 20px;
   border: 2px solid rgb(185, 33, 33);
   border-radius: 5px;
-  justify-content: space-around;    
-  align-content: space-evenly;    
+  justify-content: space-around;
+  align-content: space-evenly;
   place-self: center;
   min-width: 200px;
   min-height: 140px;
@@ -155,7 +181,7 @@ input[type="checkbox"]{
   height: 100%;
 }
 
-.sel-course-table > div > input{
+.sel-course-table>div>input {
   margin: 5px;
 }
 
@@ -165,9 +191,10 @@ input[type="checkbox"]{
     display: none;
   }
 }
-.kop:hover{
-  background-color:#C62128;
-  border-color: #C62128 ;
+
+.kop:hover {
+  background-color: #C62128;
+  border-color: #C62128;
   font-size: 17px;
   height: 50px;
   width: 80px;
@@ -175,21 +202,25 @@ input[type="checkbox"]{
   transition: background-color 0.5s linear;
 
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-main{
+
+main {
   display: flex;
   flex-direction: column;
   /* text-align: center; */
   /* align-items: center; */
 }
+
 .main-title {
   font-size: 2em;
   text-align: center;
 }
+
 .stud-details table,
 th,
 td {
@@ -202,7 +233,7 @@ td {
   font-size: 20px;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   width: min-content;
@@ -216,7 +247,7 @@ td {
   font-size: 20px;
 }
 
-footer *{
+footer * {
   margin: 1em;
 }
 
@@ -238,7 +269,8 @@ textarea {
 
 }
 
-input,select{
+input,
+select {
   box-sizing: border-box;
   border: 2px solid rgb(185, 33, 33);
   border-radius: 4px;
