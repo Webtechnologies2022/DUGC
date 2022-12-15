@@ -91,6 +91,9 @@
   .nav-options {
     display: none;
   }
+  div #c1, footer{
+    display: none;
+  }
 }
 
 

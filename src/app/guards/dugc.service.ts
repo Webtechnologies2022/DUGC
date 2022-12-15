@@ -18,6 +18,11 @@ export class DugcService implements CanActivate {
       var token=localStorage.getItem('dugc');
       console.log(token);
       return true;
+    }else
+    if (this.authservice.LoggedIn()) {
+      var token=localStorage.getItem('token');
+      console.log(token);
+      return true;
     }
     else{
       this.toast.error('you are not authorized for this task');

@@ -262,9 +262,9 @@ const routes: Routes = [
     children: [
       // {path: 'login',component:LoginComponent},
       //  {path: 'register',component:RegisterComponent},
-      { path: 'add-student', component: AddStudentComponent },
-      { path: 'edit-student', component: StudenteditComponent },
-      { path: 'list-student', component: StudentlistComponent },
+      { path: 'add-student',canActivate:[DugcService], component: AddStudentComponent },
+      { path: 'edit-student',canActivate:[DugcService], component: StudenteditComponent },
+      { path: 'list-student',canActivate:[DugcService], component: StudentlistComponent },
       //  {path:'',redirectTo:'/makeup/add-student',pathMatch: 'full'}
     ],
   },
