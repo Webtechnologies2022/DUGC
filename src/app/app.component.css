@@ -258,3 +258,19 @@ footer {
   padding-left: 0.5em;
   height: fit-content;
 }
+
+
+#welcome-message {
+  font-size: 1.5em;
+  margin-right: 1em;
+  letter-spacing: -0.05em !important;
+}
+
+.nav-options2 {
+  align-items: center;
+}
+
+
+.role-display {
+  color: #636363;
+}

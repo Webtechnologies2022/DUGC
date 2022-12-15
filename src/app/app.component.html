@@ -13,6 +13,8 @@
         <!-- <div class="nav-des-sub">UNDERGRADUATE COURSES</div> -->
       </div>
       <div class="nav-options2">
+        <div class="nav-des" id="welcome-message" *ngIf="user_type_name != ''">Welcome, <span
+            class="role-display">{{user_type_name}}</span></div>
         <button class="nav-op2" [routerLink]="['/loginMain']" *ngIf="!log()">Login</button>
         <button class="nav-op2" [routerLink]="['/registerMain']" *ngIf="!log()">Register</button>
         <button class="nav-op2" *ngIf="log()" (click)="logout()">Logout</button>
