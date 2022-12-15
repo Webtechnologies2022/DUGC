@@ -7,19 +7,15 @@
 </head>
 
 <body>
-  <h2>Uploading Result - 2022</h2>
-  <div class="navbar1">
-    <a href="/Lab/home">Home</a>
-    <a href="https://www.kletech.ac.in" target="_blank">About</a>
-    <div class="dropdown1">
-      <button class="dropbtn1">
-        Select Year
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content1">
-        <a href="/Lab/adiv2021">5th Sem 2021</a>
-        <a href="/Lab/a32021">3rd Sem 2021</a>
-      </div>
+  <div class="navbar-real">
+    <div class="navbar1">
+      <a href="/Lab/home">Home</a>
+    </div>
+    <h2>Uploading Result - 2022</h2>
+    <div class="dropdown-content1">
+      <div class="courses-label">Previous Year: </div>
+      <a href="/Lab/adiv2021">5th Sem 2021</a>
+      <a href="/Lab/a32021">3rd Sem 2021</a>
     </div>
   </div>
 </body>
@@ -28,8 +24,10 @@
 <br />
 <br />
 <br />
+<div class="file-upload-section">
 
-<input type="file" (change)="ReadExcel($event)">
+  <input type="file" (change)="ReadExcel($event)" class="file-upload-button">
+</div>
 <!-- <div id="hide" class="col-lg-8 col-xs-8">
     <label class="hand-cursor">
      <input type="file" nv-file-select uploader="$ctrl.uploader"/>
@@ -40,8 +38,7 @@
 
 <br>
 <br>
-<br>
-<div style="width: 50%; margin-left: 20%">
+<div class="table-content">
   <table class="table table-striped">
     <thead>
       <tr>

@@ -1,11 +1,12 @@
 <head>
-    <title>DUGC | Makup Minor</title>
-  </head>
-  <body>
-    
+  <title>DUGC | Makeup Minor</title>
+</head>
+
+<body>
+
   <main>
-    <h1>Makup Minor Approval</h1>
-    <table  class="pop">
+    <h1>Makeup Minor Approval</h1>
+    <table class="pop">
       <tr>
         <th>Sl no.</th>
         <th>Sem</th>
@@ -17,32 +18,32 @@
       </tr>
       {{resetSno()}}
       <thead *ngFor="let student of students; let i = index">
-  
-      <tr *ngIf="student.status == 'pending'">
-        <td>{{sno}}</td>
-        <td>{{student.sem}}</td>
-        <td>{{student.srn}}</td>
-        <td>{{student.name}}</td>
-        <td>
-          <b *ngFor="let course of student.selectedCourse">
-            {{course.id}} <br>
-            {{course.name}} <br>
-            code:{{course.code}}% <br>
-            credits:{{course.credits}} <br>
-          </b>
-        </td>
-        <!-- <td>{{course.name}}</td> -->
-        <td>{{student.reason}}</td>
-        <td>
-          <button (click)="approve(student._id)">✅</button> 
-          <button (click)="reject(student._id)">❌</button>
-        </td>
-        {{incrementSno()}}
-      </tr>
+
+        <tr *ngIf="student.status == 'pending'">
+          <td>{{sno}}</td>
+          <td>{{student.sem}}</td>
+          <td>{{student.srn}}</td>
+          <td>{{student.name}}</td>
+          <td>
+            <b *ngFor="let course of student.selectedCourse">
+              {{course.id}} <br>
+              {{course.name}} <br>
+              code:{{course.code}}% <br>
+              credits:{{course.credits}} <br>
+            </b>
+          </td>
+          <!-- <td>{{course.name}}</td> -->
+          <td>{{student.reason}}</td>
+          <td>
+            <button (click)="approve(student._id)">✅</button>
+            <button (click)="reject(student._id)">❌</button>
+          </td>
+          {{incrementSno()}}
+        </tr>
       </thead>
-  <!-- </table>
+      <!-- </table>
   <table> -->
-    <!-- <tbody>
+      <!-- <tbody>
        <tr>
         <td>1</td>
         <td>3rd</td>
@@ -99,8 +100,7 @@
       </tr> 
     </tbody> -->
     </table>
-  
-   
+
+
   </main>
-  </body>
-  
+</body>
