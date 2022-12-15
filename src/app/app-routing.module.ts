@@ -155,9 +155,9 @@ const routes: Routes = [
     component: CourseWithdrawalMainComponent,
     canActivate: [GuardService],
     children: [
-      { path: 'Home', component: CourseWithdrawalComponent },
-      { path: 'Application', component: CourseWithdrawalApplicationComponent },
-      { path: 'Report', component: CourseWidthdrawalReportComponent },
+      { path: 'Home',canActivate:[DugcService], component: CourseWithdrawalComponent },
+      { path: 'Application',canActivate:[DugcService], component: CourseWithdrawalApplicationComponent },
+      { path: 'Report',canActivate:[DugcService], component: CourseWidthdrawalReportComponent },
     ],
   },
   {
