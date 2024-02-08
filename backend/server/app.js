@@ -36,7 +36,7 @@ const { isImportEqualsDeclaration } = require('typescript');
 const PATH = './spreadsheets';
 
 //!Minor analysis import -END
-let mongo = mongoose.connect('mongodb+srv://jithendra:jhonny%40589@dugc.gd7mtam.mongodb.net/test');
+let mongo = mongoose.connect('');
 
 
 if (mongo) {
